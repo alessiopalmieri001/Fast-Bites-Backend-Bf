@@ -1,49 +1,55 @@
 @extends('layouts.guest')
 
 @section('main-content')
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="{{ route('register') }}" class="d-flex justify-content-center">
         @csrf
 
-        <!-- Name -->
-        <div>
-            <label for="name">
-                Name
-            </label>
-            <input type="text" id="name" name="name">
-        </div>
+        <div class="col-4 d-flex flex-column align-items-stretch form">
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <label for="email">
-                Email
-            </label>
-            <input type="email" id="email" name="email">
-        </div>
+            <!-- Name -->
+            <div class="field-input my-4">
+                <label for="name">
+                    Name
+                </label>
+                <input type="text" id="name" name="name">
+            </div>
 
-        <!-- Password -->
-        <div class="mt-4">
-            <label for="password">
-                Password
-            </label>
-            <input type="password" id="password" name="password">
-        </div>
+            <!-- Email Address -->
+            <div class="field-input my-4">
+                <label for="email">
+                    Email
+                </label>
+                <input type="email" id="email" name="email">
+            </div>
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <label for="password_confirmation">
-                Conferma Password
-            </label>
-            <input type="password" id="password_confirmation" name="password_confirmation">
-        </div>
+            <!-- Password -->
+            <div class="field-input my-4">
+                <label for="password">
+                    Password
+                </label>
+                <input type="password" id="password" name="password">
+            </div>
 
-        <div>
-            <a href="{{ route('login') }}">
-                {{ __('Already registered?') }}
-            </a>
+            <!-- Confirm Password -->
+            <div class="field-input my-4">
+                <label for="password_confirmation">
+                    Conferma Password
+                </label>
+                <input type="password" id="password_confirmation" name="password_confirmation">
+            </div>
 
-            <button type="submit">
-                Register
-            </button>
+            <div class="text-decoration-underline">
+                <a href="{{ route('login') }}">
+                    {{ __('Already registered?') }}
+                </a>
+            </div>
+
+            <div class="d-flex justify-content-center button mt-3">
+                <button type="submit">
+                    Log in
+                </button>
+            </div>
         </div>
     </form>
+
 @endsection
