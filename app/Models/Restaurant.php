@@ -9,6 +9,13 @@ class Restaurant extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name', 
+        'address', 
+        'iva', 
+        'img'
+    ];
+
     //Creata relazione 1 (User) to many (Restaurant)
     public function user()
     {

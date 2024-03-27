@@ -4,6 +4,9 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+// Helpers
+use Illuminate\Support\Facades\Auth;
+
 class StoreRestaurantRequest extends FormRequest
 {
     /**
@@ -11,7 +14,7 @@ class StoreRestaurantRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return Auth::check();
     }
 
     /**
@@ -20,6 +23,16 @@ class StoreRestaurantRequest extends FormRequest
      * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
      */
     public function rules(): array
+    {
+        return [
+            'name' => 'required|string|max:256',
+            'address' => 'required|string|max:256',
+            'iva' => 'required|integer',
+            'img' => 'required|url',
+        ];
+    }
+
+    public function messages(): array
     {
         return [
             //
