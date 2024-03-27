@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Models\Restaurant;
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 use App\Http\Controllers\Controller;
+
+// Models
+use App\Models\Restaurant;
 
 // Form Request
 use App\Http\Requests\StoreProjectRequest;
@@ -34,7 +36,8 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        //
+
+        return view('admin.posts.create');
     }
 
     /**
@@ -42,7 +45,22 @@ class RestaurantController extends Controller
      */
     public function store(StoreRestaurantRequest $request)
     {
-        //
+        $restaurantData = $request->validated();
+        $slug = Str::slug($restaurantData['name']);
+
+        $img = null;
+        if (isset($restaurantData['img'])) {
+            $img = Storage::disk('public')->put('images', $restaurantData['img']);
+        }
+
+        $restaurant = Restaurant::create([
+            'name' => $restaurantData['name'],
+            'slug' => $slug,
+            'iva' => $restaurantData['iva'],
+            'img' => $restaurantData['img'],
+        ]);
+
+        return redirect()->route('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -50,7 +68,7 @@ class RestaurantController extends Controller
      */
     public function show(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
@@ -58,7 +76,7 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        //
+        return view('admin.restaurants.edit');
     }
 
     /**
@@ -66,7 +84,19 @@ class RestaurantController extends Controller
      */
     public function update(UpdateRestaurantRequest $request, Restaurant $restaurant)
     {
-        //
+        $restaurantData = $request->validated();
+
+        $slug = Str::slug($restaurantData['title']);
+
+        $restaurant->update([
+            'title' => $restaurantData['title'],
+            'slug' => $slug,
+            'iva' => $restaurantData['iva'],
+            'img' => $restaurantData['img'],
+        ]);
+
+        return redirect()->route('admin.restaurants.show', compact('restaurant'));
+        
     }
 
     /**
@@ -74,6 +104,8 @@ class RestaurantController extends Controller
      */
     public function destroy(Restaurant $restaurant)
     {
-        //
+        $restaurant->delete();
+
+        return redirect()->route('admin.restaurants.index');
     }
 }
