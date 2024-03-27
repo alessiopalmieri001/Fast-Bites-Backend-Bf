@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+<<<<<<< HEAD
 main {
     background: linear-gradient(to bottom, #f38a20, #cc3232);
 }
@@ -43,4 +44,74 @@ main {
             }
         }
     }
+=======
+
+
+main {
+    background: rgb(246,144,30);
+    background: linear-gradient(180deg, rgba(246,144,30,1) 0%, rgba(204,51,51,1) 75%);
+>>>>>>> main
 }
+
+
+.form {
+    background-color: rgba(255, 255, 255, 0.2);    
+    padding: 35px;
+    border-radius: 10%;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-box-shadow: none rgb(255, 255, 255);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+input, div {
+    text-align: left;
+    color: white;
+    width: 100%;
+    border: 0;
+    padding: 5px 0;
+    margin: 0;
+    background: transparent;
+    font: 16px sans-serif;
+    outline: none;
+}
+
+.field-input {
+    border-bottom: 2px solid white;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+
+button {
+    background-color: #ffffff;
+    border: none;
+    width: 100%;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 24px;
+  }
+  
+
+
+  button:hover {
+    background-color: #F48C20;
+    color: white;
+  }
