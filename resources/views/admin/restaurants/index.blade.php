@@ -14,6 +14,9 @@
                         <h1>
                             {{ $restaurant->address }}
                         </h1>
+                        <p>
+                            {{ $restaurant->user_id }}
+                        </p>
                         
                     </div>
                 </div>
