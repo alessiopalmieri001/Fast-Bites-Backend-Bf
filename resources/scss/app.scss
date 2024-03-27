@@ -1,5 +1,46 @@
 @import "~bootstrap/scss/bootstrap";
-
 main {
-    background-color: lightcoral;
+    background-color: #cc3232;
+}
+.container {
+    margin-bottom: 25px;
+}
+.card {
+    &.custom-card {
+        height: 100%;
+
+        .card-content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+
+            .card-img-container {
+                text-align: center;
+
+                img {
+                    width: 100%;
+                    height: 200px;
+                    object-fit: cover;
+                }
+            }
+
+            .card-details {
+                flex-grow: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                h2,
+                h4 {
+                    text-align: center;
+                    margin: 0;
+                }
+
+                h2 {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
 }
