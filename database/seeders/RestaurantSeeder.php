@@ -6,9 +6,11 @@ use Illuminate\Database\Seeder;
 
 //Models
 use App\Models\Restaurant;
+use App\Models\User;
 
 //Helpers
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Schema;
 use Faker\Factory as FakerFactory;
 
 class RestaurantSeeder extends Seeder
@@ -21,7 +23,9 @@ class RestaurantSeeder extends Seeder
     public function run()
     {
         // Cancella tutti i record nella tabella prima di inserire nuovi dati
+        Schema::disableForeignKeyConstraints();
         Restaurant::truncate();
+        Schema::enableForeignKeyConstraints();
 
         // Inizializza l'istanza di Faker
         $faker = FakerFactory::create();
@@ -31,7 +35,10 @@ class RestaurantSeeder extends Seeder
 
         // Eseguo un ciclo nel file restaurants.php 
         foreach ($restaurantData as $singleRestaurant) {
+
             $restaurant = new Restaurant();
+            $user = User::inRandomOrder()->first();
+            $restaurant->user_id = $user->id;
             $restaurant->name = $singleRestaurant['name'];
             $restaurant->slug = Str::slug($singleRestaurant['name']);
             $restaurant->address = $singleRestaurant['address'];

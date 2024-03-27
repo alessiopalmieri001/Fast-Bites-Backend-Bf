@@ -42,4 +42,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    //Creata relazione 1 (User) to many (Restaurant)
+    public function restaurants()
+    {
+        return $this->hasMany(Restaurant::class); 
+    }
 }
