@@ -1,8 +1,10 @@
 @import "~bootstrap/scss/bootstrap";
-<<<<<<< HEAD
+
 main {
-    background: linear-gradient(to bottom, #f38a20, #cc3232);
+    background: rgb(246,144,30);
+    background: linear-gradient(180deg, rgba(246,144,30,1) 0%, rgba(204,51,51,1) 75%);
 }
+
 .container {
     margin-bottom: 25px;
 }
@@ -44,15 +46,7 @@ main {
             }
         }
     }
-=======
-
-
-main {
-    background: rgb(246,144,30);
-    background: linear-gradient(180deg, rgba(246,144,30,1) 0%, rgba(204,51,51,1) 75%);
->>>>>>> main
 }
-
 
 .form {
     background-color: rgba(255, 255, 255, 0.2);    
