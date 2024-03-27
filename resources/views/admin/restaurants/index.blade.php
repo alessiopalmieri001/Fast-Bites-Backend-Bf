@@ -5,17 +5,15 @@
 @section('main-content')
     <section>
         <div class="row">
-            <h1 class="text-center m-3">I nostri ristoranti</h1>
             @foreach ($restaurants as $restaurant)
-                <div class="col-md-4">
-                    <div class="card m-1 bg-danger-subtle">
-                        <h2>
+                <div class="col-12">
+                    <div class="card m-1">
+                        <h1>
                             {{ $restaurant->name }}
-                        </h2>
-                        <h3>
+                        </h1>
+                        <h1>
                             {{ $restaurant->address }}
-                            ciao
-                        </h3>
+                        </h1>
                         <p>
                             {{ $restaurant->user_id }}
                         </p>
@@ -25,4 +23,4 @@
             @endforeach
         </div>
     </section>
-
+@endsection

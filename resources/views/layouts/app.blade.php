@@ -17,7 +17,7 @@
             <nav>
                 <ul class="p-0">
                     <li>
-                        <a href="/">Home</a>
+                        <a href="/">Homeee</a>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                         </li>
