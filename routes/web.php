@@ -25,7 +25,8 @@ Route::prefix('admin')
     ->group(function () {
 
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
-    
+
+    //sto richiamando le rotte che sono definte nei rispettivi controller
     Route::resource('restaurants',AdminRestaurantController::class);
 });
 

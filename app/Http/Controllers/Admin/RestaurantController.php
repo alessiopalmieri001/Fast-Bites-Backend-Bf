@@ -22,9 +22,10 @@ class RestaurantController extends Controller
      */
     public function index()
     {
+        //definisco una variabile che mi esegue una query(select * from restaurants ) cosi che mi prenda tutti di dati della tabella
         $restaurants = Restaurant::all();
         
-
+        
         return view('admin.restaurants.index', compact('restaurants'));
     }
 
