@@ -60,12 +60,12 @@
 
             <div class="mb-3">
                 <label for="iva" class="form-label">Partita Iva</label>
-                <input class="form-control" type="text" id="iva" name="iva" placeholder="Inserisci la partita iva..." value="{{ old('iva') }}" required>
+                <input class="form-control" type="text" id="iva" name="iva" placeholder="Inserisci la partita iva..." value="{{ old('iva') }}" max="11" min="11" required>
             </div>
 
             <div class="mb-3">
                 <label for="img" class="form-label">Cover Image</label>
-                <input class="form-control" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img') }}" required>
+                <input class="form-control" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img') }}" max="1024" required>
             </div>
 
             <div>
