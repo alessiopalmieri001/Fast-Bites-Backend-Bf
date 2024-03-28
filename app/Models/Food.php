@@ -22,4 +22,10 @@ class Food extends Model
     {
         return $this->belongsTo(Restaurant::class);
     }
+
+    //Relazione many to many (Food -> Order)
+    public function foods()
+    {
+        return $this->belongsToMany(Order::class);
+    }
 }
