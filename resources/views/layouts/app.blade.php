@@ -30,6 +30,9 @@
                         <a href="{{ route('admin.foods.index') }}">I nostri cibi</a>
                     </li>
                     <li>
+                        <a href="{{ route('admin.categories.index') }}">le nostre categorie</a>
+                    </li>
+                    <li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                         <button type="submit" class="button">Logout</button>
