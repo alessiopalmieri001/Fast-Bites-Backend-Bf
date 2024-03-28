@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
 use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
+use App\Http\Controllers\Admin\FoodController as AdminFoodController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,6 +30,7 @@ Route::prefix('admin')
 
     //sto richiamando le rotte che sono definte nei rispettivi controller
     Route::resource('restaurants',AdminRestaurantController::class);
+    Route::resource('foods',AdminFoodController::class);
 });
 
 require __DIR__.'/auth.php';
