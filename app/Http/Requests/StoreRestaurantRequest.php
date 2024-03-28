@@ -28,7 +28,7 @@ class StoreRestaurantRequest extends FormRequest
             'name' => 'required|string|max:256',
             'address' => 'required|string|max:256',
             'iva' => 'required|string|min:11|max:11',
-            'img' => 'required|url|max:1024',
+            'img' => 'required|url|max:2048',
         ];
     }
 
