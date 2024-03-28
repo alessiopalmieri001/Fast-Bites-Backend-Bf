@@ -83,11 +83,12 @@ class RestaurantController extends Controller
         $restaurant->update([
             'name' => $restaurantData['name'],
             'slug' => $slug,
+            'address' => $restaurantData['address'],
             'iva' => $restaurantData['iva'],
             'img' => $restaurantData['img'],
         ]);
 
-        return redirect()->route('admin.restaurants.show', $restaurant);
+        return redirect()->route('admin.restaurants.show', compact('restaurant'));
     }
 
     /**
