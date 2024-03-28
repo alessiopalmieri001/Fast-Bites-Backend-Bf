@@ -13,7 +13,7 @@
         <header>
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="#">
-                <img src="" alt="Logo" height="30">
+                <img src="{{ asset('images/logoscritta.png') }}" alt="Logo" >
             </a>
             <nav>
                 <ul class="p-0 d-flex justify-content-between align-items-center">
@@ -55,14 +55,16 @@
         header {
             background-color: #F28920;
             color: #fff;
-            padding: 10px 0;
+           
         }
         header nav ul {
             margin: 0;
             padding: 0;
             list-style: none;
         }
-
+     .navbar-brand img{
+    width: 150px;
+}
     nav ul li {
             display: inline;
             margin-right: 20px;
