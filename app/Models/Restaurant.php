@@ -21,4 +21,10 @@ class Restaurant extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    //Creata relazione 1 (Restaurant) to many (Food)
+    public function restaurants()
+    {
+        return $this->hasMany(Food::class); 
+    }
 }
