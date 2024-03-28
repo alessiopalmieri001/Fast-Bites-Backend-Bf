@@ -11,30 +11,33 @@
     </head>
     <body>
         <header>
-           <div class="container d-flex justify-content-between align-items-center">
-               <a class="navbar-brand" href="#">
-                   <img src="" alt="Logo" height="30">
-               </a>
-               <nav>
-                   <ul class="p-0 d-flex justify-content-between align-items-center">
-                        <li>
-                           <a href="/">Home</a>
-                        </li>
-                        <li>
-                           <a href="{{ route('admin.dashboard') }}">Dashboard</a>
-                       </li>
-                       <li>
-                          <a href="{{ route('admin.restaurants.index') }}">I nostri ristoranti</a>
-                       </li>
-                      <li>
-                         <form method="POST" action="{{ route('logout') }}">
-                               @csrf
-                          <button type="submit" class="button">Logout</button>
-                          </form>
-                      </li>
-                   </ul>
-                </nav>
-           </div>
+        <div class="container d-flex justify-content-between align-items-center">
+            <a class="navbar-brand" href="#">
+                <img src="" alt="Logo" height="30">
+            </a>
+            <nav>
+                <ul class="p-0 d-flex justify-content-between align-items-center">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.restaurants.index') }}">I nostri ristoranti</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.foods.index') }}">I nostri cibi</a>
+                    </li>
+                    <li>
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+                        <button type="submit" class="button">Logout</button>
+                        </form>
+                    </li>
+                </ul>
+            </nav>
+        </div>
         </header>
 
 
@@ -45,7 +48,7 @@
         </main>
     </body>
 </html>
- <style>
+<style>
         header {
             background-color: #F28920;
             color: #fff;
@@ -57,16 +60,16 @@
             list-style: none;
         }
 
-       nav ul li {
+    nav ul li {
             display: inline;
             margin-right: 20px;
         }
 
-       nav ul li:last-child {
+    nav ul li:last-child {
             margin-right: 0;
         }
 
-       nav ul li a {
+    nav ul li a {
             color: #fff;
             text-decoration: none;
         }
@@ -81,7 +84,7 @@
         transition: background-color 0.3s;
         background-color: white;
         }
-         .button:hover {
+        .button:hover {
         background-color: #dd1818e7;
     }
 
