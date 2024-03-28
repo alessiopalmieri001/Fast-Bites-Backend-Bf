@@ -4,13 +4,13 @@
     <form method="POST" action="{{ route('login') }}" class="d-flex justify-content-center">
         @csrf
 
-        <div class="col-4 d-flex flex-column align-items-stretch form">
+        <div class="col-4 d-flex flex-column align-items-stretch form-style-1 text-white">
             <!-- Email Address -->
             <div class="field-input my-4">
                 <label for="email">
                     Email
                 </label>
-                <input type="email" id="email" name="email">
+                <input class="input-style-1" type="email" id="email" name="email">
             </div>
 
             <!-- Password -->
@@ -18,7 +18,7 @@
                 <label for="password">
                     Password
                 </label>
-                <input type="password" id="password" name="password">
+                <input class="input-style-1" type="password" id="password" name="password">
             </div>
 
             <!-- Remember Me -->
@@ -43,6 +43,5 @@
                 </button>
             </div>
         </div>
-
     </form>
 @endsection
