@@ -246,7 +246,7 @@ return [
             'description' => 'Piatto greco a base di melanzane, carne macinata, patate e besciamella.',
             'price' => 13.50,
             'availability' => true,
-            'img' => 'https://example.com/moussaka.jpg'
+            'img' => 'https://wips.plug.it/cips/buonissimo.org/cms/2012/07/moussaka.jpg?w=712&a=c&h=406'
         ],
         [
             'restaurant_id' => 11,
