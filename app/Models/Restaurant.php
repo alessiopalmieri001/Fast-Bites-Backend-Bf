@@ -14,7 +14,7 @@ class Restaurant extends Model
         'address',
         'iva',
         'img',
-        'category_id'
+        'category_id',
     ];
 
     //Creata relazione 1 (User) to many (Restaurant)
@@ -24,7 +24,7 @@ class Restaurant extends Model
     }
 
     //Creata relazione 1 (Restaurant) to many (Food)
-    public function restaurants()
+    public function foods()
     {
         return $this->hasMany(Food::class);
     }
@@ -34,4 +34,5 @@ class Restaurant extends Model
     {
         return $this->belongsToMany(Category::class);
     }
+
 }

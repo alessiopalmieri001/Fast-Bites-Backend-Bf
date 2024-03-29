@@ -10,6 +10,7 @@ class Food extends Model
     use HasFactory;
 
     protected $fillable = [
+        'restaurant_id',
         'name', 
         'description', 
         'price', 
@@ -17,15 +18,9 @@ class Food extends Model
         'img'
     ];
 
-    //Creata relazione 1 (Restaurant) to many (Foods)
-    public function user()
+    //Relazione many to many (Food -> Order)
+    public function restaurant()
     {
         return $this->belongsTo(Restaurant::class);
-    }
-
-    //Relazione many to many (Food -> Order)
-    public function foods()
-    {
-        return $this->belongsToMany(Order::class);
     }
 }

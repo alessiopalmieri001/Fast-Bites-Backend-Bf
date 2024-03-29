@@ -2,16 +2,14 @@
 
 namespace Database\Seeders;
 
-
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-//Helpers
-use Illuminate\Support\Str;
+// Helpers
 use Illuminate\Support\Facades\Schema;
 use Faker\Factory as FakerFactory;
 
-//Models
+// Models
 use App\Models\Food;
 use App\Models\Restaurant;
 
@@ -27,21 +25,22 @@ class FoodSeeder extends Seeder
         Food::truncate();
         Schema::enableForeignKeyConstraints();
 
-
         // Inizializza l'istanza di Faker
         $faker = \Faker\Factory::create();
         $faker->addProvider(new \FakerRestaurant\Provider\it_IT\Restaurant($faker));
 
-        for($i = 0 ; $i < 10; $i++){
+        //Richiamo la lista di cibi
+        $foods = config('foods');
+
+        foreach ($foods as $food) {
             $singleFood = new Food();
-            $restaurant = Restaurant::inRandomOrder()->first();
-            $singleFood->restaurant_id = $restaurant->id;
-            $singleFood->name = $faker->foodName();
-            $singleFood->description = $faker->paragraph();
-            $singleFood->price = $faker->randomDigit();
-            $singleFood->availability = $faker->boolean();
-            $singleFood->img = $faker->imageUrl($width = 200, $height = 200);
+            $singleFood->restaurant_id = $food['restaurant_id'];
+            $singleFood->name = $food['name'];
+            $singleFood->description = $food['description'];
+            $singleFood->price = $food['price'];
+            $singleFood->availability = $food['availability'];
+            $singleFood->img = $food['img'];
             $singleFood->save();
         }
     }
-};
+}
