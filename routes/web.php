@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\MainController as AdminMainController;
 use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
 use App\Http\Controllers\Admin\FoodController as AdminFoodController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\RestaurantController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,10 @@ use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
 */
 
 Route::get('/', [MainController::class, 'index'])->name('home');
+
+
+
+
 
 Route::prefix('admin')
     ->name('admin.')

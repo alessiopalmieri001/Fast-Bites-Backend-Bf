@@ -28,16 +28,16 @@ class RestaurantController extends Controller
     public function index()
     {
         // Definisco una variabile che mi esegue una query(select * from restaurants ) così che mi prenda tutti i dati della tabella
-        $restaurants = Restaurant::all();
+        //$restaurants = Restaurant::all();
 
-        //$user = auth()->user();
+        $user = auth()->user();
         
 
         /* if (!$user->restaurant) {
             return view('errors.restaurants.index_error');
         } */
         
-        return view('admin.restaurants.index', compact('restaurants'));
+        return view('admin.restaurants.index', compact('user'));
     }
 
     /**
