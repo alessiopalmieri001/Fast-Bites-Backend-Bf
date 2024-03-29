@@ -51,7 +51,7 @@
         </div>
     </section>
 @endsection
- <style>
+<style>
 .custom-button {
         display: inline-block;
         padding: 10px 20px;

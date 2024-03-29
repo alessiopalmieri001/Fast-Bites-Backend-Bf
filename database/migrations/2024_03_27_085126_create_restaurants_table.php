@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
+            $table->foreignId('user_id')->constrain()->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');
             $table->string('name', 256);
             $table->string('slug')->nullable();
             $table->string('address', 256);

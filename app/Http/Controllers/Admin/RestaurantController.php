@@ -6,14 +6,19 @@ use App\Http\Controllers\Controller;
 
 // Models
 use App\Models\Restaurant;
+use App\Models\Category;
 
 // Request
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 
+use Illuminate\Support\Facades\Auth;
+
 // Helper
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+
+
 
 class RestaurantController extends Controller
 {
@@ -24,6 +29,13 @@ class RestaurantController extends Controller
     {
         // Definisco una variabile che mi esegue una query(select * from restaurants ) così che mi prenda tutti i dati della tabella
         $restaurants = Restaurant::all();
+
+        //$user = auth()->user();
+        
+
+        /* if (!$user->restaurant) {
+            return view('errors.restaurants.index_error');
+        } */
         
         return view('admin.restaurants.index', compact('restaurants'));
     }
