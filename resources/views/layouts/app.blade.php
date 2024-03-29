@@ -24,13 +24,13 @@
                         <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.restaurants.index') }}">I nostri ristoranti</a>
+                        <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.foods.index') }}">I nostri cibi</a>
+                        <a href="{{ route('admin.foods.index') }}">Il tuo menu</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.categories.index') }}">le nostre categorie</a>
+                        <a href="{{ route('admin.categories.index') }}">le tue categorie</a>
                     </li>
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
