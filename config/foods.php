@@ -126,7 +126,7 @@ return [
             'description' => 'Dolce italiano a strati con biscotti savoiardi, mascarpone, caffè e cacao.',
             'price' => 6.99,
             'availability' => true,
-            'img' => 'https://www.tavolartegusto.it/wp/wp-content/uploads/2023/06/tiramisu-al-bicchiere.jpg'
+            'img' => 'https://www.casapappagallo.it/storage/25821/tiramisu-senza-uova.jpg'
         ],
         [
             'restaurant_id' => 13,
