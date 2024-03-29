@@ -12,7 +12,7 @@
                 </a>
             </div>
             @foreach ($categories as $category)
-                <div class="col-md-4 container">
+                <div class="col-md-3 container">
                     <div class="card m-1 custom-card" >
                         <div class="card-content">
                             <div class="card-img-container">
