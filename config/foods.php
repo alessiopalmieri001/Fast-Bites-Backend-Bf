@@ -6,7 +6,7 @@ return [
             'description' => 'Pasta italiana con uovo, pancetta, formaggio pecorino e pepe nero.',
             'price' => 10.99,
             'availability' => true,
-            'img' => 'https://example.com/spaghetti_carbonara.jpg'
+            'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrmo3tiw7FDJtVFlTyUqkKUnygxzS5SkG_CS4X3JhaMg&s'
         ],
         [
             'restaurant_id' => 2,
@@ -14,7 +14,7 @@ return [
             'description' => 'Pizza italiana con pomodoro, mozzarella e basilico.',
             'price' => 8.99,
             'availability' => true,
-            'img' => 'https://example.com/pizza_margherita.jpg'
+            'img' => 'https://staticfanpage.akamaized.net/wp-content/uploads/sites/4/2015/03/pizza-margherita-dop-napoli.jpg'
         ],
         [
             'restaurant_id' => 4,
@@ -22,7 +22,7 @@ return [
             'description' => 'Hamburger di manzo con patatine fritte.',
             'price' => 12.50,
             'availability' => true,
-            'img' => 'https://example.com/hamburger_patatine.jpg'
+            'img' => 'https://img.freepik.com/premium-photo/plate-fries-with-burger-bun-with-cheese-it_894903-1684.jpg'
         ],
         [
             'restaurant_id' => 3,
@@ -30,7 +30,7 @@ return [
             'description' => 'Insalata con lattuga romana, crostini, parmigiano, pollo grigliato e salsa Caesar.',
             'price' => 9.99,
             'availability' => true,
-            'img' => 'https://example.com/insalata_caesar.jpg'
+            'img' => 'https://www.develey.it/wp-content/uploads/2018/11/caesar-salad-con-pollo.jpg'
         ],
         [
             'restaurant_id' => 10,
@@ -38,7 +38,7 @@ return [
             'description' => 'Assortimento di sushi giapponese: nigiri, maki e sashimi.',
             'price' => 15.99,
             'availability' => true,
-            'img' => 'https://example.com/sushi_assortito.jpg'
+            'img' => 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPBnLeg5-wLHZ5Wrs15de57DqKSV2xY-aYeDLR_WPqPw&s'
         ],
         [
             'restaurant_id' => 15,
@@ -46,7 +46,7 @@ return [
             'description' => 'Tacos messicani con carne di maiale marinata, cipolla, coriandolo e salsa al lime.',
             'price' => 11.50,
             'availability' => true,
-            'img' => 'https://example.com/tacos_al_pastor.jpg'
+            'img' => 'https://www.culinaryhill.com/wp-content/uploads/2022/12/Tacos-al-Pastor-Culinary-Hill-1200x800-1.jpg'
         ],
         [
             'restaurant_id' => 15,
@@ -54,7 +54,7 @@ return [
             'description' => 'Risotto spagnolo con riso, pollo, coniglio, fagioli, piselli, pomodoro e zafferano.',
             'price' => 17.99,
             'availability' => true,
-            'img' => 'https://example.com/paella_valenciana.jpg'
+            'img' => 'https://www.pescanova.it/wp-content/uploads/2021/09/paella-alla-valenciana.png'
         ],
         [
             'restaurant_id' => 11,
@@ -62,7 +62,7 @@ return [
             'description' => 'Piatti thailandesi a base di noodles, gamberetti, tofu, arachidi, uova e lime.',
             'price' => 13.99,
             'availability' => true,
-            'img' => 'https://example.com/pad_thai.jpg'
+            'img' => 'https://www.donnamoderna.com/content/uploads/2022/09/pad-thai.jpg'
         ],
         [
             'restaurant_id' => 3,
@@ -70,7 +70,7 @@ return [
             'description' => 'Piatti italiani a base di pasta, ragù, besciamella e formaggio.',
             'price' => 11.99,
             'availability' => true,
-            'img' => 'https://example.com/lasagna_forno.jpg'
+            'img' => 'https://media-assets.lacucinaitaliana.it/photos/61faf7b09f032e00756a77db/4:3/w_903,h_677,c_limit/lasagne-leggere-ricette.jpg'
         ],
         [
             'restaurant_id' => 15,
@@ -78,7 +78,7 @@ return [
             'description' => 'Piatti messicani a base di tortilla, riso, fagioli, carne, formaggio e salsa.',
             'price' => 10.50,
             'availability' => true,
-            'img' => 'https://example.com/burrito.jpg'
+            'img' => 'https://www.melarossa.it/wp-content/uploads/2021/07/burrito-messicano.jpg'
         ],
         [
             'restaurant_id' => 5,
@@ -86,7 +86,7 @@ return [
             'description' => 'Cotoletta di carne impanata e fritta, servita con limone.',
             'price' => 14.50,
             'availability' => true,
-            'img' => 'https://example.com/cotoletta_milanese.jpg'
+            'img' => 'https://www.sfizioso.it/wp-content/uploads/2020/04/costolette-alla-milanese-1024x683.jpg'
         ],
         [
             'restaurant_id' => 13,
@@ -94,7 +94,7 @@ return [
             'description' => 'Assortimento di sushi vegano: maki di avocado, asparagi e cetrioli.',
             'price' => 12.99,
             'availability' => true,
-            'img' => 'https://example.com/sushi_vegano.jpg'
+            'img' => 'https://www.nonsprecare.it/ricetta-sushi-vegetariano/ricetta-sushi-vegetariano-5'
         ],
         [
             'restaurant_id' => 11,
@@ -102,15 +102,15 @@ return [
             'description' => 'Zuppa giapponese con noodles, brodo di carne o vegetale, carne di maiale, uova sode e verdure.',
             'price' => 9.99,
             'availability' => true,
-            'img' => 'https://example.com/ramen.jpg'
+            'img' => 'https://assets.tmecosys.com/image/upload/t_web767x639/img/recipe/ras/Assets/17eefccc0612317aa9f2ce1fbaae56cc/Derivates/3740e0c14b97c50890905a1961b9eb542959cc06.jpg'
         ],
         [
             'restaurant_id' => 8,
-            'name' => 'Cesar Salad',
-            'description' => 'Insalata fresca con pollo alla griglia, crostini, parmigiano e salsa Caesar.',
-            'price' => 8.99,
+            'name' => 'Insalata di ceci estiva',
+            'description' => 'Insalata fresca con un mix di legumi, pomodori, feta e frutta secca .',
+            'price' => 10.99,
             'availability' => true,
-            'img' => 'https://example.com/cesar_salad.jpg'
+            'img' => 'https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2023/07/insalata-di-ceci-estiva/Insalata%20di%20ceci%20estiva-2.jpg'
         ],
         [
             'restaurant_id' => 4,
@@ -118,7 +118,7 @@ return [
             'description' => 'Piatti britannici a base di pesce fritto e patatine fritte.',
             'price' => 13.50,
             'availability' => true,
-            'img' => 'https://example.com/fish_chips.jpg'
+            'img' => 'https://wips.plug.it/cips/buonissimo.org/cms/2020/05/progetto-senza-titolo-1.png'
         ],
         [
             'restaurant_id' => 8,
@@ -126,7 +126,7 @@ return [
             'description' => 'Dolce italiano a strati con biscotti savoiardi, mascarpone, caffè e cacao.',
             'price' => 6.99,
             'availability' => true,
-            'img' => 'https://example.com/tiramisu.jpg'
+            'img' => 'https://www.tavolartegusto.it/wp/wp-content/uploads/2023/06/tiramisu-al-bicchiere.jpg'
         ],
         [
             'restaurant_id' => 13,
@@ -134,7 +134,7 @@ return [
             'description' => 'Piatti giapponesi a base di riso cotto in brodo di carne, cipolla e fettine di manzo.',
             'price' => 11.99,
             'availability' => true,
-            'img' => 'https://example.com/gyudon.jpg'
+            'img' => 'https://www.pressurecookrecipes.com/wp-content/uploads/2021/10/gyudon.jpg'
         ],
         [
             'restaurant_id' => 14,
@@ -142,7 +142,7 @@ return [
             'description' => 'Wrap con pollo alla griglia, lattuga romana, parmigiano e salsa Caesar.',
             'price' => 7.50,
             'availability' => true,
-            'img' => 'https://example.com/caesar_wrap.jpg'
+            'img' => 'https://www.eatingwell.com/thmb/GhOSNFEvenSAQmv2nZKNK7zNxa0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/EWL-Chicken-Caesar-Wrap-hero-1x1-1-b033bb0d47794ebb8754d7640f583f5b.jpg'
         ],
         [
             'restaurant_id' => 10,
@@ -150,7 +150,7 @@ return [
             'description' => 'Assortimento di sashimi giapponesi: tonno, salmone e pesce bianco.',
             'price' => 18.99,
             'availability' => true,
-            'img' => 'https://example.com/sashimi_misto.jpg'
+            'img' => 'https://crm.food-zone.it/images/alimenti/sashimi-misto-1.jpg'
         ],
         [
             'restaurant_id' => 11,
@@ -158,7 +158,7 @@ return [
             'description' => 'Piatti peruviani a base di pesce crudo marinato con lime, cipolla e peperoncino.',
             'price' => 14.99,
             'availability' => true,
-            'img' => 'https://example.com/ceviche.jpg'
+            'img' => 'https://www.ilgiornaledelcibo.it/wp-content/uploads/2017/06/shutterstock_365089655.jpg'
         ],
         [
             'restaurant_id' => 14,
@@ -166,7 +166,7 @@ return [
             'description' => 'Carne di manzo cruda tritata finemente, condita con cipolla, capperi e uova.',
             'price' => 16.50,
             'availability' => true,
-            'img' => 'https://example.com/tartare_manzo.jpg'
+            'img' => 'https://www.cucchiaio.it/content/dam/cucchiaio/it/ricette/2023/07/tartare-manzo-mediterranea/tartare-manzo-mediterranea-finale.jpg'
         ],
         [
             'restaurant_id' => 14,
@@ -174,7 +174,7 @@ return [
             'description' => 'Bistecca di manzo alla griglia servita con contorno di verdure.',
             'price' => 20.50,
             'availability' => true,
-            'img' => 'https://example.com/bistecca_griglia.jpg'
+            'img' => 'https://www.aziendaagricolagnessiteresa.it/wp-content/uploads/2021/05/bistecca-alla-piastra.jpg'
         ],
         [
             'restaurant_id' => 8,
@@ -182,7 +182,7 @@ return [
             'description' => 'Dolci siciliani a base di ricotta, zucchero e scorza d\'arancia.',
             'price' => 5.99,
             'availability' => true,
-            'img' => 'https://example.com/cannoli_siciliani.jpg'
+            'img' => 'https://www.quellalucinanellacucina.it/wp-content/uploads/2021/12/cannoli-siciliani-senza-uova.jpg'
         ],
         [
             'restaurant_id' => 11,
@@ -190,7 +190,7 @@ return [
             'description' => 'Pollo cucinato con una miscela di spezie e latte di cocco, servito con riso basmati.',
             'price' => 12.99,
             'availability' => true,
-            'img' => 'https://example.com/pollo_curry.jpg'
+            'img' => 'https://www.tavolartegusto.it/wp/wp-content/uploads/2020/02/Pollo-al-curry-Ricetta-pollo-al-curry.jpg'
         ],
         [
             'restaurant_id' => 7,
@@ -198,7 +198,7 @@ return [
             'description' => 'Torta salata francese con pancetta, formaggio e uova.',
             'price' => 9.50,
             'availability' => true,
-            'img' => 'https://example.com/quiche_lorraine.jpg'
+            'img' => 'https://media.foodspring.com/magazine/public/uploads/2020/11/protein_quiche_rezept-1195x460.jpg'
         ],
         [
             'restaurant_id' => 8,
@@ -206,7 +206,7 @@ return [
             'description' => 'Dolce francese a base di crema pasticcera caramellata.',
             'price' => 7.99,
             'availability' => true,
-            'img' => 'https://example.com/creme_brulee.jpg'
+            'img' => 'https://www.fattoincasadabenedetta.it/wp-content/uploads/2019/06/CREME-BRULEE-1000x560-1.jpg'
         ],
         [
             'restaurant_id' => 7,
@@ -214,7 +214,7 @@ return [
             'description' => 'Fonduta svizzera con formaggio gruyère e emmental, servita con pane tostato.',
             'price' => 15.99,
             'availability' => true,
-            'img' => 'https://example.com/fonduta_formaggio.jpg'
+            'img' => 'https://www.montitrentini.com/wp-content/uploads/2023/06/monti-trentini-ricette-fonduta-trentina.jpg'
         ],
         [
             'restaurant_id' => 3,
@@ -222,7 +222,7 @@ return [
             'description' => 'Pasta italiana con salsa al basilico, pinoli, aglio, parmigiano e olio d\'oliva.',
             'price' => 11.50,
             'availability' => true,
-            'img' => 'https://example.com/pasta_pesto.jpg'
+            'img' => 'https://wips.plug.it/cips/buonissimo.org/cms/2019/03/pasta-fredda-al-pesto.jpg'
         ],
         [
             'restaurant_id' => 8,
@@ -230,7 +230,7 @@ return [
             'description' => 'Torta dolce italiana con pasta frolla e frutta fresca.',
             'price' => 8.99,
             'availability' => true,
-            'img' => 'https://example.com/crostata_frutta.jpg'
+            'img' => 'https://www.decora.it/wp-content/uploads/2019/02/Crostata-di-Frutta.jpg'
         ],
         [
             'restaurant_id' => 4,
@@ -238,7 +238,7 @@ return [
             'description' => 'Bistecca di manzo grigliata e affettata, servita con rucola e scaglie di parmigiano.',
             'price' => 18.99,
             'availability' => true,
-            'img' => 'https://example.com/tagliata_manzo.jpg'
+            'img' => 'https://www.giallozafferano.it/images/215-21544/Tagliata-di-manzo-con-rucola-e-pomodorini_450x300.jpg'
         ],
         [
             'restaurant_id' => 10,
@@ -254,7 +254,7 @@ return [
             'description' => 'Piatto francese a base di verdure grigliate: melanzane, zucchine, peperoni e pomodori.',
             'price' => 10.99,
             'availability' => true,
-            'img' => 'https://example.com/ratatouille.jpg'
+            'img' => 'https://static.gamberorosso.it/2021/06/ratatouille-scaled.jpeg'
         ],
         [
             'restaurant_id' => 3,
@@ -262,7 +262,7 @@ return [
             'description' => 'Piatto nordafricano a base di semola di grano con verdure e carne o pesce.',
             'price' => 14.50,
             'availability' => true,
-            'img' => 'https://example.com/couscous.jpg'
+            'img' => 'https://www.giallozafferano.it/images/169-16986/Couscous-ai-frutti-di-mare_650x433_wm.jpg'
         ],
         [
             'restaurant_id' => 5,
@@ -270,7 +270,7 @@ return [
             'description' => 'Piatti francesi a base di sottili frittelle ripiene di dolce o salato.',
             'price' => 9.99,
             'availability' => true,
-            'img' => 'https://example.com/crepes.jpg'
+            'img' => 'https://magazy.it/wp-content/uploads/2020/10/pancakes-with-strawberries-chocolate-decorated-with-mint-leaf.jpg'
         ],
         [
             'restaurant_id' => 15,
@@ -278,7 +278,7 @@ return [
             'description' => 'Tacos messicani con carne di pollo marinata, cipolla, coriandolo e salsa al lime.',
             'price' => 10.99,
             'availability' => true,
-            'img' => 'https://example.com/tacos_al_pollo.jpg'
+            'img' => 'https://cdn.ilclubdellericette.it/wp-content/uploads/2018/05/tacos-di-pollo-1280x720.jpg'
         ],
         [
             'restaurant_id' => 8,
@@ -286,7 +286,7 @@ return [
             'description' => 'Dolce italiano a base di pasta lievitata, inzuppato nel rum e servito con crema pasticcera.',
             'price' => 7.50,
             'availability' => true,
-            'img' => 'https://example.com/baba_rum.jpg'
+            'img' => 'https://i1.wp.com/www.piccolericette.net/piccolericette/wp-content/uploads/2017/02/3189_Baba.jpg?resize=895%2C616&ssl=1'
         ],
         [
             'restaurant_id' => 3,
@@ -294,7 +294,7 @@ return [
             'description' => 'Filetto di salmone alla griglia, servito con contorno di verdure.',
             'price' => 16.99,
             'availability' => true,
-            'img' => 'https://example.com/salmone_griglia.jpg'
+            'img' => 'https://www.gustissimo.it/articoli/ricette/pesce/filetto-di-salmone-alla-griglia.jpeg'
         ],
         [
             'restaurant_id' => 8,
@@ -302,7 +302,7 @@ return [
             'description' => 'Gelato italiano alla vaniglia fatto in casa.',
             'price' => 4.99,
             'availability' => true,
-            'img' => 'https://example.com/gelato_vaniglia.jpg'
+            'img' => 'https://www.academiabarilla.it/wp-content/uploads/2019/migration//75-gelato-alla-vaniglia.jpg'
         ],
         [
             'restaurant_id' => 8,
@@ -310,7 +310,7 @@ return [
             'description' => 'Gelato italiano al cioccolato con centro di cioccolato fondente.',
             'price' => 6.50,
             'availability' => true,
-            'img' => 'https://example.com/tartufo.jpg'
+            'img' => 'https://www.tipicoitaly.org/wpr/wp-content/uploads/2022/01/tartufo-nero.jpg'
         ],
         [
             'restaurant_id' => 5,
@@ -318,7 +318,7 @@ return [
             'description' => 'Muffin dolci con pezzi di mela e cannella.',
             'price' => 3.50,
             'availability' => true,
-            'img' => 'https://example.com/muffin_mele_cannella.jpg'
+            'img' => 'https://www.salepepe.it/files/2016/05/muffin-mele-cannella.jpg'
         ],
         [
             'restaurant_id' => 5,
@@ -326,7 +326,7 @@ return [
             'description' => 'Frittelle americane spesse, soffici e servite con sciroppo d\'acero.',
             'price' => 7.99,
             'availability' => true,
-            'img' => 'https://example.com/pancakes.jpg'
+            'img' => 'https://i.pinimg.com/736x/4f/0c/1c/4f0c1cfa71d6fde74e5f11bc05b438fc.jpg'
         ],
         [
             'restaurant_id' => 8,
@@ -334,7 +334,7 @@ return [
             'description' => 'Croissant francese ripieno di cioccolato fondente.',
             'price' => 2.99,
             'availability' => true,
-            'img' => 'https://example.com/croissant_cioccolato.jpg'
+            'img' => 'https://www.ricettasprint.it/wp-content/uploads/2020/10/Croissant-al-cioccolato-fondente-ricettasprint-d.jpg'
         ],
 ]
 ?>
