@@ -28,7 +28,7 @@
                 </ul>
             </div>
         @endif
-
+        
         {{-- Alla sottomissione del form verrà reindirizzato alla pagina show del ristorante modificato--}} 
         <form action="{{ route('admin.foods.update', ['food' => $food->id]) }}" method="POST" enctype="multipart/form-data">
             @csrf
@@ -43,13 +43,13 @@
             {{-- DESCRIZIONE --}}
             <div class="mb-3">
                 <label for="description" class="form-label"> Descrizione</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Inserisci una descrizione del piatto..." required></textarea>
-              </div>
+                <textarea class="form-control" id="description" rows="3" placeholder="Inserisci una descrizione del piatto..." required name='description'>{{ old('description', $food->description) }}></textarea>
+            </div>
 
             {{-- PREZZO --}}
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input class="form-control" type="text" id="price" name="price" placeholder="Inserisci la partita iva..." value="{{ old('iva', $food->iva) }}" required>
+                <input class="form-control" type="text" id="price" name="price" placeholder="Inserisci il prezzo..." value="{{ old('price', $food->price) }}" required>
             </div>
 
             {{-- IMMAGINE --}}

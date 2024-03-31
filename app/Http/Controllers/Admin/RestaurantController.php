@@ -55,8 +55,10 @@ class RestaurantController extends Controller
     {
         $restaurantData = $request->validated();
         $slug = Str::slug($restaurantData['name']);
+        $user = auth()->user();
 
         $restaurant = Restaurant::create([
+            'user_id' => $user->id,
             'name' => $restaurantData['name'],
             'slug' => $slug,
             'address' => $restaurantData['address'],
@@ -64,6 +66,7 @@ class RestaurantController extends Controller
             'img' => $restaurantData['img'],
         ]);
 
+        
         return redirect()->route('admin.restaurants.show', $restaurant);
     }
 

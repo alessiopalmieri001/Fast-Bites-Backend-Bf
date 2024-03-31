@@ -7,6 +7,13 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Storage;
+
+use Illuminate\Support\Facades\Auth;
+
+//model
+use App\Models\User;
 
 class CategoryController extends Controller
 {
@@ -15,9 +22,11 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        //$categories = Category::all();
+        /* recupera l'utente autenticato corrente e lo assegna alla variabile $user */
+        $user = auth()->user();
         
-        return view('admin.categories.index', compact('categories'));
+        return view('admin.categories.index', compact('user'));
     }
 
     /**
@@ -25,7 +34,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+       //
     }
 
     /**
@@ -49,7 +58,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admin.categories.edit', compact('category'));
     }
 
     /**
@@ -57,7 +66,7 @@ class CategoryController extends Controller
      */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
-        //
+       //
     }
 
     /**

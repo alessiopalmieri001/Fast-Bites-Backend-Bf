@@ -7,11 +7,7 @@
         <div class="row">
             <h1 class="text-center m-4 text-light">Il tuo ristorante</h1>
             {{-- Reindirizzo l'utente alla pagina di creazione del ristorante --}}
-            <div class=" mb-2 d-flex justify-content-center ">
-                <a href="{{ route('admin.restaurants.create') }}" class="custom-button add">
-                    + Aggiungi
-                </a>
-            </div>
+            
             {{-- Per ilristorante stampo in pagina: img / name / indirizzo --}}
             
             @if($user && $user->restaurants)
@@ -36,6 +32,12 @@
                     </div>
                 </div>
             @else
+                <div class=" mb-2 d-flex justify-content-center ">
+                    <a href="{{ route('admin.restaurants.create') }}" class="custom-button add">
+                        + Aggiungi
+                    </a>
+                </div>
+
                 <div>
                     <p>Ristorante non trovato</p>
                 </div>

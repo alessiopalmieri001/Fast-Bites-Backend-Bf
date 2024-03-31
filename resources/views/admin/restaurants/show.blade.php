@@ -3,6 +3,7 @@
 @section('page-title', $restaurant->name)
 
 @section('main-content')
+    
     <section>
         <div class="row">
             <div class="mb-3">

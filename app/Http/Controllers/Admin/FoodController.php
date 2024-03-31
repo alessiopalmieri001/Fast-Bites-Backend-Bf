@@ -42,16 +42,18 @@ class FoodController extends Controller
     public function store(StoreFoodRequest $request)
     {
         $foodData = $request->validated();
+        $user = auth()->user();
 
         $food = Food::create([
-            'restaurant_id' => $foodData['restaurant_id'],
+            'restaurant_id' => $user->restaurants->first()->id,
             'name' => $foodData['name'],
             'description' => $foodData['description'],
             'price' => $foodData['price'],
+            'availability' => $foodData['availability'],
             'img' => $foodData['img'],
         ]);
 
-        return redirect()->route('admin.foods.show', $food);
+        return redirect()->route('admin.foods.show', $food->id);
     }
 
     /**

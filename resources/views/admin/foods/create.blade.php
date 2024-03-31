@@ -30,36 +30,43 @@
         @endif
 
         {{-- Alla sottomissione del form verrà reindirizzato alla pagina show del ristorante modificato--}} 
-        <form action="{{ route('admin.foods.update', ['food' => $food->id]) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('admin.foods.store')}}" method="POST" enctype="multipart/form-data">
             @csrf
 
             {{-- NOME --}}
             <div class="mb-3">
                 <label for="name" class="form-label">Nome <span class="text-danger">*</span></label>
-                <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $food->name) }}" placeholder="Inserisci il nome del piatto..." maxlength="256" required>
+                <input type="text" class="form-control" id="name" name="name" value="{{ old('name') ?? '' }}" placeholder="Inserisci il nome del piatto..." maxlength="256" required>
             </div>
 
             {{-- DESCRIZIONE --}}
             <div class="mb-3">
                 <label for="description" class="form-label"> Descrizione</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Inserisci una descrizione del piatto..." required></textarea>
-              </div>
+                <textarea class="form-control" id="description" name="description" rows="3" placeholder="Inserisci una descrizione del piatto..." required></textarea>
+            </div>
 
             {{-- PREZZO --}}
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input class="form-control" type="text" id="price" name="price" placeholder="Inserisci la partita iva..." value="{{ old('iva', $food->iva) }}" required>
+                <input class="form-control" type="text" id="price" name="price" placeholder="Inserisci la partita iva..." value="{{ old('iva') ?? '' }}" required>
             </div>
 
             {{-- IMMAGINE --}}
             <div class="mb-3">
                 <label for="img" class="form-label">Cover Image</label>
-                <input class="form-control" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img', $food->img) }}" max="1024" required>
+                <input class="form-control" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img') ?? '' }}" max="1024" required>
             </div>
-
+            {{-- visibility checkbox --}}
+            <div class="mb-3 form-check">
+                <input class="form-check-input" type="checkbox" name="availability" id="availability" value="1"
+                    {{ old('availability') ? 'checked' : '' }}>
+                <label class="form-check-label @error('availability') is-invalid @enderror"
+                    for="availability">Disponibile</label>
+            </div>
+            {{-- aggiungi food --}}
             <div>
                 <button type="submit" class="btn btn-warning w-100">
-                    Aggiorna
+                    aggiungi
                 </button>
             </div>
 
