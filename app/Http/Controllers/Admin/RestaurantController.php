@@ -45,7 +45,9 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $categories = Category::all();
+
+        return view('admin.restaurants.create', compact('categories'));
     }
 
     /**
@@ -68,8 +70,13 @@ class RestaurantController extends Controller
         ]);
 
         
-        return redirect()->route('admin.restaurants.show', $restaurant);
+         // Associare le categorie al ristorante
+        $restaurant->categories()->sync($request->input('categories', []));
+
+        
+        return redirect()->route('admin.restaurants.show', $restaurant->id);
     }
+
 
     /**
      * Display the specified resource.

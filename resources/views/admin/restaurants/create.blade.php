@@ -35,24 +35,6 @@
                 <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="Inserisci il nome del ristorante..." maxlength="256" required>
             </div>
 
-            {{-- <div class="mb-3">
-                <label for="category_id" class="form-label">Categoria</label>
-                <select name="category_id" id="category_id" class="form-select">
-                    <option
-                        value=""
-                        {{ old('category_id') == null ? 'selected' : '' }}>
-                        Seleziona una categoria...
-                    </option>
-                    @foreach ($categories as $category)
-                        <option
-                            value="{{ $category->id }}"
-                            {{ old('category_id') == $category->id ? 'selected' : '' }}>
-                            {{ $category->title }}
-                        </option>
-                    @endforeach
-                </select>
-            </div> --}}
-
             <div class="mb-3">
                 <label for="address" class="form-label">Indirizzo</label>
                 <input class="form-control" type="text" id="address" name="address" placeholder="Inserisci l'indirizzo" value="{{ old('address') }}" max="256" required>
@@ -67,6 +49,26 @@
                 <label for="img" class="form-label">Cover Image</label>
                 <input class="form-control" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img') }}" max="1024" required>
             </div>
+
+            <div class="mb-3">
+                <label class="mb-2">Categorie*</label>
+                <div class="checkbox-groups">
+                    @foreach ($categories as $category)
+                    
+                        <div class="form-check form-check-inline w-25">
+                            <input class="form-check-input @error('categories') is-invalid @enderror" type="checkbox" name="categories[]"
+                                id="category{{ $category->id }}" 
+                                value="{{ $category->id }}"
+                                {{ in_array($category->id, old('categories', [])) ? 'checked' : '' }}>
+            
+                            <label class="form-check-label" for="category{{ $category->id }}">
+                                {{ $category->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            
 
             <div>
                 <button type="submit" class="btn btn-success w-100">
