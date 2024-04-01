@@ -56,6 +56,7 @@ class RestaurantController extends Controller
         $restaurantData = $request->validated();
         $slug = Str::slug($restaurantData['name']);
         $user = auth()->user();
+        
 
         $restaurant = Restaurant::create([
             'user_id' => $user->id,

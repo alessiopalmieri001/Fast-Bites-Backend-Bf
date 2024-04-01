@@ -26,7 +26,7 @@
                 </ul>
             </div>
         @endif
-
+        
         <form action="{{ route('admin.restaurants.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
 

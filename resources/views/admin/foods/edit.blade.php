@@ -43,7 +43,7 @@
             {{-- DESCRIZIONE --}}
             <div class="mb-3">
                 <label for="description" class="form-label"> Descrizione</label>
-                <textarea class="form-control" id="description" rows="3" placeholder="Inserisci una descrizione del piatto..." required name='description'>{{ old('description', $food->description) }}></textarea>
+                <textarea class="form-control" id="description" rows="3" placeholder="Inserisci una descrizione del piatto..." required name='description'>{{ old('description', $food->description) }}</textarea>
             </div>
 
             {{-- PREZZO --}}
@@ -56,6 +56,13 @@
             <div class="mb-3">
                 <label for="img" class="form-label">Cover Image</label>
                 <input class="form-control" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img', $food->img) }}" max="1024" required>
+            </div>
+            {{-- visibility checkbox --}}
+            <div class="mb-3 form-check">
+                <input class="form-check-input" type="checkbox" name="availability" id="availability" value="1"
+                    {{ old('availability') ? 'checked' : '' }}>
+                <label class="form-check-label @error('availability') is-invalid @enderror"
+                    for="availability">Disponibile</label>
             </div>
 
             <div>
