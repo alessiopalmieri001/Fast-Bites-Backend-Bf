@@ -48,7 +48,7 @@
             {{-- PREZZO --}}
             <div class="mb-3">
                 <label for="price" class="form-label">Prezzo</label>
-                <input class="form-control" type="text" id="price" name="price" placeholder="Inserisci la partita iva..." value="{{ old('iva') ?? '' }}" required>
+                <input class="form-control" type="number" step=".01"  id="price" name="price" placeholder="Inserisci la partita prezzo..." value="{{ old('iva') ?? '' }}" required>
             </div>
 
             {{-- IMMAGINE --}}
