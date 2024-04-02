@@ -22,9 +22,10 @@ class FoodController extends Controller
      */
     public function index()
     {
-        $foods = Food::all();
+        //$foods = Food::all();
+        $user = auth()->user();
 
-        return view('admin.foods.index', compact('foods'));
+        return view('admin.foods.index', compact('user'));
     }
 
     /**
@@ -32,7 +33,7 @@ class FoodController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.foods.create');
     }
 
     /**
@@ -40,7 +41,19 @@ class FoodController extends Controller
      */
     public function store(StoreFoodRequest $request)
     {
-        //
+        $foodData = $request->validated();
+        $user = auth()->user();
+
+        $food = Food::create([
+            'restaurant_id' => $user->restaurants->id,
+            'name' => $foodData['name'],
+            'description' => $foodData['description'],
+            'price' => $foodData['price'],
+            'availability' => $foodData['availability'],
+            'img' => $foodData['img'],
+        ]);
+
+        return redirect()->route('admin.foods.show', $food->id);
     }
 
     /**
@@ -56,7 +69,7 @@ class FoodController extends Controller
      */
     public function edit(Food $food)
     {
-        //
+        return view('admin.foods.edit', compact('food'));
     }
 
     /**
@@ -64,7 +77,19 @@ class FoodController extends Controller
      */
     public function update(UpdateFoodRequest $request, Food $food)
     {
-        //
+        $foodData = $request->validated();
+        $user = auth()->user();
+
+        $food->update([
+            'restaurant_id' => $user->restaurants->id,
+            'name' => $foodData['name'],
+            'description' => $foodData['description'],
+            'price' => $foodData['price'],
+            'availability' => $foodData['availability'],
+            'img' => $foodData['img'],
+        ]);
+
+        return redirect()->route('admin.foods.show', compact('food'));
     }
 
     /**
@@ -72,6 +97,8 @@ class FoodController extends Controller
      */
     public function destroy(Food $food)
     {
-        //
+        $food->delete();
+
+        return redirect()->route('admin.foods.index');
     }
 }

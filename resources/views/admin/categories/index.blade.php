@@ -6,12 +6,8 @@
     <section>
         <div class="row">
             <h1 class="text-center m-4 text-light">Le nostre Categorie</h1>
-            <div class=" mb-2 d-flex justify-content-center ">
-                <a href="{{ route('admin.categories.create') }}" class="custom-button add">
-                    + Aggiungi
-                </a>
-            </div>
-            @foreach ($categories as $category)
+            
+            @foreach ($user->restaurants->categories as $category)
                 <div class="col-md-3 container">
                     <div class="card m-1 custom-card" >
                         <div class="card-content">
@@ -24,10 +20,7 @@
                             <div class=" mb-2 d-flex justify-content-center">
                                 <a href="{{ route('admin.categories.show', ['category' => $category->id]) }}" class="custom-button show ">
                                 Vedi
-                            </a>
-                            <a href="{{ route('admin.categories.edit', ['category' => $category->id]) }}" class="custom-button edit">
-                                Modifica
-                            </a>
+                                </a>
                             </div>
                         </div>
                     </div>

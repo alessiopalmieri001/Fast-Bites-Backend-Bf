@@ -4,6 +4,8 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        {{-- font awesome --}}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <title>@yield('page-title') | {{ config('app.name', 'Laravel') }}</title>
         <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
@@ -25,13 +27,13 @@
                         <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.restaurants.index') }}">I nostri ristoranti</a>
+                        <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.foods.index') }}">I nostri cibi</a>
+                        <a href="{{ route('admin.foods.index') }}">Il tuo menu</a>
                     </li>
                     <li>
-                        <a href="{{ route('admin.categories.index') }}">le nostre categorie</a>
+                        <a href="{{ route('admin.categories.index') }}">le tue categorie</a>
                     </li>
                     <li>
                         <form method="POST" action="{{ route('logout') }}">

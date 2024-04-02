@@ -18,11 +18,16 @@
                             {{ $food->name}}
                         </h1>
                         <h3>
-                            {{ $food->address}}
+                            {{ $food->description}}
                         </h3>
                         <h3>
-                            {{ $food->iva}}
+                            {{ $food->price}}
                         </h3>
+                        @if ($food->availability)
+                            <i class="fa-solid fa-eye"></i>
+                        @else
+                            <i class="fa-solid fa-eye-slash"></i>
+                        @endif
                     </div>
                 </div>
             </div>

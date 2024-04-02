@@ -10,8 +10,9 @@ class Order extends Model
     use HasFactory;
 
     //Relazione many to many (Order -> Food)
-    public function orders()
+    public function foods()
     {
-        return $this->belongsToMany(Food::class);
+        return $this->belongsToMany(Food::class)->withPivot('quantity')->withTrashed();
     }
+
 }
