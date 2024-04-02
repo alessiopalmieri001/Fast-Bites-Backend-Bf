@@ -26,22 +26,21 @@ use App\Http\Controllers\RestaurantController;
 Route::get('/', [MainController::class, 'index'])->name('home');
 
 
-
-
-
-Route::prefix('admin')
+/* rotte protette */
+Route::middleware(['auth'])
+    ->prefix('admin')
     ->name('admin.')
-    ->middleware('auth')
     ->group(function () {
+        Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
+        
+        Route::resource('restaurants',AdminRestaurantController::class);
 
-    Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
+        Route::resource('foods',AdminFoodController::class);
+        Route::resource('categories',AdminCategoryController::class);
+        Route::resource('orders',AdminOrderController::class);
+        
+    });
 
-    //sto richiamando le rotte che sono definte nei rispettivi controller
-    Route::resource('restaurants',AdminRestaurantController::class);
-    Route::resource('foods',AdminFoodController::class);
-    Route::resource('categories',AdminCategoryController::class);
-    Route::resource('orders',AdminOrderController::class);
 
-});
 
 require __DIR__.'/auth.php';

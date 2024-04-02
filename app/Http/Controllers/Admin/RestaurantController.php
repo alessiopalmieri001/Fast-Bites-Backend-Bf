@@ -85,7 +85,7 @@ class RestaurantController extends Controller
     {
         // Ottieni tutti i cibi associati a questo ristorante
         $foods = $restaurant->foods; // Assuming there is a relationship defined between Restaurant and Food models
-
+        
         return view('admin.restaurants.show', compact('restaurant', 'foods')); // Cambia $food in $foods
     }
 

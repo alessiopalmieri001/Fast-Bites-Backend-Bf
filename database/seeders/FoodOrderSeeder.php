@@ -4,10 +4,13 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 //Models
 use App\Models\Food;
 use App\Models\Order;
+use App\Models\Restaurant;
 
 
 class FoodOrderSeeder extends Seeder
@@ -17,84 +20,33 @@ class FoodOrderSeeder extends Seeder
      */
     public function run(): void
     {
-        $relations = [
-                [
-                    "food" => 1, 
-                    "order" => 1,
-                    "quantity" => 3,
-                ],
-                [
-                    "food" => 2, 
-                    "order" => 1,
-                    "quantity" => 1,
-                ],
-                [
-                    "food" => 5, 
-                    "order" => 1,
-                    "quantity" => 1,
-                ],
-                [
-                    "food" => 2, 
-                    "order" => 2,
-                    "quantity" => 1,
-                ],
-                [
-                    "food" => 5, 
-                    "order" => 3,
-                    "quantity" => 1,
-                ],
-                [
-                    "food" => 7, 
-                    "order" => 4,
-                    "quantity" => 4,
-                ],
-                [
-                    "food" => 1, 
-                    "order" => 5,
-                    "quantity" => 3,
-                ],
-                [
-                    "food" => 5, 
-                    "order" => 6,
-                    "quantity" => 2,
-                ],
-                [
-                    "food" => 2, 
-                    "order" => 7,
-                    "quantity" => 1,
-                ],
-                [
-                    "food" => 6, 
-                    "order" => 8,
-                    "quantity" => 4,
-                ],
-                [
-                    "food" => 1, 
-                    "order" => 9,
-                    "quantity" =>5,
-                ],
-                [
-                    "food" => 8, 
-                    "order" => 10,
-                    "quantity" => 2,
-                ],
-            ];
-            
-            foreach ($relations as $relation) {
-                $food = Food::find($relation['food']);
-                $order = Order::find($relation['order']);
-                $food->orders()->attach($order, ['quantity' => $relation['quantity']]);
+        $orders = Order::all();
+
+        foreach ($orders as $order) {
+            $menu = Restaurant::with('foods')->find(Order::find($order->id)->restaurant->id)->foods;
+
+            $orderedFoodsCount = rand(1, 10);
+            $total = 0;
+            for ($i = 0; $i < $orderedFoodsCount; $i++) {
+                if ($menu->isEmpty()) {
+                    continue; // Esci dall'iterazione se il menu è vuoto
+                }
+                $foodId = $menu->random()->id;
+                $quantity = rand(1, 5);
+                if (DB::table('food_order')->where('food_id', $foodId)->where('order_id', $order->id)->exists()) {
+                    continue;
+                } else {
+                    $total += ($menu->find($foodId)->price * $quantity);
+                    DB::table('food_order')->insert([
+                        'food_id' => $foodId,
+                        'order_id' => $order->id,
+                        'quantity' => $quantity,
+                    ]);
+                }
             }
+            $order->update(['total' => $total]);
+        }
     }
 }
 
 
-/* 
-1 Scelgo il ristorante
-2 Scelgo il primo piatto
-3 Scelgo il secondo piatto
-4 SE secondo piatto è dello stesso ristorante del primo
-    ALLORA continua
-    ALTRIMENTI alert che devi selezionare solo da quel ristorante
-
-*/
