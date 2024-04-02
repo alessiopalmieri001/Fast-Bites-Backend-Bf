@@ -8,7 +8,9 @@ use App\Http\Controllers\Admin\MainController as AdminMainController;
 use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
 use App\Http\Controllers\Admin\FoodController as AdminFoodController;
 use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\RestaurantController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -38,6 +40,7 @@ Route::prefix('admin')
     Route::resource('restaurants',AdminRestaurantController::class);
     Route::resource('foods',AdminFoodController::class);
     Route::resource('categories',AdminCategoryController::class);
+    Route::resource('orders',AdminOrderController::class);
 
 });
 

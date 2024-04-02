@@ -36,6 +36,9 @@
                         <a href="{{ route('admin.categories.index') }}">le tue categorie</a>
                     </li>
                     <li>
+                        <a href="{{ route('admin.orders.index') }}">I tuoi ordini</a>
+                    </li>
+                    <li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
                         <button type="submit" class="button">Logout</button>

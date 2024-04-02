@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Order;
+use App\Models\Restaurant;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -29,6 +30,7 @@ class OrderSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             $randomStatusIndex = array_rand($status);
             $order = new Order();
+            $order->restaurant_id = $faker->randomElement($this->getRestaurantId()); //Inserisco gli id dei ristoranti casualmente
             $order->name = $faker->name;
             $order->email = $faker->email;
             $order->address = $faker->address;
@@ -37,5 +39,10 @@ class OrderSeeder extends Seeder
             $order->status = $status[$randomStatusIndex];
             $order->save();
         }
+    }
+
+    //Definisco una funzione per recuperare la colonna id di tutti i ristoranti
+    private function getRestaurantId() {
+        return Restaurant::all()->pluck('id');
     }
 }
