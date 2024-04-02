@@ -1,16 +1,17 @@
 <?php
 
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\FoodController as AdminFoodController;
+use App\Http\Controllers\Admin\MainController as AdminMainController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
+use App\Http\Controllers\Customer\CategoryController as CustomerCategoryController;
+use App\Http\Controllers\Customer\RestaurantController as CustomerRestaurantController;
+use App\Http\Controllers\Customer\FoodController as CustomerFoodController;
+use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
 // Controllers
-use App\Http\Controllers\MainController;
-use App\Http\Controllers\Admin\MainController as AdminMainController;
-use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
-use App\Http\Controllers\Admin\FoodController as AdminFoodController;
-use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
-use App\Http\Controllers\Admin\OrderController as AdminOrderController;
-use App\Http\Controllers\RestaurantController;
-
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +27,13 @@ use App\Http\Controllers\RestaurantController;
 Route::get('/', [MainController::class, 'index'])->name('home');
 
 
-
+Route::prefix('customer')
+    ->name('customer.')
+    ->group(function (){
+        Route::resource('categories', CustomerCategoryController::class);
+        Route::resource('restaurants', CustomerRestaurantController::class);
+        Route::resource('foods', CustomerFoodController::class);
+    });
 
 
 Route::prefix('admin')
@@ -43,5 +50,6 @@ Route::prefix('admin')
     Route::resource('orders',AdminOrderController::class);
 
 });
+
 
 require __DIR__.'/auth.php';

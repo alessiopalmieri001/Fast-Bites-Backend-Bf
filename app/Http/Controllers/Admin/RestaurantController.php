@@ -31,12 +31,12 @@ class RestaurantController extends Controller
         //$restaurants = Restaurant::all();
 
         $user = auth()->user();
-        
+
 
         /* if (!$user->restaurant) {
             return view('errors.restaurants.index_error');
         } */
-        
+
         return view('admin.restaurants.index', compact('user'));
     }
 
@@ -58,7 +58,7 @@ class RestaurantController extends Controller
         $restaurantData = $request->validated();
         $slug = Str::slug($restaurantData['name']);
         $user = auth()->user();
-        
+
 
         $restaurant = Restaurant::create([
             'user_id' => $user->id,
@@ -69,11 +69,11 @@ class RestaurantController extends Controller
             'img' => $restaurantData['img'],
         ]);
 
-        
+
          // Associare le categorie al ristorante
         $restaurant->categories()->sync($request->input('categories', []));
 
-        
+
         return redirect()->route('admin.restaurants.show', $restaurant->id);
     }
 

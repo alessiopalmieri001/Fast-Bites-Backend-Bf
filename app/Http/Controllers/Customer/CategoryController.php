@@ -1,19 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Customer;
 
 use App\Http\Controllers\Controller;
-
-use App\Models\Category;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Storage;
-
-use Illuminate\Support\Facades\Auth;
-
-//model
-use App\Models\User;
+use App\Models\Category;
+use App\Models\Restaurant;
 
 class CategoryController extends Controller
 {
@@ -22,11 +15,9 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        //$categories = Category::all();
-        /* recupera l'utente autenticato corrente e lo assegna alla variabile $user */
-        $user = auth()->user();
+        $categories = Category::all();
+        return view('customer.categories.index', compact('categories'));
 
-        return view('admin.categories.index', compact('user'));
     }
 
     /**
@@ -50,7 +41,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('admin.categories.show', compact('category'));
+       //
     }
 
     /**
@@ -58,7 +49,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view('admin.categories.edit', compact('category'));
+
     }
 
     /**
