@@ -1,17 +1,48 @@
 @extends('layouts.guest')
 
 @section('main-content')
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="card-body">
-                    <h1 class="text-center text-primary">
-                        Welcome!
-                    </h1>
-                    <br>
-                    La welcome page è una pagina pubblica (NON protetta)
-                </div>
-            </div>
-        </div>
-    </div>
+   <div class="container my-5">
+      <div class="d-flex justify-content-center align-items-center">
+         <div id="logo" class="me-2">
+            <img class="w-100" src="logo.png" alt="Fastbites Logo">
+         </div>
+         <div class="title-wrapper">
+            <span id="title-fastbites">Fastbites</span>
+            <i class="fa-solid fa-lock"id="lock-icon"></i>
+         </div>
+      </div>
+      <p class="fs-4 my-5 text-center">Benvenuto in Fastbites! Qui puoi gestire i tuoi ristoranti, modificare i menù e monitorare l'andamento del tuo locale e dei piatti tramite una dashboard intuitiva.</p>
+      <div class="buttons d-flex justify-content-center gap-3">
+         <button>
+            <a class="nav-link" href="{{ route('register') }}">Registrati</a>
+         </button>
+         <button>
+            <a class="nav-link" href="{{ route('login') }}">Accedi</a>
+         </button>
+      </div>
+   </div>
 @endsection
+
+<style lang="scss" scoped>
+   #logo {
+      width: 150px;
+   }
+
+   .title-wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
+
+   #title-fastbites {
+      color: #ffffff;
+      font-size: 5rem;
+      font-weight: 900;
+   }
+
+   #lock-icon {
+      font-size: 3rem;
+      color: #ffffff;
+      margin-top: -15px;
+   }
+</style>

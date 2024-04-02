@@ -12,6 +12,7 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Schema;
 use Faker\Factory as FakerFactory;
+use Faker\Generator as Faker;
 
 class RestaurantSeeder extends Seeder
 {
@@ -37,8 +38,8 @@ class RestaurantSeeder extends Seeder
         foreach ($restaurantData as $singleRestaurant) {
 
             $restaurant = new Restaurant();
-            $user = User::inRandomOrder()->first();
-            $restaurant->user_id = $user->id;
+            //$user = User::inRandomOrder()->first();
+            $restaurant->user_id = $faker->unique()->randomElement($this->getUserID());;
             $restaurant->name = $singleRestaurant['name'];
             $restaurant->slug = Str::slug($singleRestaurant['name']);
             $restaurant->address = $singleRestaurant['address'];
@@ -47,5 +48,9 @@ class RestaurantSeeder extends Seeder
             $restaurant->img = $singleRestaurant['img'];
             $restaurant->save();
         }
+    }
+    private function getUserID()
+    {
+        return User::all()->pluck('id');
     }
 }

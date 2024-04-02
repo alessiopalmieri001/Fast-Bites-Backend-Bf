@@ -6,14 +6,19 @@ use App\Http\Controllers\Controller;
 
 // Models
 use App\Models\Restaurant;
+use App\Models\Category;
 
 // Request
 use App\Http\Requests\StoreRestaurantRequest;
 use App\Http\Requests\UpdateRestaurantRequest;
 
+use Illuminate\Support\Facades\Auth;
+
 // Helper
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
+
+
 
 class RestaurantController extends Controller
 {
@@ -23,9 +28,16 @@ class RestaurantController extends Controller
     public function index()
     {
         // Definisco una variabile che mi esegue una query(select * from restaurants ) così che mi prenda tutti i dati della tabella
-        $restaurants = Restaurant::all();
+        //$restaurants = Restaurant::all();
+
+        $user = auth()->user();
         
-        return view('admin.restaurants.index', compact('restaurants'));
+
+        /* if (!$user->restaurant) {
+            return view('errors.restaurants.index_error');
+        } */
+        
+        return view('admin.restaurants.index', compact('user'));
     }
 
     /**
@@ -33,7 +45,9 @@ class RestaurantController extends Controller
      */
     public function create()
     {
-        return view('admin.restaurants.create');
+        $categories = Category::all();
+
+        return view('admin.restaurants.create', compact('categories'));
     }
 
     /**
@@ -43,8 +57,11 @@ class RestaurantController extends Controller
     {
         $restaurantData = $request->validated();
         $slug = Str::slug($restaurantData['name']);
+        $user = auth()->user();
+        
 
         $restaurant = Restaurant::create([
+            'user_id' => $user->id,
             'name' => $restaurantData['name'],
             'slug' => $slug,
             'address' => $restaurantData['address'],
@@ -52,15 +69,24 @@ class RestaurantController extends Controller
             'img' => $restaurantData['img'],
         ]);
 
-        return redirect()->route('admin.restaurants.show', $restaurant);
+        
+         // Associare le categorie al ristorante
+        $restaurant->categories()->sync($request->input('categories', []));
+
+        
+        return redirect()->route('admin.restaurants.show', $restaurant->id);
     }
+
 
     /**
      * Display the specified resource.
      */
     public function show(Restaurant $restaurant)
     {
-        return view('admin.restaurants.show', compact('restaurant'));
+        // Ottieni tutti i cibi associati a questo ristorante
+        $foods = $restaurant->foods; // Assuming there is a relationship defined between Restaurant and Food models
+
+        return view('admin.restaurants.show', compact('restaurant', 'foods')); // Cambia $food in $foods
     }
 
     /**
@@ -83,11 +109,12 @@ class RestaurantController extends Controller
         $restaurant->update([
             'name' => $restaurantData['name'],
             'slug' => $slug,
+            'address' => $restaurantData['address'],
             'iva' => $restaurantData['iva'],
             'img' => $restaurantData['img'],
         ]);
 
-        return redirect()->route('admin.restaurants.show', $restaurant);
+        return redirect()->route('admin.restaurants.show', compact('restaurant'));
     }
 
     /**

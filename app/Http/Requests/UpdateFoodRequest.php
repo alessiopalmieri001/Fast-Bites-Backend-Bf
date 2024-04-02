@@ -3,11 +3,10 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-
 // Helpers
 use Illuminate\Support\Facades\Auth;
 
-class StoreRestaurantRequest extends FormRequest
+class UpdateFoodRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -26,16 +25,10 @@ class StoreRestaurantRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:256',
-            'address' => 'required|string|max:256',
-            'iva' => 'required|string|min:11|max:11',
+            'description' => 'required|max:256',
+            'price' => 'required|numeric',
             'img' => 'required|url|max:10048',
-        ];
-    }
-
-    public function messages(): array
-    {
-        return [
-            //
+            'availability' => 'required'
         ];
     }
 }

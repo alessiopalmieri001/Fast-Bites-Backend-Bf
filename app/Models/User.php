@@ -43,9 +43,9 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    //Creata relazione 1 (User) to many (Restaurant)
+    //Creata relazione 1 (User) to 1 (Restaurant)
     public function restaurants()
     {
-        return $this->hasMany(Restaurant::class); 
+        return $this->hasOne(Restaurant::class); 
     }
 }
