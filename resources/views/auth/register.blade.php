@@ -11,7 +11,7 @@
                 <label for="name">
                     Name e Cognome <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="text" id="name" name="name" required aria-required="true">
+                <input class="input-style-1" type="text" id="name" name="name" required >
             </div>
 
             <!-- Email Address -->
@@ -19,7 +19,7 @@
                 <label for="email">
                     Email <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="email" id="email" name="email" required aria-required="true">
+                <input class="input-style-1" type="email" id="email" name="email" required >
                 @error('email')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
@@ -30,7 +30,7 @@
                 <label for="password">
                     Password <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="password" id="password" name="password" required aria-required="true">
+                <input class="input-style-1" type="password" id="password" name="password" required >
             </div>
 
             <!-- Confirm Password -->
@@ -38,7 +38,7 @@
                 <label for="password_confirmation">
                     Conferma Password <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="password" id="password_confirmation" name="password_confirmation" required aria-required="true">
+                <input class="input-style-1" type="password" id="password_confirmation" name="password_confirmation" required >
                <span id="password-error" class="text-danger"></span>
             </div>
 
