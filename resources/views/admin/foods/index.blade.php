@@ -32,10 +32,17 @@
                             <div class=" mb-2 d-flex justify-content-center">
                                 <a href="{{ route('admin.foods.show', ['food' => $food->id]) }}" class="custom-button show ">
                                 Vedi
-                            </a>
-                            <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="custom-button edit">
-                                Modifica
-                            </a>
+                                </a>
+                                <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="custom-button edit">
+                                    Modifica
+                                </a>
+                                <form onsubmit="return confirm('Are you sure you want to delete this?');"  action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                        <button type="submit" class="btn btn-danger">
+                                            Delete
+                                        </button>
+                                </form>
                             </div>
                         </div>
                     </div>
