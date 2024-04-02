@@ -39,7 +39,7 @@ class RestaurantSeeder extends Seeder
 
             $restaurant = new Restaurant();
             //$user = User::inRandomOrder()->first();
-            $restaurant->user_id = $faker->unique()->randomElement($this->getUserID());;
+            $restaurant->user_id = $singleRestaurant['user_id'];
             $restaurant->name = $singleRestaurant['name'];
             $restaurant->slug = Str::slug($singleRestaurant['name']);
             $restaurant->address = $singleRestaurant['address'];
