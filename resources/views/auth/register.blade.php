@@ -9,33 +9,37 @@
             <!-- Name -->
             <div class="field-input my-4">
                 <label for="name">
-                    Name
+                    Name e Cognome <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="text" id="name" name="name">
+                <input class="input-style-1" type="text" id="name" name="name" required aria-required="true">
             </div>
 
             <!-- Email Address -->
             <div class="field-input my-4">
                 <label for="email">
-                    Email
+                    Email <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="email" id="email" name="email">
+                <input class="input-style-1" type="email" id="email" name="email" required aria-required="true">
+                @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <!-- Password -->
             <div class="field-input my-4">
                 <label for="password">
-                    Password
+                    Password <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="password" id="password" name="password">
+                <input class="input-style-1" type="password" id="password" name="password" required aria-required="true">
             </div>
 
             <!-- Confirm Password -->
             <div class="field-input my-4">
                 <label for="password_confirmation">
-                    Conferma Password
+                    Conferma Password <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="password" id="password_confirmation" name="password_confirmation">
+                <input class="input-style-1" type="password" id="password_confirmation" name="password_confirmation" required aria-required="true">
+               <span id="password-error" class="text-danger"></span>
             </div>
 
             <div class="text-decoration-underline">
@@ -46,10 +50,14 @@
 
             <div class="d-flex justify-content-center button mt-3">
                 <button type="submit">
-                    Log in
+                    Login 
                 </button>
             </div>
         </div>
     </form>
-
+    
+   
 @endsection
+
+
+
