@@ -9,6 +9,15 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'total',
+        'status',
+        'name',
+        'email',
+        'address',
+        'phone_num',
+    ];
+
     //Relazione many to many (Order -> Food)
     public function foods()
     {
