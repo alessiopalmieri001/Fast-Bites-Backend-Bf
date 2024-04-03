@@ -42,15 +42,15 @@
                <span id="password-error" class="text-danger"></span>
             </div>
 
-            <div class="text-decoration-underline">
-                <a href="{{ route('login') }}">
+            <div class="text-decoration-underline ">
+                <a class="text-white" href="{{ route('login') }}">
                     {{ __('Already registered?') }}
                 </a>
             </div>
 
             <div class="d-flex justify-content-center button mt-3">
-                <button type="submit">
-                    Login 
+                <button class="button-style-1" type="submit">
+                    Register
                 </button>
             </div>
         </div>

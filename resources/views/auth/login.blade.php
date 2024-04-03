@@ -31,14 +31,14 @@
 
             <div class="forgot-password text-decoration-underline">
                 @if (Route::has('password.request'))
-                    <a href="{{ route('password.request') }}">
+                    <a class="text-white" href="{{ route('password.request') }}">
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif
             </div>
 
             <div class="d-flex justify-content-center button mt-3">
-                <button type="submit">
+                <button class="button-style-1" type="submit">
                     Log in
                 </button>
             </div>

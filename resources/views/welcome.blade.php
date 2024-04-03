@@ -10,10 +10,10 @@
       </div>
       <p class="fs-4 my-5 text-center">Benvenuto in Fastbites! Qui puoi gestire i tuoi ristoranti, modificare i menù e monitorare l'andamento del tuo locale e dei piatti tramite una dashboard intuitiva.</p>
       <div class="buttons d-flex justify-content-center gap-3">
-         <button>
+         <button class="button-style-1">
             <a class="nav-link" href="{{ route('register') }}">Registrati</a>
          </button>
-         <button>
+         <button class="button-style-1">
             <a class="nav-link" href="{{ route('login') }}">Accedi</a>
          </button>
       </div>
