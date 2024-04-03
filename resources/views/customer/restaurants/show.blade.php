@@ -4,15 +4,18 @@
 
 @section('main-content')
     <section>
-        <div class="row">
-            @foreach($restaurants as $restaurant)
-                <li>
-                    <a href="">
-                        {{ $restaurant->name }}
-                    </a>
-                </li>
-            @endforeach
-        </div>
+        <section>
+            <div class="row">
+                @foreach($foods as $food)
+                    <li>
+                        <a href="{{route('customer.foods.show', ['food' => $food->id])}}">
+                            {{ $food->name }}
+                        </a>
+                    </li>
+
+                @endforeach
+            </div>
+        </section>
     </section>
 @endsection
 

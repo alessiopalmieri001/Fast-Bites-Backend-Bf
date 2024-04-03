@@ -47,7 +47,7 @@ class RestaurantController extends Controller
     {
         $foods = $restaurant->foods;
 
-        return view('admin.restaurants.show', compact('restaurant', 'foods'));
+        return view('customer.restaurants.show', compact( 'foods'));
     }
 
     /**

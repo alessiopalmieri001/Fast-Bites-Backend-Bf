@@ -8,7 +8,7 @@
             <ul>
                 @foreach($foods as $food)
                     <li>
-                        <a>
+                        <a href="{{route('customer.foods.index', ['food' => $food->id])}}">
                             {{ $food->name }}
                         </a>
                     </li>

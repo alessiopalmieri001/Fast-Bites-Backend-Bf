@@ -23,7 +23,7 @@ class FoodController extends Controller
     public function index()
     {
         $foods = Food::all();
-        return view('customer.food.index', compact('foods'));
+        return view('customer.foods.index', compact('foods'));
     }
 
     /**
@@ -47,7 +47,7 @@ class FoodController extends Controller
      */
     public function show(Food $food)
     {
-        return view('admin.foods.show', compact('food'));
+        return view('customer.foods.show', compact('food'));
     }
 
     /**
