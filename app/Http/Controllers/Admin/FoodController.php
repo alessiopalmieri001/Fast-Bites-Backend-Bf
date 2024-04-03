@@ -52,6 +52,7 @@ class FoodController extends Controller
             'availability' => $foodData['availability'],
             'img' => $foodData['img'],
         ]);
+    
 
         return redirect()->route('admin.foods.show', $food->id);
     }
@@ -59,16 +60,30 @@ class FoodController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Food $food)
+    public function show($id)
     {
+        $user = auth()->user();
+        $food = Food::find($id);
+
+        // Controllo se il piatto esiste oppure se l'utente ha il permesso di vedere il piatto
+        if (!$food || $food->restaurant->user_id != $user->id) {
+            abort(403, 'Non sei autorizzato a vedere questo cibo.');
+        }
+
         return view('admin.foods.show', compact('food'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Food $food)
+    public function edit($id)
     {
+        $user = auth()->user(); //Per l'utente loggato
+        $food = Food::find($id);    //Prendo la colonna id dei foods
+        // Controllo se il piatto esiste oppure se l'utente ha il permesso di editare il piatto
+        if (!$food || $food->restaurant->user_id != $user->id) {
+            abort(403, 'Non sei autorizzato a modificare questo cibo.');
+        }
         return view('admin.foods.edit', compact('food'));
     }
 
@@ -77,6 +92,7 @@ class FoodController extends Controller
      */
     public function update(UpdateFoodRequest $request, Food $food)
     {
+        
         $foodData = $request->validated();
         $user = auth()->user();
 

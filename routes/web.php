@@ -1,17 +1,20 @@
 <?php
 
-use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
-use App\Http\Controllers\Admin\FoodController as AdminFoodController;
+use Illuminate\Support\Facades\Route;
+
+// Controllers
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
-use App\Http\Controllers\Admin\OrderController as AdminOrderController;
 use App\Http\Controllers\Admin\RestaurantController as AdminRestaurantController;
+use App\Http\Controllers\Admin\FoodController as AdminFoodController;
+use App\Http\Controllers\Admin\CategoryController as AdminCategoryController;
+use App\Http\Controllers\Admin\OrderController as AdminOrderController;
+use App\Http\Controllers\RestaurantController;
+
 use App\Http\Controllers\Customer\CategoryController as CustomerCategoryController;
 use App\Http\Controllers\Customer\RestaurantController as CustomerRestaurantController;
 use App\Http\Controllers\Customer\FoodController as CustomerFoodController;
 use App\Http\Controllers\MainController;
-use Illuminate\Support\Facades\Route;
-
-// Controllers
 
 /*
 |--------------------------------------------------------------------------
@@ -36,20 +39,22 @@ Route::prefix('customer')
     });
 
 
-Route::prefix('admin')
+/* rotte protette */
+Route::middleware(['auth'])
+    ->prefix('admin')
     ->name('admin.')
-    ->middleware('auth')
     ->group(function () {
+        Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
 
-    Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
+        Route::resource('restaurants',AdminRestaurantController::class);
 
-    //sto richiamando le rotte che sono definte nei rispettivi controller
-    Route::resource('restaurants',AdminRestaurantController::class);
-    Route::resource('foods',AdminFoodController::class);
-    Route::resource('categories',AdminCategoryController::class);
-    Route::resource('orders',AdminOrderController::class);
+        Route::resource('foods',AdminFoodController::class);
+        Route::resource('categories',AdminCategoryController::class);
+        Route::resource('orders',AdminOrderController::class);
 
-});
+    });
+
 
 
 require __DIR__.'/auth.php';
+

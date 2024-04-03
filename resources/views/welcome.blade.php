@@ -3,9 +3,6 @@
 @section('main-content')
    <div class="container my-5">
       <div class="d-flex justify-content-center align-items-center">
-         <div id="logo" class="me-2">
-            <img class="w-100" src="logo.png" alt="Fastbites Logo">
-         </div>
          <div class="title-wrapper">
             <span id="title-fastbites">Fastbites</span>
             <i class="fa-solid fa-lock"id="lock-icon"></i>
