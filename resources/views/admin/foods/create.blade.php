@@ -11,7 +11,7 @@
     
                 {{-- Link per tornare alla lista dei ristoranti --}}
                 <div class="mb-4">
-                    <button>
+                    <button class="button-style-1">
                         <a href="{{ route('admin.foods.index') }}">
                             Torna alla dashboard
                         </a>
@@ -82,7 +82,7 @@
     
                     {{-- aggiungi food --}}
                     <div>
-                        <button type="submit">
+                        <button class="button-style-1" type="submit">
                             Aggiungi
                         </button>
                     </div>
