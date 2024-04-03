@@ -44,6 +44,11 @@ class FoodController extends Controller
         $foodData = $request->validated();
         $user = auth()->user();
 
+        $path = Storage::disk('public')->put('uploads/foods', $request['img']);
+        $foodData['img'] = $path;
+        $foodData['user_id'] = $user->id;
+        $foodData['restaurant_id'] = $user->restaurants->id;
+
         // Upload dell'immagine
         if ($request->hasFile('img')) {
             $image = $request->file('img');
@@ -104,14 +109,10 @@ class FoodController extends Controller
         $foodData = $request->validated();
         $user = auth()->user();
 
-        // Upload dell'immagini
-        if ($request->hasFile('img')) {
-            // Update dell'immagine
-            $image = $request->file('img');
-            $imageName = time().'.'.$image->getClientOriginalExtension();
-            $image->storeAs('public/images', $imageName);
-
-            $food->img = 'images/' . $imageName;
+        if ($request['img']) {
+            Storage::disk('public')->delete($food->img);
+            $path = Storage::disk('public')->put('uploads/foods', $request['img']);
+            $data['img'] = $path;
         }
 
         $food->update([

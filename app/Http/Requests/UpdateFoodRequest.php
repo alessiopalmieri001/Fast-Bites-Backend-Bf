@@ -5,6 +5,7 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\File;
 class UpdateFoodRequest extends FormRequest
 {
     /**
@@ -25,7 +26,7 @@ class UpdateFoodRequest extends FormRequest
             'name' => 'required|string|max:256',
             'description' => 'required|max:256',
             'price' => 'required|numeric',
-            'img' => 'nullable|image|mimes:jpeg,png,jpg,gif,webp|max:4096',
+            'img' => [File::image()->max(2048)],
             'availability' => 'required',
         ];
     }

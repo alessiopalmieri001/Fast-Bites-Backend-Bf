@@ -67,7 +67,7 @@
                 {{-- IMMAGINE --}}
                 <div class="mb-3">
                     <label for="current_image" class="form-label">Immagine Attuale</label>
-                    <img src="{{ asset('storage/' . $food->img) }}" alt="Current Food Image" class="img-fluid mb-2">
+                    <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}" alt="Current Food Image" class="img-fluid mb-2">
                     <input type="hidden" name="current_image" value="{{ $food->img }}">
     
                     <label for="img" class="form-label">Scegli una nuova immagine</label>
