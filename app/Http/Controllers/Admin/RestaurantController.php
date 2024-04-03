@@ -27,17 +27,11 @@ class RestaurantController extends Controller
      */
     public function index()
     {
-        // Definisco una variabile che mi esegue una query(select * from restaurants ) così che mi prenda tutti i dati della tabella
-        //$restaurants = Restaurant::all();
-
         $user = auth()->user();
-        
 
-        /* if (!$user->restaurant) {
-            return view('errors.restaurants.index_error');
-        } */
+        $restaurant = $user->restaurants; // Otteniamo il ristorante associato all'utente
         
-        return view('admin.restaurants.index', compact('user'));
+        return view('admin.restaurants.index', compact('user','restaurant'));
     }
 
     /**
@@ -94,7 +88,10 @@ class RestaurantController extends Controller
      */
     public function edit(Restaurant $restaurant)
     {
-        return view('admin.restaurants.edit', compact('restaurant'));
+        // Richiamo le categorie
+        $categories = Category::all();
+
+        return view('admin.restaurants.edit', compact('restaurant','categories'));
     }
 
     /**
@@ -114,7 +111,10 @@ class RestaurantController extends Controller
             'img' => $restaurantData['img'],
         ]);
 
-        return redirect()->route('admin.restaurants.show', compact('restaurant'));
+        // Sincronizza le categorie selezionate con il ristorante
+        $restaurant->categories()->sync($request->input('categories', []));
+
+        return redirect()->route('admin.restaurants.index', compact('restaurant'));
     }
 
     /**

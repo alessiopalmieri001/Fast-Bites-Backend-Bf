@@ -58,6 +58,28 @@
                 <input class="form-control" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img', $restaurant->img) }}" max="1024" required>
             </div>
 
+            <div class="mb-3">
+                <label class="mb-2">Categorie  <span>*</span></label>
+                <div class="checkbox-groups">
+                    @foreach ($categories as $category)
+                        <div class="form-check form-check-inline w-25">
+                            <input class="form-check-input @error('categories') is-invalid @enderror" 
+                                type="checkbox" 
+                                name="categories[]" 
+                                id="category{{ $category->id }}" 
+                                value="{{ $category->id }}"
+                                {{ $restaurant->categories->contains($category->id) ? 'checked' : '' }}>
+                            <label class="form-check-label" for="category{{ $category->id }}">
+                                {{ $category->name }}
+                            </label>
+                        </div>
+                    @endforeach
+                    @error('categories')
+                        <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
+
             <div>
                 <button type="submit" class="btn btn-warning w-100">
                     Aggiorna

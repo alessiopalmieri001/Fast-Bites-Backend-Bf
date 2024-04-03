@@ -12,25 +12,31 @@
             
             @if($user && $user->restaurants)
                 <div class="card">
-                    <div class="card-header">
+                    <div class="card-header d-flex flex-column align-items-center ">
                         <img src="{{ $user->restaurants->img }}" alt="{{ $user->restaurants->name }}">
                         <h1>{{ $user->restaurants->name }}</h1>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body text-center">
                         <h2>{{ $user->restaurants->address }}</h2>
                     </div>
                     <div class="card-subtitle mb-2 text-muted pt-2">
                         @if (count($user->restaurants->categories) > 0)
                         <ul>
                             @foreach ($user->restaurants->categories as $category)
-                                <li>{{ $category->name }}</li>
+                                <li>{{ $category->name }} </li>
                             @endforeach
                         </ul>
                         @else
                             <p>No Types</p>
                         @endif
                     </div>
+                    <div class="d-flex justify-content-center">
+                        <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->id]) }}" class="custom-button edit w-25 text-center">
+                            Modifica
+                        </a>
+                    </div>
                 </div>
+                
             @else
                 <div class=" mb-2 d-flex justify-content-center ">
                     <a href="{{ route('admin.restaurants.create') }}" class="custom-button add">
@@ -46,6 +52,9 @@
     </section>
 @endsection
 <style>
+    img {
+        max-width: 300px;
+    }
 .custom-button {
         display: inline-block;
         padding: 10px 20px;
