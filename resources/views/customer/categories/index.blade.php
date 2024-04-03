@@ -1,49 +1,41 @@
 @extends('layouts.app')
 
-@section('page-title', 'homepage')
+@section('page-title', 'Homepage')
 
 @section('main-content')
     <section>
         <div class="container">
-            <h1>Hai fame?</h1>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <ul>
+            <h1 class="mb-4 text-center title">Hai fame?</h1>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Cerca il tuo ristorante" aria-label="Search">
+                        <button class="btn btn btn-outline-danger" type="submit">Cerca</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row mt-4">
                 @foreach($categories as $category)
-                    <li>
-                        <a href="{{route('customer.categories.show', ['category' => $category->id])}}">
-                            {{ $category->name }}
-                        </a>
-                    </li>
-
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100 shadow">
+                            <img src="{{ asset($category->image_path) }}" class="card-img-top" alt="{{ $category->name }}">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">{{ $category->name }}</h5>
+                                <p class="card-text">Scopri i piatti della categoria "{{ $category->name }}".</p>
+                                <a href="{{ route('customer.categories.show', ['category' => $category->id]) }}" class="btn btn-danger">Scopri di più</a>
+                            </div>
+                        </div>
+                    </div>
                 @endforeach
-            </ul>
+            </div>
         </div>
     </section>
 @endsection
-<style>
-    .custom-button {
-        display: inline-block;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        color: black;
-        text-decoration: none;
-        transition: background-color 0.3s;
-    }
-    .custom-button.add{
-        background-color: white;
-    }
-        .custom-button.show{
-        background-color: #F28920;
-        margin-right: 5px;
-        }
-        .custom-button.edit{
-        background-color: #F28920;
-        }
-    .custom-button:hover {
-        background-color: #dd1818e7;
-    }
-</style>
+
+    <style>
+  .title{
+      font-size: 5rem;
+  }
+
+    </style>
+

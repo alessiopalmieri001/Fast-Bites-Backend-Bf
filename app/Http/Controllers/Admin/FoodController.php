@@ -43,7 +43,7 @@ class FoodController extends Controller
     {
         $foodData = $request->validated();
         $user = auth()->user();
-    
+
         // Upload dell'immagine
         if ($request->hasFile('img')) {
             $image = $request->file('img');
@@ -52,16 +52,16 @@ class FoodController extends Controller
         } else {
             $imageName = null; // immagine di default
         }
-    
+
         $food = Food::create([
             'restaurant_id' => $user->restaurants->id,
             'name' => $foodData['name'],
             'description' => $foodData['description'],
             'price' => $foodData['price'],
             'availability' => $foodData['availability'],
-            'img' => 'images/' . $imageName, 
+            'img' => 'images/' . $imageName,
         ]);
-    
+
         return redirect()->route('admin.foods.show', $food->id);
     }
 
@@ -76,7 +76,7 @@ class FoodController extends Controller
 
         // Controllo se il piatto esiste oppure se l'utente ha il permesso di vedere il piatto
         if (!$food || $food->restaurant->user_id != $user->id) {
-            abort(403, 'Non sei autorizzato a vedere questo cibo.');
+            return view('errors.foods.errors_show');
         }
 
         return view('admin.foods.show', compact('food'));
@@ -91,7 +91,7 @@ class FoodController extends Controller
         $food = Food::find($id);    //Prendo la colonna id dei foods
         // Controllo se il piatto esiste oppure se l'utente ha il permesso di editare il piatto
         if (!$food || $food->restaurant->user_id != $user->id) {
-            abort(403, 'Non sei autorizzato a modificare questo cibo.');
+            return view('errors.foods.errors_edit');
         }
         return view('admin.foods.edit', compact('food'));
     }
@@ -101,7 +101,7 @@ class FoodController extends Controller
      */
     public function update(UpdateFoodRequest $request, Food $food)
     {
-        
+
         $foodData = $request->validated();
         $user = auth()->user();
 

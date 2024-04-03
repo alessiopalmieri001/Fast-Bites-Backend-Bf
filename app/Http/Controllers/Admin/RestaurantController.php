@@ -30,7 +30,7 @@ class RestaurantController extends Controller
         $user = auth()->user();
 
         $restaurant = $user->restaurants; // Otteniamo il ristorante associato all'utente
-        
+
         return view('admin.restaurants.index', compact('user','restaurant'));
     }
 
@@ -52,7 +52,7 @@ class RestaurantController extends Controller
         $restaurantData = $request->validated();
         $slug = Str::slug($restaurantData['name']);
         $user = auth()->user();
-        
+
 
         $restaurant = Restaurant::create([
             'user_id' => $user->id,
@@ -63,11 +63,11 @@ class RestaurantController extends Controller
             'img' => $restaurantData['img'],
         ]);
 
-        
+
          // Associare le categorie al ristorante
         $restaurant->categories()->sync($request->input('categories', []));
 
-        
+
         return redirect()->route('admin.restaurants.index', $restaurant->id);
     }
 
@@ -79,17 +79,25 @@ class RestaurantController extends Controller
     {
         // Ottieni tutti i cibi associati a questo ristorante
         $foods = $restaurant->foods; // Assuming there is a relationship defined between Restaurant and Food models
-        
+
         return view('admin.restaurants.show', compact('restaurant', 'foods')); // Cambia $food in $foods
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Restaurant $restaurant)
+    public function edit($id)
     {
         // Richiamo le categorie
         $categories = Category::all();
+        $user = auth()->user(); //Per l'utente loggato
+        $restaurant =Restaurant::find($id); //Prendo la colonna dei restaurant
+
+        // Verifica se il ristorante esiste e se l'utente ha il permesso di modificarlo
+        if (!$restaurant || $restaurant->user_id != $user->id){
+            return view('errors.restaurants.errors_edit', compact("user", "restaurant"));
+        }
+
 
         return view('admin.restaurants.edit', compact('restaurant','categories'));
     }

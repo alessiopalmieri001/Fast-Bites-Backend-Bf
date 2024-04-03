@@ -48,7 +48,7 @@ class OrderController extends Controller
         $order = Order::find($id);
 
         if (!$order || $order->restaurant->user_id !== $user->id) {
-            abort(403, 'Non sei autorizzato a vedere questo ordine.');
+            return view('errors.orders.errors_show');
         }
 
 
