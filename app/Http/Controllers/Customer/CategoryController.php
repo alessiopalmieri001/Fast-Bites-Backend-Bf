@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreCategoryRequest;
 use App\Http\Requests\UpdateCategoryRequest;
 use App\Models\Category;
-use App\Models\Restaurant;
 
 class CategoryController extends Controller
 {
@@ -41,7 +40,8 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-       //
+       $restaurants = $category -> restaurants;
+       return view('customer.categories.show', compact('category', 'restaurants'));
     }
 
     /**

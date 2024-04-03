@@ -13,7 +13,7 @@
             <ul>
                 @foreach($categories as $category)
                     <li>
-                        <a href="{{route('customer.restaurants.index', ['category' => $category->id])}}">
+                        <a href="{{route('customer.categories.show', ['category' => $category->id])}}">
                             {{ $category->name }}
                         </a>
                     </li>

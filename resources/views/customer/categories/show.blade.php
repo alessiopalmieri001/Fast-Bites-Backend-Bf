@@ -7,7 +7,7 @@
         <div class="row">
             @foreach($restaurants as $restaurant)
                 <li>
-                    <a href="{{route('customer.foods.index', ['restaurant' => $restaurant->id])}}">
+                    <a href="{{route('customer.restaurants.show', ['restaurant' => $restaurant->id])}}">
                         {{ $restaurant->name }}
                     </a>
                 </li>

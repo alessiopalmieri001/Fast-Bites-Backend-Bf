@@ -1,4 +1,4 @@
-<?php 
+<?php
 return [
         [
             'restaurant_id' => 3,
