@@ -13,7 +13,10 @@
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        <img src="{{ $food['img'] }}" alt="{{ $food->name }}">
+                        @else
+                        <p>No image available</p>
+                        @endif
+
                         <h1>
                             {{ $food->name}}
                         </h1>

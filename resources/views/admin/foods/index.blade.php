@@ -17,7 +17,9 @@
                     <div class="card m-1 custom-card" >
                         <div class="card-content">
                             <div class="card-img-container">
-                                <img src="{{ $food->img }}" alt="{{ $food->name }}">
+                                @else
+                                <p>No image available</p>
+                                @endif
                             </div>
                             <div class="card-details">
                                 <h2>{{ $food->name }}</h2>

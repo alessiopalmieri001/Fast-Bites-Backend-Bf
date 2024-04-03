@@ -43,19 +43,28 @@ class FoodController extends Controller
     {
         $foodData = $request->validated();
         $user = auth()->user();
-
+    
+        // Upload dell'immagine
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $image->storeAs('public/images', $imageName);
+        } else {
+            $imageName = null; // immagine di default
+        }
+    
         $food = Food::create([
             'restaurant_id' => $user->restaurants->id,
             'name' => $foodData['name'],
             'description' => $foodData['description'],
             'price' => $foodData['price'],
             'availability' => $foodData['availability'],
-            'img' => $foodData['img'],
+            'img' => 'images/' . $imageName, 
         ]);
     
-
         return redirect()->route('admin.foods.show', $food->id);
     }
+
 
     /**
      * Display the specified resource.
