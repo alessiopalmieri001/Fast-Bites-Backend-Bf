@@ -34,12 +34,8 @@ class StoreFoodRequest extends FormRequest
     {
         return [
             'name.required' => 'Il campo nome è obbligatorio.',
-            'name.string' => 'Il campo nome deve essere una stringa.',
-            'name.max' => 'La nome non può superare :max caratteri.',
             'description.required' => 'Il campo descrizione è obbligatorio.',
-            'description.max' => 'La descrizione non può superare :max caratteri.',
             'price.required' => 'Il campo prezzo è obbligatorio.',
-            'price.numeric' => 'Il campo prezzo deve essere un numero.',
             'img.image' => 'Il file deve essere un\'immagine.',
             'img.mimes' => 'Il file deve essere di tipo: :values.',
             'img.max' => 'Il file è troppo pesante.',
