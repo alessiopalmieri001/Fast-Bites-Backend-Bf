@@ -17,9 +17,11 @@
                     <div class="card m-1 custom-card" >
                         <div class="card-content">
                             <div class="card-img-container">
-                                @else
+                                @if ($food->img)
+                                <img src="{{ asset('storage/' . $food->img) }}" alt="Food Image">
+                            @else
                                 <p>No image available</p>
-                                @endif
+                            @endif
                             </div>
                             <div class="card-details">
                                 <h2>{{ $food->name }}</h2>
