@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Http\Requests\StoreOrderRequest;
 use App\Http\Requests\UpdateOrderRequest;
+use Illuminate\Support\Facades\Auth;
 
 class OrderController extends Controller
 {
@@ -39,8 +40,17 @@ class OrderController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Order $order)
+    public function show($id)
     {
+        $user = auth()->user();
+        $restaurantId = Auth::user()->restaurants->id;
+
+        $order = Order::find($id);
+
+        if (!$order || $order->restaurant->user_id !== $user->id) {
+            abort(403, 'Non sei autorizzato a vedere questo ordine.');
+        }
+
 
         return view('admin.orders.show', compact('order'));
     }
