@@ -12,7 +12,7 @@
 
         @vite('resources/js/app.js')
     </head>
-    <body>
+
         <header>
         <div class="container d-flex justify-content-between align-items-center">
             <a class="navbar-brand" href="#">
@@ -29,15 +29,19 @@
                     <li>
                         <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
                     </li>
+                    {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
+                    @if($user->restaurants)
                     <li>
                         <a href="{{ route('admin.foods.index') }}">Il tuo menu</a>
                     </li>
-                    <li>
-                        <a href="{{ route('admin.categories.index') }}">le tue categorie</a>
-                    </li>
+                    @endif
+                    {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
+                    @if($user->restaurants)
                     <li>
                         <a href="{{ route('admin.orders.index') }}">I tuoi ordini</a>
                     </li>
+                    @endif
+
                     <li>
                         <form method="POST" action="{{ route('logout') }}">
                             @csrf
@@ -49,13 +53,11 @@
         </div>
         </header>
 
-
         <main>
             <div class="container">
                 @yield('main-content')
             </div>
         </main>
-    </body>
 </html>
 <style>
         header {

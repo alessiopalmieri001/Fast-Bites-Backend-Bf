@@ -32,6 +32,7 @@ class RestaurantController extends Controller
         $restaurant = $user->restaurants; // Otteniamo il ristorante associato all'utente
 
         return view('admin.restaurants.index', compact('user','restaurant'));
+
     }
 
     /**
@@ -78,7 +79,7 @@ class RestaurantController extends Controller
     public function show(Restaurant $restaurant)
     {
         // Ottieni tutti i cibi associati a questo ristorante
-        $foods = $restaurant->foods; // Assuming there is a relationship defined between Restaurant and Food models
+        $foods = $restaurant->foods;
 
         return view('admin.restaurants.show', compact('restaurant', 'foods')); // Cambia $food in $foods
     }
