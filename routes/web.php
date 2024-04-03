@@ -14,7 +14,6 @@ use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\Customer\CategoryController as CustomerCategoryController;
 use App\Http\Controllers\Customer\RestaurantController as CustomerRestaurantController;
 use App\Http\Controllers\Customer\FoodController as CustomerFoodController;
-use App\Http\Controllers\MainController;
 
 /*
 |--------------------------------------------------------------------------
