@@ -52,6 +52,7 @@ class FoodController extends Controller
             'availability' => $foodData['availability'],
             'img' => $foodData['img'],
         ]);
+    
 
         return redirect()->route('admin.foods.show', $food->id);
     }
