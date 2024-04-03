@@ -13,7 +13,11 @@
             <div class="row">
                 <div class="col">
                     <div class="card">
-                        <img src="{{ $food['img'] }}" alt="{{ $food->name }}">
+                        @if ($food->img)
+                            <img src="{{ asset('storage/' . $food->img) }}" alt="Food Image">
+                        @else
+                            <p>No image available</p>
+                        @endif
                         <h1>
                             {{ $food->name}}
                         </h1>
