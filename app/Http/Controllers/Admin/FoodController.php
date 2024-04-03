@@ -78,8 +78,8 @@ class FoodController extends Controller
      */
     public function edit($id)
     {
-        $user = auth()->user();
-        $food = Food::find($id);
+        $user = auth()->user(); //Per l'utente loggato
+        $food = Food::find($id);    //Prendo la colonna id dei foods
         // Controllo se il piatto esiste oppure se l'utente ha il permesso di editare il piatto
         if (!$food || $food->restaurant->user_id != $user->id) {
             abort(403, 'Non sei autorizzato a modificare questo cibo.');
