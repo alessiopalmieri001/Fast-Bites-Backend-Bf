@@ -1,5 +1,7 @@
 @import "~bootstrap/scss/bootstrap";
 
+html
+
 body {
     background: rgb(246, 144, 30);
     background: linear-gradient(
@@ -15,6 +17,8 @@ body {
 .card {
     &.custom-card {
         height: 100%;
+        padding: 25px;
+        border-radius: 8%;
 
         .card-content {
             height: 100%;
@@ -25,29 +29,22 @@ body {
                 text-align: center;
 
                 img {
-                    width: 100%;
-                    height: 200px;
+                    width: 50%;
                     object-fit: cover;
                 }
             }
 
             .card-details {
+                color: black;
                 flex-grow: 1;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
 
-                h2,
-                h4 {
-                    text-align: center;
-                    margin: 0;
-                    color: black;
+                h5 {
+                    line-height: 1;
                 }
 
-                h2 {
-                    margin-top: 1.5rem;
-                    color: black;
-                }
             }
         }
     }
@@ -111,7 +108,7 @@ div {
 }
 }
 
-button {
+.button-style-1 {
     background-color: #ffffff;
     border: none;
     width: 100%;
@@ -128,7 +125,7 @@ button {
         }
 }
 
-button:hover {
+.button-style-1:hover {
     background-color: #f48c20;
     a {
         text-decoration: none;
@@ -142,4 +139,37 @@ button:hover {
 
 img {
     width: 100%;
+}
+
+.button-style-2 {
+    background-color:rgba(246, 144, 30, 1);
+    border: none;
+    width: 100%;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 24px;
+        a {
+        text-decoration: none;
+        color: white;
+        }
+        button {
+            color: white;
+            border: none;
+            background-color: transparent;
+        }
+}
+
+.button-style-2:hover {
+    background-color: #CC3234;
+    a {
+        text-decoration: none;
+        color: white;
+        }
+}
+
+.card-details i {
+    color: black;
 }

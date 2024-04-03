@@ -101,19 +101,27 @@ class FoodController extends Controller
      */
     public function update(UpdateFoodRequest $request, Food $food)
     {
-        
         $foodData = $request->validated();
         $user = auth()->user();
-
+    
+        // Upload dell'immagini
+        if ($request->hasFile('img')) {
+            // Update dell'immagine
+            $image = $request->file('img');
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $image->storeAs('public/images', $imageName);
+    
+            $food->img = 'images/' . $imageName;
+        }
+    
         $food->update([
             'restaurant_id' => $user->restaurants->id,
             'name' => $foodData['name'],
             'description' => $foodData['description'],
             'price' => $foodData['price'],
             'availability' => $foodData['availability'],
-            'img' => $foodData['img'],
         ]);
-
+    
         return redirect()->route('admin.foods.show', compact('food'));
     }
 
@@ -126,4 +134,6 @@ class FoodController extends Controller
 
         return redirect()->route('admin.foods.index');
     }
+
+    
 }
