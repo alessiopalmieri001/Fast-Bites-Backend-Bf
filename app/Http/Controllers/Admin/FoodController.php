@@ -60,8 +60,16 @@ class FoodController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Food $food)
+    public function show($id)
     {
+        $user = auth()->user();
+        $food = Food::find($id);
+
+        // Controllo se il piatto esiste oppure se l'utente ha il permesso di vedere il piatto
+        if (!$food || $food->restaurant->user_id != $user->id) {
+            abort(403, 'Non sei autorizzato a vedere questo cibo.');
+        }
+
         return view('admin.foods.show', compact('food'));
     }
 
