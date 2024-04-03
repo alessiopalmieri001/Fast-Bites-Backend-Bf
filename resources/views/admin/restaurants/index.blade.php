@@ -12,7 +12,7 @@
             
             @if($user && $user->restaurants)
                 <div class="card w-50 m-auto">
-                    <div class="card-header d-flex flex-column align-items-center ">
+                    <div class="d-flex flex-column align-items-center">
                         <img src="{{ $user->restaurants->img }}" alt="{{ $user->restaurants->name }}">
                     </div>
                     <div class="card-body text-center">
@@ -30,16 +30,16 @@
                             <p>No Types</p>
                         @endif
                     </div>
-                    <div class="d-flex justify-content-center">
-                        <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->id]) }}" class="custom-button edit w-25 text-center">
+                    <button class="button-style-2 text-center">
+                        <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->id]) }}">
                             Modifica
                         </a>
-                    </div>
+                    </button>
                 </div>
                 
             @else
                 <div class=" mb-2 d-flex justify-content-center ">
-                    <a href="{{ route('admin.restaurants.create') }}" class="custom-button add">
+                    <a href="{{ route('admin.restaurants.create') }}" class="button-style-2">
                         + Aggiungi
                     </a>
                 </div>
@@ -55,7 +55,7 @@
     img {
         width: 100%;
     }
-.custom-button {
+/* .custom-button {
         display: inline-block;
         padding: 10px 20px;
         border: none;
@@ -76,6 +76,6 @@
      }
     .custom-button:hover {
         background-color: #dd1818e7;
-    }
+    } */
 </style>
 
