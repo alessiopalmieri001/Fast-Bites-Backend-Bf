@@ -11,12 +11,12 @@
             {{-- Per ilristorante stampo in pagina: img / name / indirizzo --}}
             
             @if($user && $user->restaurants)
-                <div class="card">
+                <div class="card w-50 m-auto">
                     <div class="card-header d-flex flex-column align-items-center ">
                         <img src="{{ $user->restaurants->img }}" alt="{{ $user->restaurants->name }}">
-                        <h1>{{ $user->restaurants->name }}</h1>
                     </div>
                     <div class="card-body text-center">
+                        <h1>{{ $user->restaurants->name }}</h1>
                         <h2>{{ $user->restaurants->address }}</h2>
                     </div>
                     <div class="card-subtitle mb-2 text-muted pt-2">
@@ -45,7 +45,7 @@
                 </div>
 
                 <div>
-                    <p>Ristorante non trovato</p>
+                    <p>Nessun ristorante al momento</p>
                 </div>
             @endif
         </div>
@@ -53,7 +53,7 @@
 @endsection
 <style>
     img {
-        max-width: 300px;
+        width: 100%;
     }
 .custom-button {
         display: inline-block;
