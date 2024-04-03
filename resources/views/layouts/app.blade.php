@@ -12,45 +12,43 @@
 
         @vite('resources/js/app.js')
     </head>
-
+    
+    <div class="background-container">
         <header>
-        <div class="container d-flex justify-content-between align-items-center">
-            <a class="navbar-brand" href="#">
-                <img src="{{ asset('images/logoscritta.png') }}" alt="Logo" >
-            </a>
-            <nav>
-                <ul class="p-0 d-flex justify-content-between align-items-center">
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('admin.dashboard') }}">Dashboard</a>
-                    </li>
-                    <li>
-                        <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
-                    </li>
-                    {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
-                    @if($user->restaurants)
-                    <li>
-                        <a href="{{ route('admin.foods.index') }}">Il tuo menu</a>
-                    </li>
-                    @endif
-                    {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
-                    @if($user->restaurants)
-                    <li>
-                        <a href="{{ route('admin.orders.index') }}">I tuoi ordini</a>
-                    </li>
-                    @endif
-
-                    <li>
-                        <form method="POST" action="{{ route('logout') }}">
-                            @csrf
-                        <button type="submit" class="button">Logout</button>
-                        </form>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+            <div class="container d-flex justify-content-between align-items-center">
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('images/logoscritta.png') }}" alt="Logo" >
+                </a>
+                <nav>
+                    <ul class="p-0 d-flex justify-content-between align-items-center">
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
+                        </li>
+                        {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
+                        @if($user->restaurants)
+                            <li>
+                                <a href="{{ route('admin.foods.index') }}">Il tuo menu</a>
+                            </li>
+                            {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
+                            <li>
+                                <a href="{{ route('admin.orders.index') }}">I tuoi ordini</a>
+                            </li>
+                        @endif
+                        <li>
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                <button class="button-style-3" type="submit" class="button">Logout</button>
+                            </form>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
 
         <main>
@@ -58,13 +56,9 @@
                 @yield('main-content')
             </div>
         </main>
+    </div>
 </html>
 <style>
-        header {
-            background-color: #F28920;
-            color: #fff;
-           
-        }
         header nav ul {
             margin: 0;
             padding: 0;
@@ -86,20 +80,7 @@
             color: #fff;
             text-decoration: none;
         }
-        .button{
-        width: 100px;
-        display: inline-block;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 20px;
-        color: black;
-        text-decoration: none;
-        transition: background-color 0.3s;
-        background-color: white;
-        }
-        .button:hover {
-        background-color: #dd1818e7;
-    }
+
 
         main {
             padding: 20px 0;
