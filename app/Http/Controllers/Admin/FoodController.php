@@ -68,8 +68,14 @@ class FoodController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Food $food)
+    public function edit($id)
     {
+        $user = auth()->user();
+        $food = Food::find($id);
+        // Controllo se il piatto esiste oppure se l'utente ha il permesso di editare il piatto
+        if (!$food || $food->restaurant->user_id != $user->id) {
+            abort(403, 'Non sei autorizzato a modificare questo cibo.');
+        }
         return view('admin.foods.edit', compact('food'));
     }
 
@@ -78,6 +84,7 @@ class FoodController extends Controller
      */
     public function update(UpdateFoodRequest $request, Food $food)
     {
+        
         $foodData = $request->validated();
         $user = auth()->user();
 
