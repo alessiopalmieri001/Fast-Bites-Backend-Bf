@@ -90,9 +90,25 @@ div {
     border-bottom: 2px solid white;
 }
 
-a {
+.field-input > a {
     text-decoration: none;
     color: white;
+}
+
+.form-style-2 {
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    textarea:-webkit-autofill,
+    textarea:-webkit-autofill:hover,
+    textarea:-webkit-autofill:focus,
+    select:-webkit-autofill,
+    select:-webkit-autofill:hover,
+    select:-webkit-autofill:focus {
+    -webkit-text-fill-color: rgb(0, 0, 0);
+    -webkit-box-shadow: none rgb(255, 255, 255);
+    transition: background-color 5000s ease-in-out 0s;
+}
 }
 
 button {
@@ -106,11 +122,18 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 24px;
+        a {
+        text-decoration: none;
+        color: black;
+        }
 }
 
 button:hover {
     background-color: #f48c20;
-    color: white;
+    a {
+        text-decoration: none;
+        color: white;
+        }
 }
 
 .logo-header {
