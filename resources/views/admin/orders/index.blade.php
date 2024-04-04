@@ -9,7 +9,7 @@
             {{-- Reindirizzo l'utente alla pagina di creazione del ristorante --}}
 
             {{-- @if ($user && $user->restaurants) --}}
-            <div class="container glass my-4">
+            <div class="container my-4">
                 <div class="row p-3">
                     <div class="col">
                         <span class="table-btn p-2" onclick="orderByID()">

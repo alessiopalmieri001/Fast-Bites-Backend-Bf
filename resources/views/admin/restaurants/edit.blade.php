@@ -3,17 +3,21 @@
 @section('page-title', 'Restaurant Edit')
 
 @section('main-content')
-<h1>
-    Restaurant Edit
-</h1>
-{{-- Link per tornare alla lista dei ristoranti --}}
-<div class="mb-4">
-    <a href="{{ route('admin.restaurants.index') }}" class="btn btn-primary">
-        Torna all'index dei ristoranti
-    </a>
-</div>
-    <div class="row w-50 m-auto">
-        <div class="col py-4">
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-6 form-style-2">
+            <h1 class="pb-5 text-center">
+                Modifica il tuo ristorante
+            </h1>
+            {{-- Link per tornare alla lista dei ristoranti --}}
+            <div class="mb-4">
+                <button class="button-style-1">
+                    <a href="{{ route('admin.restaurants.index') }}">
+                        Torna all'index dei ristoranti
+                    </a>
+                </button>
+            </div>
                
             {{-- Gli errori di validazione vengono elencati qui --}} 
             @if ($errors->any())
@@ -35,26 +39,31 @@
     
                 {{-- NOME RISTORANTE --}}
                 <div class="mb-3">
-                    <label for="name" class="form-label">Nome Ristorante<span class="text-light">*</span></label>
+                    <label for="name" class="form-label">Nome Ristorante<span class="text-white">*</span></label>
                     <input type="text" class="form-control" id="name" name="name" value="{{ old('name', $restaurant->name) }}" placeholder="Inserisci il nome del ristorante..." maxlength="256" required>
                 </div>
     
                 {{-- INDIRIZZO RISTORANTE --}}
                 <div class="mb-3">
-                    <label for="address" class="form-label">Indirizzo<span class="text-light">*</span></label>
+                    <label for="address" class="form-label">Indirizzo<span class="text-white">*</span></label>
                     <input class="form-control" type="text" id="address" name="address" placeholder="Inserisci l'indirizzo" value="{{ old('address', $restaurant->address) }}" max="256" required>
                 </div>
     
                 {{-- IVA RISTORANTE --}}
                 <div class="mb-3">
-                    <label for="iva" class="form-label">Partita Iva<span class="text-light">*</span></label>
+                    <label for="iva" class="form-label">Partita Iva<span class="text-white">*</span></label>
                     <input class="form-control" type="text" id="iva" name="iva" placeholder="Inserisci la partita iva..." value="{{ old('iva', $restaurant->iva) }}" max="11" min="11" required>
                 </div>
     
                 {{-- IMMAGINE RISTORANTE --}}
+
                 <div class="mb-3">
-                    <label for="img" class="form-label">Cover Image<span class="text-light">*</span></label>
-                    <input class="form-control" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img', $restaurant->img) }}" max="1024" required>
+                    <label for="current_image" class="form-label">Immagine Attuale<span class="text-white">*</span></label>
+                    <img src="{{ substr($restaurant->img, 0, 4) === 'http' ? $restaurant->img : asset('storage/' . $restaurant->img) }}" alt="Current Food Image" class="img-fluid mb-2">
+                    <input type="hidden" name="current_image" value="{{ $restaurant->img }}">
+    
+                    <label for="img" class="form-label">Scegli una nuova immagine</label>
+                    <input class="form-control" type="file" name="img" id="img">
                 </div>
     
                 <div class="mb-3">
@@ -88,6 +97,7 @@
             </form>
         </div>
     </div>
+</div>
 @endsection
 
 <style></style>
