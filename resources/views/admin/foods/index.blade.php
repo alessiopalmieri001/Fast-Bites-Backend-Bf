@@ -19,10 +19,10 @@
                 <div class="col-md-4 container">
                     <div class="card m-1 custom-card" >
                         <div class="card-content">
-                            <div class="card-img-container mb-2">
+                            <div class="card-img-container mb-3">
                                 {{-- Se i primi 4 caratteri sono 'http' allora consideralo come url, altrimenti sarà un file conservato in storage  --}}
                                 <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
-                                class="w-100" alt="{{ $food->name }}">
+                                class="round-image" alt="{{ $food->name }}">
                             </div>
                             <div class="card-details mb-2 text-center">
                                 <h5>Nome: {{ $food->name }}</h5>
@@ -34,7 +34,7 @@
                                     <i class="text-center fa-solid fa-eye-slash my-1"></i>
                                 @endif
                             </div>
-                            <div class="mb-2 d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
                                 <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="button-style-2">
                                     Modifica
                                 </a>

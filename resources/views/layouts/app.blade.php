@@ -6,7 +6,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         {{-- font awesome --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>@yield('page-title') | {{ config('app.name', 'Laravel') }}</title>
+        <title>@yield('page-title') | {{ config('app.name', 'Fastbites') }}</title>
+
+        <link rel="icon" type="image/png" href="{{ asset('images/faviconlogo.png') }}">
+
         <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
 
@@ -19,7 +22,9 @@
             <nav class="navbar navbar-expand-lg">
                 <div class="container">
                     <div class="logo-header">
-                        <img src="{{ asset('images/logoscritta.png') }}" alt="logo">
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            <img src="{{ asset('images/logoscritta.png') }}" alt="logo">
+                        </a>
                     </div>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
