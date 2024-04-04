@@ -16,7 +16,6 @@ return new class extends Migration
             $table->unsignedBigInteger('restaurant_id')->nullable();
             $table->foreign('restaurant_id')->references('id')->on('restaurants')->nullOnDelete();
             $table->text('name')->nullable();
-            $table->text('surname')->nullable();
             $table->string('email', 128)->unique();
             $table->string('address', 256);
             $table->bigInteger('phone_num', false, true)->unsigned();

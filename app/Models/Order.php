@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 //model
 use App\Models\Food;
@@ -13,22 +14,15 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'total',
-        'status',
         'name',
         'surname',
         'email',
-        'address',
         'phone_num',
+        'address',
+        'total',
         'status',
-        'total'
     ];
-
-    //Relazione many to many (Order -> Food)
-    public function foods()
-    {
-        return $this->belongsToMany(Food::class)->withPivot('quantity')->withTrashed();
-    }
+    //use SoftDeletes;
 
     //Relazione 1 to many (Order -> Restaurant)
     public function restaurant()
@@ -39,7 +33,7 @@ class Order extends Model
     //Relazione many to many (Order -> Food)
     public function foods()
     {
-        return $this->belongsToMany(Food::class)->withPivot('quantity')->withTrashed();
+        return $this->belongsToMany(Food::class)->withPivot('quantity');
     }
 
 

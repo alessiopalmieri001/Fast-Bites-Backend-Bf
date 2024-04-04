@@ -14,13 +14,14 @@ return new class extends Migration
         Schema::create('restaurants', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger("user_id")->nullable();
-            $table->foreign("user_id")->references("id")->on("users")->nullOnDelete();            
+            $table->foreign("user_id")->references("id")->on("users")->nullOnDelete();
             $table->string('name', 256);
             $table->string('slug')->nullable();
             $table->string('address', 256);
             $table->unsignedBigInteger('iva')->unique(); //da verificare lunghezza (11)
             $table->string('img');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
