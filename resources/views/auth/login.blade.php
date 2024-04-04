@@ -10,7 +10,7 @@
                 <label for="email">
                     Email
                 </label>
-                <input class="input-style-1" type="email" id="email" name="email">
+                <input class="input-style-1" type="email" id="email" name="email" required>
             </div>
 
             <!-- Password -->
@@ -18,7 +18,7 @@
                 <label for="password">
                     Password
                 </label>
-                <input class="input-style-1" type="password" id="password" name="password">
+                <input class="input-style-1" type="password" id="password" name="password" required>
             </div>
 
             <!-- Remember Me -->
