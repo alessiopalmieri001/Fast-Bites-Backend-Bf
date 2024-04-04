@@ -643,6 +643,86 @@ return [
             'img' => 'https://tse3.explicit.bing.net/th?id=OIP.xIC1ZVO3g_NMM4skUSGdVwHaFj&pid=Api&P=0&h=180'
         ],
         [
+            'restaurant_id' => 9,
+            'name' => 'Whopper Vegano',
+            'description' => 'Pane, pomodoro, cipolla, ketchup, insalata iceberg, cetrioli, maionese, burger 100% vegetale.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.TX5cvuJgfnEdPcvRUE0TSAHaFU&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'THE SPECK & ASIAGO BURGER',
+            'description' => 'Pane brioche, carne alla griglia, maionese Gourmet, Assiago DOP, cipolle fritte, speak Alto Adige IDP.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse4.explicit.bing.net/th?id=OIP.1BEyr0QehDzYH7mlxWYkFAHaGO&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'THE PARMIGIANO REGGIANO BURGER',
+            'description' => 'Pane brioche, carne alla griglia, parmiggiano reggiano DOP, maionese Gourmet, rucola, cipolle fritte, bacon.',
+            'price' => 9.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.HDHOqkE05h66K5emGTB0fwHaEK&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'BACON KING',
+            'description' => 'Pane al mais, carne alla griglia, ketchup, maionese, bacon, cheddar.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.LBCzcL5TDqLLPG5XU4PaWAHaHa&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'CHICKEN BACON KING',
+            'description' => 'Pane al mais, ketchup, maionese, bacon, pollo con panatura croccante.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.BmC4nz1m9QjIOkKxrjANfwHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'BACON KING 3.0',
+            'description' => 'Pane al mais, carne alla griglia, ketchup, maionese, bacon, cheddar.',
+            'price' => 8.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.nj3V324yyEyWAhkHQW10fAHaDS&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'CRUNCHICKEN',
+            'description' => 'Pane al mais, maionese, insalata iceberg, pomodoro.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.FWmjvEgQ1dM6hwmxFC3MqwHaDS&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'BRONX STEAKHOUSE*',
+            'description' => 'Pane, bacon con proteine vegetali, cheddar, insalata, cipolle croccanti, pomodoro, salsa BBQ e maionese.',
+            'price' => 8.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.Ser05DrzU1hVhDfV8lcZ2wHaEK&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'BIG KING ® XXL',
+            'description' => 'Pane, carne alla griglia, cipolla fresca, insalata iceberg, cetrioli, cheddar, salsa king.',
+            'price' => 10.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.BQVM5diUOmldnzBoHdFVjwHaFj&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 9,
+            'name' => 'Hamburger',
+            'description' => 'Pane, carne alla griglia, ketchup, cetriolo e senape.',
+            'price' => 1.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.H3P_yJB6C-lMbC9xhq0HMAHaD4&pid=Api&P=0&h=180'
+        ],
+        [
             'restaurant_id' => 10,
             'name' => 'Sushi assortito',
             'description' => 'Assortimento di sushi giapponese: nigiri, maki e sashimi.',
@@ -665,6 +745,62 @@ return [
             'price' => 13.50,
             'availability' => true,
             'img' => 'https://wips.plug.it/cips/buonissimo.org/cms/2012/07/moussaka.jpg?w=712&a=c&h=406'
+        ],
+        [
+            'restaurant_id' => 10,
+            'name' => 'Ramen spicy teriyaki miso',
+            'description' => 'Un piatto di ramen con teriyaki piccante e miso.',
+            'price' => .99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.XX7iST0-mYl_rTBuUShRpAHaLH&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 10,
+            'name' => 'Chicken Ramen',
+            'description' => 'Ramen servito con pollo..',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.l46Ej0LvdQi1WSRS1NH8aQHaHa&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 10,
+            'name' => 'Teriyaki miso ramen',
+            'description' => 'Ramen con teriyaki e miso.',
+            'price' => 8.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.uRUsCkJH3UmAo3hkZ_3gGQHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 10,
+            'name' => 'Spicy buta tama miso ramen',
+            'description' => 'Ramen piccante con maiale (buta), uovo (tama) e miso.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.JzhE9j4wNQ0MukHAIJtg_QHaJy&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 10,
+            'name' => 'Takoyaki di polipo',
+            'description' => 'Palline di pastella fritte con pezzi di polpo all interno.',
+            'price' => 9.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.niaDLKeZgf68K5qgk0zRLQHaE3&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 10,
+            'name' => 'Karaage wantan shoyu ramen',
+            'description' => 'Ramen con pollo karaage (pollo fritto giapponese), wantan (ravioli cinesi) e salsa di soia (shoyu).',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.7avLSLlkn7_EOcoPG1rBmwHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 10,
+            'name' => 'Ramen con brodo shoyou e pollo teriyaki',
+            'description' => 'Ramen servito con brodo di soia e pollo teriyaki.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.wBWNIbM9-9brnTCeHldk4QHaEK&pid=Api&P=0&h=180'
         ],
         [
             'restaurant_id' => 11,
@@ -707,6 +843,46 @@ return [
             'img' => 'https://static.gamberorosso.it/2021/06/ratatouille-scaled.jpeg'
         ],
         [
+            'restaurant_id' => 11,
+            'name' => 'Ravioli di carne',
+            'description' => 'Un piatto tradizionale coreano fatto con pasta ripiena di carne.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.HqvGh17U7CKtY4f7w22ngwHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 11,
+            'name' => 'Bibimbap',
+            'description' => 'Un piatto coreano che consiste in una ciotola di riso caldo con verdure mescolate, carne e uovo, servito con una salsa piccante.',
+            'price' => 10.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.XQIww0eJrl8VSqLyJUCWeAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 11,
+            'name' => 'Coda di rospo',
+            'description' => 'Un tipo di pesce noto anche come angler. Servito grigliato o in zuppa.',
+            'price' => 8.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.m4n6lQB_zskL0IaXR8TWFgHaJ4&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 11,
+            'name' => 'Pancake',
+            'description' => 'Fritella dolce americana accompagnata con sciroppo acero',
+            'price' => 2.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.2vnCVHlZLaytK1OiWhJ32gHaJQ&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 11,
+            'name' => '',
+            'description' => '',
+            'price' => .99,
+            'availability' => true,
+            'img' => ''
+        ],
+        [
             'restaurant_id' => 13,
             'name' => 'Sushi Vegano',
             'description' => 'Assortimento di sushi vegano: maki di avocado, asparagi e cetrioli.',
@@ -747,6 +923,62 @@ return [
             'img' => 'https://www.aziendaagricolagnessiteresa.it/wp-content/uploads/2021/05/bistecca-alla-piastra.jpg'
         ],
         [
+            'restaurant_id' => 14,
+            'name' => 'Hamburger con patatine',
+            'description' => 'Hamburger di manzo con patatine fritte.',
+            'price' => 12.50,
+            'availability' => true,
+            'img' => 'https://img.freepik.com/premium-photo/plate-fries-with-burger-bun-with-cheese-it_894903-1684.jpg'
+        ],
+        [
+            'restaurant_id' => 14,
+            'name' => 'Fish and Chips',
+            'description' => 'Piatti britannici a base di pesce fritto e patatine fritte.',
+            'price' => 13.50,
+            'availability' => true,
+            'img' => 'https://wips.plug.it/cips/buonissimo.org/cms/2020/05/progetto-senza-titolo-1.png'
+        ],
+        [
+            'restaurant_id' => 14,
+            'name' => 'Tagliata di manzo',
+            'description' => 'Bistecca di manzo grigliata e affettata, servita con rucola e scaglie di parmigiano.',
+            'price' => 18.99,
+            'availability' => true,
+            'img' => 'https://www.giallozafferano.it/images/215-21544/Tagliata-di-manzo-con-rucola-e-pomodorini_450x300.jpg'
+        ],
+        [
+            'restaurant_id' => 14,
+            'name' => 'Cheese Dog',
+            'description' => 'Hot dog di manzo, diviso e grigliato con uno strato di formaggio.',
+            'price' => 4.50,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.tGd4-aHAJdWii9WnKePL-gHaFJ&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 14,
+            'name' => 'CHEESE VEGGIE SANDWICH',
+            'description' => 'Cipolle, funghi e peperoni verdi grigliati con lattuga, pomodori e fette di formaggio stile americana su un morbido panino ai semi di sesamo tostato.',
+            'price' => 4.50,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.yV2miI5xBro6IS3mq9NsdwHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 14,
+            'name' => 'GRILLED CHEESE',
+            'description' => 'Fette di formaggio in stile americano sciolte su un panino ai semi di sesamo al rovescio con condimenti a scelta e grigliate fino a doratura.',
+            'price' => 5.50,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.OX2LP98NqgwagWDWdNcdoQAAAA&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 14,
+            'name' => 'BACON BURGER',
+            'description' => 'Polpette formate a mano calde dalla griglia, stratificate con strisce di pancetta affumicata croccante al legno di melo e adagiate su un morbido panino ai semi di sesamo tostato',
+            'price' => 4.50,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.Zi5v_eyS2rZPEfJEKDfChQHaEq&pid=Api&P=0&h=180'
+        ],
+        [
             'restaurant_id' => 15,
             'name' => 'Tacos al pastor',
             'description' => 'Tacos messicani con carne di maiale marinata, cipolla, coriandolo e salsa al lime.',
@@ -780,27 +1012,3 @@ return [
         ],
 ]
 ?>
-[
-            'restaurant_id' => 4,
-            'name' => 'Hamburger con patatine',
-            'description' => 'Hamburger di manzo con patatine fritte.',
-            'price' => 12.50,
-            'availability' => true,
-            'img' => 'https://img.freepik.com/premium-photo/plate-fries-with-burger-bun-with-cheese-it_894903-1684.jpg'
-        ],
-        [
-            'restaurant_id' => 4,
-            'name' => 'Fish and Chips',
-            'description' => 'Piatti britannici a base di pesce fritto e patatine fritte.',
-            'price' => 13.50,
-            'availability' => true,
-            'img' => 'https://wips.plug.it/cips/buonissimo.org/cms/2020/05/progetto-senza-titolo-1.png'
-        ],
-        [
-            'restaurant_id' => 4,
-            'name' => 'Tagliata di manzo',
-            'description' => 'Bistecca di manzo grigliata e affettata, servita con rucola e scaglie di parmigiano.',
-            'price' => 18.99,
-            'availability' => true,
-            'img' => 'https://www.giallozafferano.it/images/215-21544/Tagliata-di-manzo-con-rucola-e-pomodorini_450x300.jpg'
-        ],
