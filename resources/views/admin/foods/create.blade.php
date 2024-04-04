@@ -54,7 +54,7 @@
                     {{-- PREZZO --}}
                     <div class="mb-3">
                         <label for="price" class="form-label">Prezzo<span class="text-white">*</span></label>
-                        <input class="form-control" type="number" step=".01"  id="price" name="price" placeholder="Inserisci il prezzo..." value="{{ old('price') }}" required>
+                        <input class="form-control" type="number" step=".01" min="0"  id="price" name="price" placeholder="Inserisci il prezzo..." value="{{ old('price') }}" required>
                         @error('price')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror

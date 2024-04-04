@@ -25,7 +25,7 @@
                             {{ $food->description}}
                         </h3>
                         <h3>
-                            {{ $food->price}}
+                            {{ $food->price}} €
                         </h3>
                         @if ($food->availability)
                             <i class="fa-solid fa-eye"></i>
