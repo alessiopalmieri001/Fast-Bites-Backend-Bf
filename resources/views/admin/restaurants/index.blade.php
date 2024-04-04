@@ -17,7 +17,7 @@
                         <div class="card-content">
                             <div class="d-flex flex-column align-items-center card-img-container mb-3">
                                 {{-- Se i primi 4 caratteri sono 'http' allora consideralo come url, altrimenti sarà un file conservato in storage  --}}
-                                <img src="{{ substr($user->restaurants->img, 0, 4) === 'http' ? $user->restaurants->img : asset('storage/' . $user->restaurants->img) }}" alt="{{ $user->restaurants->name }}">
+                                <img class="round-image" src="{{ substr($user->restaurants->img, 0, 4) === 'http' ? $user->restaurants->img : asset('storage/' . $user->restaurants->img) }}" alt="{{ $user->restaurants->name }}">
                             </div>
                             <div class="card-body text-center text-dark">
                                 <h1>{{ $user->restaurants->name }}</h1>
