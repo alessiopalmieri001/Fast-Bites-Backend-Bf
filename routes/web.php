@@ -38,6 +38,7 @@ Route::prefix('customer')
     });
 
 
+
 /* rotte protette */
 Route::middleware(['auth'])
     ->prefix('admin')

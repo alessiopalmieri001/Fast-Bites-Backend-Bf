@@ -13,15 +13,22 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
+        'total',
+        'status',
         'name',
         'surname',
         'email',
-        'phone_num',
         'address',
-        'total',
+        'phone_num',
         'status',
+        'total'
     ];
 
+    //Relazione many to many (Order -> Food)
+    public function foods()
+    {
+        return $this->belongsToMany(Food::class)->withPivot('quantity')->withTrashed();
+    }
 
     //Relazione 1 to many (Order -> Restaurant)
     public function restaurant()
