@@ -7,11 +7,11 @@
         <div class="row d-flex justify-content-center">
             <div class="mb-2 col-4">
                 <h1 class="text-center m-4 text-light">Il tuo menu</h1>
-                <button class="button-style-1">
-                    <a href="{{ route('admin.foods.create') }}">
+                <div class="d-flex justify-content-center"> <!-- Center the button -->
+                    <a href="{{ route('admin.foods.create') }}" class="button-style-1">
                         + Aggiungi un nuovo piatto
                     </a>
-                </button>
+                </div>
             </div>
             
             <div class="container d-flex justify-content-center flex-wrap">
@@ -35,28 +35,25 @@
                                     <i class="text-center fa-solid fa-eye-slash my-1"></i>
                                 @endif
                             </div>
-                            <div class=" mb-2 d-flex justify-content-center">
-                                <button class="button-style-2">
-                                    <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}">
-                                        Modifica
-                                    </a>
-                                </button>
+                            <div class="mb-2 d-flex justify-content-center">
+                                <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="button-style-2">
+                                    Modifica
+                                </a>
 
-                                <form class="button-style-2" onsubmit="return confirm('Are you sure you want to delete this?');"  action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
+                                <form onsubmit="return confirm('Are you sure you want to delete this?');"
+                                    action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                        <button type="submit">
-                                            Delete
-                                        </button>
+                                    <button type="submit" class="button-style-2">
+                                        Elimina
+                                    </button>
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endforeach
+                @endforeach
             </div>
         </div>
     </section>
 @endsection
-
-

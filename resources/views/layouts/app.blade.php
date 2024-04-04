@@ -14,24 +14,26 @@
     </head>
     
     <div class="background-container">
+
         <header>
-            <div class="container d-flex justify-content-between align-items-center">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/logoscritta.png') }}" alt="Logo" >
-                </a>
-                <nav>
-                    <ul class="p-0 d-flex justify-content-between align-items-center">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
-                        </li>
-                        {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
-                        @if($user->restaurants)
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <div class="logo-header">
+                        <img src="{{ asset('images/logoscritta.png') }}" alt="logo">
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 aalign-items-baseline">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
+                            </li>
+                            {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
+                            @if($user->restaurants)
                             <li>
                                 <a href="{{ route('admin.foods.index') }}">Il tuo menu</a>
                             </li>
@@ -39,16 +41,17 @@
                             <li>
                                 <a href="{{ route('admin.orders.index') }}">I tuoi ordini</a>
                             </li>
-                        @endif
-                        <li>
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button class="button-style-3" type="submit" class="button">Logout</button>
-                            </form>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+                            @endif
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button class="button-style-3" type="submit" class="button">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
 
         <main>
