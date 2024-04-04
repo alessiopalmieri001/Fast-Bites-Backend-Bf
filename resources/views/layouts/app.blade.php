@@ -25,7 +25,7 @@
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 aalign-items-baseline">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-baseline">
                             <li class="nav-item">
                                 <a href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
