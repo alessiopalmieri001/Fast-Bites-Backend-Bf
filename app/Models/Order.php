@@ -21,7 +21,7 @@ class Order extends Model
     //Relazione many to many (Order -> Food)
     public function foods()
     {
-        return $this->belongsToMany(Food::class)->withPivot('quantity')->withTrashed();
+        return $this->belongsToMany(Food::class)->withPivot('quantity');
     }
 
     //Relazione 1 to many (Order -> Restaurant)
