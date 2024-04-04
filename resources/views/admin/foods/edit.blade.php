@@ -12,11 +12,11 @@
             </h1>
             {{-- Link per tornare alla lista dei ristoranti --}}
             <div class="mb-4">
-                <button class="button-style-1">
-                    <a href="{{ route('admin.foods.index') }}">
+                <div class="d-flex justify-content-center"> <!-- Center the button -->
+                    <a href="{{ route('admin.foods.index') }}" class="button-style-1">
                         Torna all'index foods
                     </a>
-                </button>
+                </div>
             </div>
     
             {{-- Gli errori di validazione vengono elencati qui --}} 
@@ -88,7 +88,7 @@
                     @enderror
                 </div>
             
-                <div>
+                <div class="d-flex justify-content-center"> <!-- Center the button -->
                     <button class="button-style-1" type="submit">
                         Aggiorna
                     </button>

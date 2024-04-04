@@ -7,15 +7,13 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-6 form-style-2">
-                <h1 class="pb-5">Aggiungi un nuovo piatto</h1>
+                <h1 class="pb-5 text-center">Aggiungi un nuovo piatto</h1>
     
                 {{-- Link per tornare alla lista dei ristoranti --}}
-                <div class="mb-4">
-                    <button class="button-style-1">
-                        <a href="{{ route('admin.foods.index') }}">
-                            Torna alla dashboard
-                        </a>
-                    </button>
+                <div class="mb-4 text-center"> <!-- Added text-center class -->
+                    <a href="{{ route('admin.foods.index') }}" class="button-style-1">
+                        Torna alla dashboard
+                    </a>
                 </div>
     
                 {{-- Gli errori di validazione vengono elencati qui --}}
@@ -81,7 +79,7 @@
                     </div>
     
                     {{-- aggiungi food --}}
-                    <div>
+                    <div class="text-center"> <!-- Added text-center class -->
                         <button class="button-style-1" type="submit">
                             Aggiungi
                         </button>

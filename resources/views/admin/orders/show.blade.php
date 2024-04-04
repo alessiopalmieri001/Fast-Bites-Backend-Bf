@@ -5,77 +5,80 @@
 @section('main-content')
 
     <section>
-        <div class="row">
-            <div class="mb-3">
-                <a href="{{ route('admin.orders.index') }}" class="btn btn-success w-100">
-                    Torna all'index
-                </a>
+        <div class="row justify-content-center"> <!-- Center the row -->
+            <div class="col-md-6"> <!-- Adjust column width as needed -->
+                <div class="mb-3 text-center"> <!-- Center the button -->
+                    <a href="{{ route('admin.orders.index') }}" class="button-style-1">
+                        Torna alla lista degli ordini
+                    </a>
+                </div>
             </div>
-            @if ($order)
-            <div class="row p-3">
+        </div>
+
+        @if ($order)
+        <div class="container my-4">
+            <div class="row order-header">
                 <div class="col">
-                    <span class="table-btn p-2" onclick="orderByID()">
+                    <span class="table-btn" onclick="orderByID()">
                         ID
                         <i id="id-icon" class="fas fa-sort-down ms-1 d-none table-icon"></i>
                     </span>
                 </div>
                 <div class="col">
-                    <span class="table-btn p-2" onclick="orderByClient()">
+                    <span class="table-btn" onclick="orderByClient()">
                         Cliente
                         <i id="client-icon" class="fas fa-sort-down ms-1 d-none table-icon"></i>
                     </span>
                 </div>
                 <div class="col">
-                    <span class="table-btn p-2" onclick="orderByStatus()">
+                    <span class="table-btn" onclick="orderByStatus()">
                         Stato
                         <i id="status-icon" class="fas fa-sort-down ms-1 d-none table-icon"></i>
                     </span>
                 </div>
                 <div class="col">
-                    <span class="table-btn p-2" onclick="orderByDate()">
+                    <span class="table-btn" onclick="orderByDate()">
                         Data
                         <i id="date-icon" class="fas fa-sort-down ms-1 d-none table-icon"></i>
                     </span>
                 </div>
                 <div class="col">
-                    <span class="table-btn p-2" onclick="orderByTotal()">
+                    <span class="table-btn" onclick="orderByTotal()">
                         Totale
                         <i id="total-icon" class="fas fa-sort-down ms-1 d-none table-icon"></i>
                     </span>
                 </div>
             </div>
-            <div class="order-btn row{{ $order->id }}" style="order: 1;">
-                <div class="row order">
-                    <div class="col id">
+        </div>
+        <div id="table-content" class="d-flex flex-column {{ $order->id }}" style="order: 1;">
+                <div class="row order pb-3">
+                    <div class="col">
                         <span>{{ $order->id }}</span>
                     </div>
 
-                    <div class="col name">
+                    <div class="col">
                         <span>{{ $order->name }}</span>
                     </div>
 
-                    <div class="col status">
-                        <span
-                            class="badge" >{{ $order->status }}</span>
+                    <div class="col">
+                        <span class="order-pill">{{ $order->status }}</span>
                     </div>
 
-                    <div class="col date">
+                    <div class="col">
                         <span>{{ $order->created_at }}</span>
                     </div>
 
-                    <div class="col total">
-                        <span >€ {{ number_format($order->total, 2) }}</span>
+                    <div class="col">
+                        <span>€ {{ number_format($order->total, 2) }}</span>
                     </div>
-
                 </div>
-            </div>
-
-            @else
-                <div class="col">
-                    <p>Nessun ordine disponibile al momento!</p>
-                </div>
-            @endif
         </div>
+
+        @else
+            <div class="col">
+                <p class="text-center">Nessun ordine disponibile al momento!</p>
+            </div>
+        @endif
     </section>
 @endsection
 

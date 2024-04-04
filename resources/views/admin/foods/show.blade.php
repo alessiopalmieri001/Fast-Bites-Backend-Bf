@@ -4,46 +4,51 @@
 
 @section('main-content')
     <section>
-        <div class="row">
-            <div class="mb-3">
-                <a href="{{ route('admin.foods.index') }}" class="btn btn-success w-100">
+        <div class="row d-flex justify-content-center">
+            <div class="mb-2 col-4 text-center">
+                <a href="{{ route('admin.foods.index') }}" class="button-style-1">
                     Torna all'index
                 </a>
             </div>
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        @if ($food->img)
-                            <img src="{{ asset('storage/' . $food->img) }}" alt="Food Image">
-                        @else
-                            <p>No image available</p>
-                        @endif
-                        <h1>
-                            {{ $food->name}}
-                        </h1>
-                        <h3>
-                            {{ $food->description}}
-                        </h3>
-                        <h3>
-                            {{ $food->price}} €
-                        </h3>
-                        @if ($food->availability)
-                            <i class="fa-solid fa-eye"></i>
-                        @else
-                            <i class="fa-solid fa-eye-slash"></i>
-                        @endif
+
+            <div class="container d-flex justify-content-center flex-wrap">
+                <div class="col-md-4 container">
+                    <div class="card m-1 custom-card">
+                        <div class="card-content">
+                            <div class="card-img-container mb-2">
+                                <div class="img-container">
+                                    <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
+                                        alt="{{ $food->name }}">
+                                </div>
+                            </div>
+                            <div class="card-details mb-2 text-center">
+                                <h5>Nome: {{ $food->name }}</h5>
+                                <h5>Descrizione: {{ $food->description }}</h5>
+                                <h5>Prezzo: € {{ $food->price }}</h5>
+                                @if ($food->availability)
+                                    <i class="text-center fa-solid fa-eye my-1"></i>
+                                @else
+                                    <i class="text-center fa-solid fa-eye-slash my-1"></i>
+                                @endif
+                            </div>
+                            <div class="mb-2 d-flex justify-content-center">
+                                <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="button-style-2">
+                                    Modifica
+                                </a>
+
+                                <form onsubmit="return confirm('Are you sure you want to delete this?');"
+                                    action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="button-style-2">
+                                        Elimina
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
-
-<style lang="scss" scoped>
-
-    .card {
-        max-width: 300px;
-        margin: 0 auto;
-    }
-
-</style>

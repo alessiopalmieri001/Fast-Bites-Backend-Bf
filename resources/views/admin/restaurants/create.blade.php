@@ -3,9 +3,11 @@
 @section('page-title', 'Restaurant Create')
 
 @section('main-content')
-    <h1>Restaurant Create</h1>
+    <h1 class="text-center">Restaurant Create</h1>
     <div class="mb-4">
-        <a href="{{ route('admin.restaurants.index') }}" class="btn btn-primary">Torna all'index dei ristoranti</a>
+        <div class="d-flex justify-content-center"> 
+            <a href="{{ route('admin.restaurants.index') }}" class="button-style-1">Torna all'index dei ristoranti</a>
+        </div>
     </div>
 
     <div class="row w-50 m-auto">
@@ -77,8 +79,8 @@
                     </div>
                 </div>
 
-                <div>
-                    <button type="submit" class="btn btn-success w-100">+ Aggiungi</button>
+                <div class="d-flex justify-content-center"> 
+                    <button type="submit" class="button-style-1">+ Aggiungi</button>
                 </div>
 
             </form>
