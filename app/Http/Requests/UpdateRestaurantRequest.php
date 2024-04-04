@@ -8,6 +8,8 @@ use App\Rules\AtLeastOneCategorySelected;
 // Helpers
 use Illuminate\Support\Facades\Auth;
 
+use Illuminate\Validation\Rules\File;
+
 class UpdateRestaurantRequest extends FormRequest
 {
     /**
@@ -29,7 +31,7 @@ class UpdateRestaurantRequest extends FormRequest
             'name' => 'required|string|max:256',
             'address' => 'required|string|max:256',
             'iva' => 'required|string|min:11|max:11',
-            'img' => 'required|url|max:2048',
+            'img' => [File::image()->max(2048)],
             'categories' => ['required', new AtLeastOneCategorySelected],
         ];
     }
@@ -40,7 +42,7 @@ class UpdateRestaurantRequest extends FormRequest
             'categories.required' => 'Seleziona almeno una categoria.',
             'iva.min' => 'Questo campo deve contenere almeno 11 cifre',
             'iva.max' => 'Questo campo deve contenere massimo 11 cifre',
-            'img.url' => 'Questo campo deve contenere un link url',
+            'img.image' => 'Questo campo deve contenere un file image',
         ];
     }
 }

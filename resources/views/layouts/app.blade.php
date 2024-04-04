@@ -6,7 +6,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}">
         {{-- font awesome --}}
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <title>@yield('page-title') | {{ config('app.name', 'Laravel') }}</title>
+        <title>@yield('page-title') | {{ config('app.name', 'Fastbites') }}</title>
+
+        <link rel="icon" type="image/png" href="{{ asset('images/faviconlogo.png') }}">
+
         <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
 
@@ -14,24 +17,28 @@
     </head>
     
     <div class="background-container">
+
         <header>
-            <div class="container d-flex justify-content-between align-items-center">
-                <a class="navbar-brand" href="#">
-                    <img src="{{ asset('images/logoscritta.png') }}" alt="Logo" >
-                </a>
-                <nav>
-                    <ul class="p-0 d-flex justify-content-between align-items-center">
-                        <li>
-                            <a href="/">Home</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.dashboard') }}">Dashboard</a>
-                        </li>
-                        <li>
-                            <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
-                        </li>
-                        {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
-                        @if($user->restaurants)
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <div class="logo-header">
+                        <a class="navbar-brand" href="{{ route('home') }}">
+                            <img src="{{ asset('images/logoscritta.png') }}" alt="logo">
+                        </a>
+                    </div>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-baseline">
+                            <li class="nav-item">
+                                <a href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
+                            </li>
+                            {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
+                            @if($user->restaurants)
                             <li>
                                 <a href="{{ route('admin.foods.index') }}">Il tuo menu</a>
                             </li>
@@ -39,16 +46,17 @@
                             <li>
                                 <a href="{{ route('admin.orders.index') }}">I tuoi ordini</a>
                             </li>
-                        @endif
-                        <li>
-                            <form method="POST" action="{{ route('logout') }}">
-                                @csrf
-                                <button class="button-style-3" type="submit" class="button">Logout</button>
-                            </form>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
+                            @endif
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button class="button-style-3" type="submit" class="button">Logout</button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
         </header>
 
         <main>

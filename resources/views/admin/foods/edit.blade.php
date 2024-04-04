@@ -7,16 +7,16 @@
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-6 form-style-2">
-            <h1 class="pb-5">
+            <h1 class="pb-5 text-center">
                 Modifica il tuo piatto
             </h1>
             {{-- Link per tornare alla lista dei ristoranti --}}
             <div class="mb-4">
-                <button class="button-style-1">
-                    <a href="{{ route('admin.foods.index') }}">
-                        Torna alla dashboard
+                <div class="d-flex justify-content-center"> <!-- Center the button -->
+                    <a href="{{ route('admin.foods.index') }}" class="button-style-1">
+                        Torna all'index foods
                     </a>
-                </button>
+                </div>
             </div>
     
             {{-- Gli errori di validazione vengono elencati qui --}} 
@@ -58,7 +58,7 @@
                 {{-- PREZZO --}}
                 <div class="mb-3">
                     <label for="price" class="form-label">Prezzo<span class="text-white">*</span></label>
-                    <input class="form-control" type="number" step=".01"  id="price" name="price" placeholder="Inserisci il prezzo..." value="{{ old('price', $food->price) }}" required>
+                    <input class="form-control" type="number" step=".01" min="0"  id="price" name="price" placeholder="Inserisci il prezzo..." value="{{ old('price', $food->price) }}" required>
                     @error('price')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
@@ -66,7 +66,7 @@
             
                 {{-- IMMAGINE --}}
                 <div class="mb-3">
-                    <label for="current_image" class="form-label">Immagine Attuale</label>
+                    <label for="current_image" class="form-label">Immagine Attuale<span class="text-white">*</span></label>
                     <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}" alt="Current Food Image" class="img-fluid mb-2">
                     <input type="hidden" name="current_image" value="{{ $food->img }}">
     
@@ -88,7 +88,7 @@
                     @enderror
                 </div>
             
-                <div>
+                <div class="d-flex justify-content-center">
                     <button class="button-style-1" type="submit">
                         Aggiorna
                     </button>
