@@ -10,12 +10,12 @@ class Order extends Model
     use HasFactory;
 
     protected $fillable = [
-        'total',
-        'status',
         'name',
         'email',
         'address',
         'phone_num',
+        'status',
+        'total'
     ];
 
     //Relazione many to many (Order -> Food)
