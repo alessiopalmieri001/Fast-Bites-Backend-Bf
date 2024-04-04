@@ -15,13 +15,13 @@
                 <div class="col-md-4 container">
                     <div class="card m-1 custom-card">
                         <div class="card-content">
-                            <div class="card-img-container mb-2">
+                            <div class="card-img-container mb-3">
                                 <div class="img-container">
-                                    <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
+                                    <img class="round-image" src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
                                         alt="{{ $food->name }}">
                                 </div>
                             </div>
-                            <div class="card-details mb-2 text-center">
+                            <div class="card-details mb-2">
                                 <h5>Nome: {{ $food->name }}</h5>
                                 <h5>Descrizione: {{ $food->description }}</h5>
                                 <h5>Prezzo: € {{ $food->price }}</h5>
@@ -31,7 +31,7 @@
                                     <i class="text-center fa-solid fa-eye-slash my-1"></i>
                                 @endif
                             </div>
-                            <div class="mb-2 d-flex justify-content-center">
+                            <div class="d-flex justify-content-center">
                                 <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="button-style-2">
                                     Modifica
                                 </a>
