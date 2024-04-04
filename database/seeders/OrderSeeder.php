@@ -27,7 +27,7 @@ class OrderSeeder extends Seeder
         $faker = FakerFactory::create();
 
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $randomStatusIndex = array_rand($status);
             $order = new Order();
             $order->restaurant_id = $faker->randomElement($this->getRestaurantId()); //Inserisco gli id dei ristoranti casualmente
