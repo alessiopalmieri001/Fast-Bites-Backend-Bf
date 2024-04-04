@@ -88,7 +88,7 @@
                     @enderror
                 </div>
             
-                <div class="d-flex justify-content-center"> <!-- Center the button -->
+                <div class="d-flex justify-content-center">
                     <button class="button-style-1" type="submit">
                         Aggiorna
                     </button>

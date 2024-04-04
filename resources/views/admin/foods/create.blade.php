@@ -10,7 +10,7 @@
                 <h1 class="pb-5 text-center">Aggiungi un nuovo piatto</h1>
     
                 {{-- Link per tornare alla lista dei ristoranti --}}
-                <div class="mb-4 text-center"> <!-- Added text-center class -->
+                <div class="mb-4 text-center">
                     <a href="{{ route('admin.foods.index') }}" class="button-style-1">
                         Torna alla dashboard
                     </a>
@@ -79,7 +79,7 @@
                     </div>
     
                     {{-- aggiungi food --}}
-                    <div class="text-center"> <!-- Added text-center class -->
+                    <div class="text-center"> 
                         <button class="button-style-1" type="submit">
                             Aggiungi
                         </button>
