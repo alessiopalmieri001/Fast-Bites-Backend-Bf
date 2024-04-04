@@ -81,20 +81,6 @@ header {
 }
 
 
-// .custom-card-2 {
-//     background-color: white;
-//     height: 100%;
-//     padding: 25px;
-//     border-radius: 8%;
-//     color: black;
-//     h1 {
-//         font-size: 24px;
-//     }
-//     h2 {
-//         font-size: 18px;
-//     }
-// }
-
 .form-style-1 {
     background-color: rgba(255, 255, 255, 0.2);
     padding: 35px;
@@ -153,29 +139,65 @@ div {
 }
 }
 
-.button-style-1 {
-    background-color: #ffffff;
-    border: none;
-    width: 100%;
-    color: black;
-    padding: 10px 20px;
-    text-align: center;
+.button-style-1,
+.button-style-2 {
+    display: inline-block;
     text-decoration: none;
-    margin: 4px 2px;
+    color: white;
+    padding: 10px 20px;
+    margin: 4px 10px;
     cursor: pointer;
     border-radius: 24px;
-        a {
-        text-decoration: none;
-        color: black;
-        }
-}
+    transition: background-color 0.3s ease;
+    border: none;
+    background-color: rgba(246, 144, 30, 1); 
 
-.button-style-1:hover {
-    background-color: #f48c20;
+    &:hover {
+        background-color: #cc3234; 
+    }
+
     a {
         text-decoration: none;
-        color: white;
-        }
+    }
+}
+
+.button-style-3 {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 1px solid transparent;
+    padding: 10px 20px;
+    margin: 4px 10px;
+    cursor: pointer;
+    border-radius: 24px;
+    transition: background-color 0.3s ease, border-color 0.3s ease; 
+}
+
+.button-style-3:hover {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white; 
+}
+
+.button-style-3 a {
+    text-decoration: none;
+}
+
+.button-style-1 {
+    background-color: #ffffff;
+    color: black;
+
+    &:hover {
+        background-color: #f48c20;
+    }
+}
+
+.button-style-2 {
+    background-color: rgba(246, 144, 30, 1);
+
+    &:hover {
+        background-color: #cc3234;
+    }
 }
 
 .logo-header {
@@ -186,57 +208,25 @@ img {
     width: 100%;
 }
 
-.button-style-2 {
-    background-color:rgba(246, 144, 30, 1);
-    border: none;
-    width: 100%;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 24px;
-        a {
-        text-decoration: none;
-        color: white;
-        }
-        button {
-            color: white;
-            border: none;
-            background-color: transparent;
-        }
-}
-
-.button-style-2:hover {
-    background-color: #CC3234;
-    a {
-        text-decoration: none;
-        color: white;
-        }
-}
 
 .card-details i {
     color: black;
 }
 
 
-.button-style-3 {
-    background-color:rgb(255, 255, 255);
-    border: none;
-    width: 100%;
-    padding: 10px 20px;
+.order {
+    border-bottom: 1px solid white;
+}
+
+.order-pill {
+    border: 1px solid rgb(255, 255, 255);;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px; 
     text-align: center;
     text-decoration: none;
     margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 24px;
-        a {
-        text-decoration: none;
-        color: white;
-        }
-        button {
-            color: white;
-            border: none;
-            background-color: transparent;
-        }
+    border-radius: 12px; 
+    list-style-type: none;
+    font-size: 14px; 
 }
+

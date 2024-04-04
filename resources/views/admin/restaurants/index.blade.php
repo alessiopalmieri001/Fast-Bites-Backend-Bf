@@ -5,7 +5,7 @@
 @section('main-content')
     <section>
         <div class="row">
-            <h1 class="text-center m-4 text-light">Il tuo ristorante</h1>
+            <h1 class="text-center mb-4 text-white">Il tuo ristorante</h1>
             
             {{-- Reindirizzo l'utente alla pagina di creazione del ristorante --}}
             
@@ -35,16 +35,14 @@
                                 @endif
                             </div>
                             <div class="mb-2 d-flex justify-content-center">
-                                <button class="button-style-2">
-                                    <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->id]) }}">
-                                        Modifica
-                                    </a>
-                                </button>
+                                <a href="{{ route('admin.restaurants.edit', ['restaurant' => $restaurant->id]) }}" class="button-style-2">
+                                    Modifica
+                                </a>
 
-                                <form class="button-style-2" onsubmit="return confirm('Are you sure you want to delete this?');"  action="{{ route('admin.restaurants.destroy', ['restaurant' => $restaurant->id]) }}" method="POST">
+                                <form onsubmit="return confirm('Are you sure you want to delete this?');"  action="{{ route('admin.restaurants.destroy', ['restaurant' => $restaurant->id]) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit">
+                                    <button type="submit" class="button-style-2">
                                         Delete
                                     </button>
                                 </form>
@@ -53,15 +51,14 @@
                     </div>
                 </div>
             @else
-                <div class="col-md-4 container"> <!-- Adjust column size as needed -->
-                    <div class=" mb-2 d-flex justify-content-center ">
-                        <a href="{{ route('admin.restaurants.create') }}" class="button-style-2">
+                <div class="col-md-4 container"> 
+                    <div class="text-center">
+                        <a href="{{ route('admin.restaurants.create') }}" class="button-style-2 mb-3">
                             + Aggiungi
                         </a>
-                    </div>
-
-                    <div>
-                        <p>Nessun ristorante al momento</p>
+                        <div class="text-center">
+                            <p>Nessun ristorante al momento</p>
+                        </div>
                     </div>
                 </div>
             @endif
