@@ -7,14 +7,14 @@
 <div class="container">
     <div class="row d-flex justify-content-center">
         <div class="col-6 form-style-2">
-            <h1 class="pb-5">
+            <h1 class="pb-5 text-center">
                 Modifica il tuo piatto
             </h1>
             {{-- Link per tornare alla lista dei ristoranti --}}
             <div class="mb-4">
                 <button class="button-style-1">
                     <a href="{{ route('admin.foods.index') }}">
-                        Torna alla dashboard
+                        Torna all'index foods
                     </a>
                 </button>
             </div>
@@ -66,7 +66,7 @@
             
                 {{-- IMMAGINE --}}
                 <div class="mb-3">
-                    <label for="current_image" class="form-label">Immagine Attuale</label>
+                    <label for="current_image" class="form-label">Immagine Attuale<span class="text-white">*</span></label>
                     <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}" alt="Current Food Image" class="img-fluid mb-2">
                     <input type="hidden" name="current_image" value="{{ $food->img }}">
     
