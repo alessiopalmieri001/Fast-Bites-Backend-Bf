@@ -20,10 +20,9 @@
                     <div class="card m-1 custom-card" >
                         <div class="card-content">
                             <div class="card-img-container mb-2">
-                                <div>
-                                    <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
-                                    alt="{{ $food->name }}">
-                                </div>
+                                {{-- Se i primi 4 caratteri sono 'http' allora consideralo come url, altrimenti sarà un file conservato in storage  --}}
+                                <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
+                                class="w-100" alt="{{ $food->name }}">
                             </div>
                             <div class="card-details mb-2 text-center">
                                 <h5>Nome: {{ $food->name }}</h5>

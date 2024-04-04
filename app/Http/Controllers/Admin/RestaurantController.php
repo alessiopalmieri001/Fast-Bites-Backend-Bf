@@ -54,6 +54,18 @@ class RestaurantController extends Controller
         $slug = Str::slug($restaurantData['name']);
         $user = auth()->user();
 
+        $path = Storage::disk('public')->put('uploads/restaurants', $request['img']);
+        $restaurantData['img'] = $path;
+
+        // Upload dell'immagine
+        if ($request->hasFile('img')) {
+            $image = $request->file('img');
+            $imageName = time().'.'.$image->getClientOriginalExtension();
+            $image->storeAs('public/images', $imageName);
+        } else {
+            $imageName = null; // immagine di default
+        }
+          
 
         $restaurant = Restaurant::create([
             'user_id' => $user->id,
@@ -61,7 +73,7 @@ class RestaurantController extends Controller
             'slug' => $slug,
             'address' => $restaurantData['address'],
             'iva' => $restaurantData['iva'],
-            'img' => $restaurantData['img'],
+            'img' => 'images/' . $imageName,
         ]);
 
 
@@ -111,6 +123,12 @@ class RestaurantController extends Controller
         $restaurantData = $request->validated();
 
         $slug = Str::slug($restaurantData['name']);
+
+        if ($request['img']) {
+            Storage::disk('public')->delete($restaurant->img);
+            $path = Storage::disk('public')->put('uploads/restaurants', $request['img']);
+            $data['img'] = $path;
+        }
 
         $restaurant->update([
             'name' => $restaurantData['name'],
