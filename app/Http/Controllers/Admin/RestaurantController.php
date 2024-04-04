@@ -124,10 +124,18 @@ class RestaurantController extends Controller
 
         $slug = Str::slug($restaurantData['name']);
 
-        if ($request['img']) {
+        if ($request->hasFile('img')) {
+            // Elimina l'immagine precedente
             Storage::disk('public')->delete($restaurant->img);
-            $path = Storage::disk('public')->put('uploads/restaurants', $request['img']);
-            $data['img'] = $path;
+            
+            // Carica la nuova immagine
+            $path = Storage::disk('public')->put('uploads/restaurants', $request->file('img'));
+        
+            // Aggiorna l'attributo 'img' con il percorso della nuova immagine
+            $restaurantData['img'] = $path;
+        } else {
+            // Utilizza l'immagine corrente
+            $restaurantData['img'] = $request->input('current_image');
         }
 
         $restaurant->update([
