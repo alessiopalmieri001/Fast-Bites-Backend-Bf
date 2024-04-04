@@ -49,7 +49,6 @@
                     </div>
                 </div>
                 <div id="table-content" class="d-flex flex-column">
-                    {{-- Loop through orders --}}
                     @foreach ($user->restaurants->orders as $order)
                         <div class="row order align-items-baseline">
                             <div class="col">

@@ -7,7 +7,7 @@
         <div class="row d-flex justify-content-center">
             <div class="mb-2 col-4">
                 <h1 class="text-center m-4 text-light">Il tuo menu</h1>
-                <div class="d-flex justify-content-center"> <!-- Center the button -->
+                <div class="d-flex justify-content-center">
                     <a href="{{ route('admin.foods.create') }}" class="button-style-1">
                         + Aggiungi un nuovo piatto
                     </a>

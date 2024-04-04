@@ -5,9 +5,9 @@
 @section('main-content')
 
     <section>
-        <div class="row justify-content-center"> <!-- Center the row -->
-            <div class="col-md-6"> <!-- Adjust column width as needed -->
-                <div class="mb-3 text-center"> <!-- Center the button -->
+        <div class="row justify-content-center"> 
+            <div class="col-md-6"> 
+                <div class="mb-3 text-center"> 
                     <a href="{{ route('admin.orders.index') }}" class="button-style-1">
                         Torna alla lista degli ordini
                     </a>
