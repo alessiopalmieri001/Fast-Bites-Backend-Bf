@@ -20,6 +20,7 @@ return new class extends Migration
             $table->boolean('availability');
             $table->string('img', 255);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
