@@ -50,11 +50,12 @@
                     @enderror
                 </div>
 
+                {{-- IMMAGINE --}}
                 <div class="mb-3">
-                    <label for="img" class="form-label">Cover Image<span class="text-light">*</span></label>
-                    <input class="form-control @error('img') is-invalid @enderror" type="text" id="img" name="img" placeholder="Inserisci il link dell'immagine..." value="{{ old('img') }}" max="1024" required>
+                    <label for="img" class="form-label">Inserisci immagine <span class="text-white">*</span></label>
+                    <input class="form-control" type="file" name="img" id="img" required>
                     @error('img')
-                        <div class="invalid-feedback">{{ $message }}</div>
+                        <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
 
