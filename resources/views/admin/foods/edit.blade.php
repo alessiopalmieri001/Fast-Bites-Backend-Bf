@@ -81,10 +81,9 @@
             
                 {{-- Availability checkbox --}}
                 <div class="mb-3 form-check">
-                    <input class="form-check-input" type="checkbox" name="availability" checked id="availability" value="1"
-                        {{ old('availability', $food->availability) ? 'checked' : '' }}>
-                    <label class="form-check-label @error('availability') is-invalid @enderror"
-                        for="availability">Disponibile</label>
+                    <input class="form-check-input" type="checkbox" name="availability" id="availability" value="1"
+                        {{ old('availability', $food->availability) == 1 ? 'checked' : '' }}>
+                    <label class="form-check-label @error('availability') is-invalid @enderror" for="availability">Disponibile</label>
                     @error('availability')
                         <div class="text-danger">{{ $message }}</div>
                     @enderror
