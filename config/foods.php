@@ -883,6 +883,86 @@ return [
             'img' => ''
         ],
         [
+            'restaurant_id' => 12,
+            'name' => 'Pizza Margherita',
+            'description' => 'Pizza pomodoro e mozzarella.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.5GxcBuPuaIPYxz3LJ2AF0gHaEP&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza Mozzarella di bufala casertana',
+            'description' => 'Pizza pomodoro, mozzarella di bufala casertana.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.4tYqQtE5K6CLt4FCO6M5DgHaFw&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza Prosciutto crudo',
+            'description' => 'Pizza pomodoro, mozzarella, prosciutto crudo.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.mE3PxVaW6dA71izLf2UorAHaFM&pid=Api&rs=1&c=1&qlt=95&w=156&h=109'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza Culatello e Burrata',
+            'description' => 'Pizza pomodoro, mozzarella, culatello e burrata.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse2.explicit.bing.net/th?id=OIP.gfb19qhW0bjw-AqierMmegHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza vellutata di zucca calabrese',
+            'description' => 'Pizza pomodoro, mozzarella e vellutata di zucca.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.YtRBZGpe-O8EZ0tVLx6CUgHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza olive nere',
+            'description' => 'Pizza pomodoro, mozzarella e olive nere caiatine.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.30VYzSskVYkKYTGf7WcimQHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza Provolone',
+            'description' => 'Pizza provolone Agerola e mozzarella',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.zmIVXj64I45oiYAg4TeUxQHaEX&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza Marinara',
+            'description' => 'Pizza pomodoro, aglio, pepe nero e origano.',
+            'price' => .99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.EmmmF8FAZwdTzqaPClB4UQHaFj&pid=Api&rs=1&c=1&qlt=95&w=136&h=102'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza Carnivora',
+            'description' => 'Pizza pomodoro, mozzarella, salsiccia, salame piccante, prosciutto cotto.',
+            'price' => 8.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.LycuI8G9ih50COeQzUHnDAHaFj&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 12,
+            'name' => 'Pizza Vegetariana',
+            'description' => 'Pizza pomodoro, mozzarella, cetriolo, pomodoro fresco, peperoni verdi e rossi.',
+            'price' => .99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.VuJaN76MiTuhTP3xe-6ufQHaE9&pid=Api&P=0&h=180'
+        ],
+        [
             'restaurant_id' => 13,
             'name' => 'Sushi Vegano',
             'description' => 'Assortimento di sushi vegano: maki di avocado, asparagi e cetrioli.',
@@ -897,6 +977,70 @@ return [
             'price' => 11.99,
             'availability' => true,
             'img' => 'https://www.pressurecookrecipes.com/wp-content/uploads/2021/10/gyudon.jpg'
+        ],
+        [
+            'restaurant_id' => 13,
+            'name' => 'Haru Ebi',
+            'description' => 'Involtini di gamberi con pasta kataifi',
+            'price' => 3.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.BARzKt8g_C0GcjUi5FyFrAHaHa&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 13,
+            'name' => 'Involtino Primavera',
+            'description' => 'Verdure, gamberi e sfoglia per involtini',
+            'price' => 1.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.D7eQGWJnbPuv2PNfuM-fQgHaER&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 13,
+            'name' => 'Nuvolette',
+            'description' => '9 Nuveolette di gamberi',
+            'price' => 2.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.UaMyFpbsoJzFh0JiwroNDQHaFj&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 13,
+            'name' => '',
+            'description' => '6 polpette di polpo',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.13ZwZtxEFQf1wC4RTcSiNAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 13,
+            'name' => 'Spring Roll',
+            'description' => 'Insalata mista, salmone, mango, surimi di granchio reale, avocado, salsa primavera e mandorle.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.bzukFiiO4isMQX8nAQM9WgHaLH&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 13,
+            'name' => 'Goma wakame',
+            'description' => 'Insalata di alghe',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.3zNZcBPaT0N-X_DJ6QNQxwHaDt&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 13,
+            'name' => 'Tartare sake',
+            'description' => 'Tartara di salmone',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.FdO4qg6jKYYX9ErVfG0qyQHaF3&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 13,
+            'name' => 'Tekka Maki 6PZ',
+            'description' => 'Riso, tonno ed alghe',
+            'price' => 3.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP._c_s9hOlQhI0gspcv-yP0wHaE7&pid=Api&P=0&h=180'
         ],
         [
             'restaurant_id' => 14,
