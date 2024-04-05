@@ -32,11 +32,11 @@
             </div>
 
             <!-- Remember Me -->
-            <div class="mt-4 checkbox-wrapper py-2">
+            <div class="mt-4 checkbox-wrapper py-2 d-flex align-items-center ">
                 <label for="remember_me">
-                    <input id="remember_me" type="checkbox" name="remember">
-                    <span>Ricordati di me</span>
+                    <input id="remember_me" type="checkbox" name="remember" class="form-check-input my-0 me-2">
                 </label>
+                <span>Ricordati di me</span>
             </div>
 
             <!-- Forgot Password -->
