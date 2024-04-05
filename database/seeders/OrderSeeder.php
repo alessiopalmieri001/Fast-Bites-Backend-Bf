@@ -27,7 +27,7 @@ class OrderSeeder extends Seeder
         $faker = FakerFactory::create();
 
 
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $randomStatusIndex = array_rand($status);
             $order = new Order();
             $order->restaurant_id = $faker->randomElement($this->getRestaurantId()); //Inserisco gli id dei ristoranti casualmente
@@ -35,8 +35,9 @@ class OrderSeeder extends Seeder
             $order->email = $faker->email;
             $order->address = $faker->address;
             $order->phone_num = $faker->e164PhoneNumber;
-            $order->total = $faker->randomNumber(3);
+            //$order->total = $faker->randomNumber(3);
             $order->status = $status[$randomStatusIndex];
+            $order->created_at = $faker->dateTimeBetween('-5 months', 'now');
             $order->save();
         }
     }

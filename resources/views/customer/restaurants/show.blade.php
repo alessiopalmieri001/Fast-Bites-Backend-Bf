@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.customer_guest')
 
 @section('page-title', 'Ristoranti')
 
-@section('main-content')
+@section('content')
     <section>
         <section>
             <div class="row">

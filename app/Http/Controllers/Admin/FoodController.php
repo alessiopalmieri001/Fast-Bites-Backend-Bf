@@ -129,7 +129,7 @@ class FoodController extends Controller
             'name' => $foodData['name'],
             'description' => $foodData['description'],
             'price' => $foodData['price'],
-            'availability' => $foodData['availability'],
+            $food->availability = $request->has('availability'),
             'img' => $foodData['img'],
         ]);
 

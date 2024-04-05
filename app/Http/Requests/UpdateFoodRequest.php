@@ -27,7 +27,7 @@ class UpdateFoodRequest extends FormRequest
             'description' => 'required|max:256',
             'price' => 'required|numeric|min:0',
             'img' => [File::image()->max(2048)],
-            'availability' => 'required',
+            'availability' => '',
         ];
     }
 

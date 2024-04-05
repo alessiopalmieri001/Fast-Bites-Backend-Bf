@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.customer_guest')
 
 @section('page-title', $category->name)
 
-@section('main-content')
+@section('content')
     <section>
         <div class="row">
             @foreach($restaurants as $restaurant)

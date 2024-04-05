@@ -16,6 +16,9 @@
          <a href="{{ route('login') }}" class="button-style-3">
             Accedi
          </a>
+         <a href="{{ route('customer.categories.index') }}" class="button-style-3">
+         Aquista
+         </a>
       </div>
    </div>
 @endsection
