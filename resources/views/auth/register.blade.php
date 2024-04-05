@@ -9,9 +9,12 @@
             <!-- Name -->
             <div class="field-input my-4">
                 <label for="name">
-                    Name e Cognome <strong>*</strong>
+                    Nome e Cognome <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="text" id="name" name="name" required >
+                <input class="input-style-1" type="text" id="name" name="name" required>
+                @error('name')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <!-- Email Address -->
@@ -38,13 +41,15 @@
                 <label for="password_confirmation">
                     Conferma Password <strong>*</strong>
                 </label>
-                <input class="input-style-1" type="password" id="password_confirmation" name="password_confirmation" required >
-               <span id="password-error" class="text-danger"></span>
+                <input class="input-style-1" type="password" id="password_confirmation" name="password_confirmation" required>
+                @error('password_confirmation')
+                    <span class="text-danger">{{ $message }}</span>
+                @enderror
             </div>
 
             <div class="text-decoration-underline ">
                 <a class="text-white" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Hai già un account?') }}
                 </a>
             </div>
 
@@ -53,6 +58,17 @@
                     Register
                 </button>
             </div>
+
+            <!-- Display Validation Errors -->
+            @if ($errors->any())
+            <div class="alert alert-danger mt-4">
+                <ul class="mb-0">
+                    @foreach ($errors->all() as $error)
+                        <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
         </div>
     </form>
     

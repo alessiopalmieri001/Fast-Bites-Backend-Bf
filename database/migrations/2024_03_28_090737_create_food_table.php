@@ -17,9 +17,10 @@ return new class extends Migration
             $table->string('name', 256);
             $table->text('description', 1024)->nullable();
             $table->double('price', 6, 2)->unsigned();
-            $table->boolean('availability');
+            $table->boolean('availability')->default(true);
             $table->string('img', 255);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
