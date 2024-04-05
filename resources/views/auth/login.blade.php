@@ -5,18 +5,24 @@
         @csrf
 
         <div class="col-4 d-flex flex-column align-items-stretch form-style-1 text-white">
+            <!-- Display Validation Errors -->
+            @if ($errors->any())
+                <div class="alert alert-danger mt-4">
+                    <ul class="mb-0">
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <!-- Email Address -->
             <div class="field-input my-4">
                 <label for="email">
                     Email
                 </label>
                 <input class="input-style-1" type="email" id="email" name="email" required>
-                @error('email')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
             </div>
+            <span class="text-danger fw-bold" id="emailError"></span>
 
             <!-- Password -->
             <div class="field-input my-4">
@@ -24,12 +30,8 @@
                     Password
                 </label>
                 <input class="input-style-1" type="password" id="password" name="password" required>
-                @error('password')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                </span>
-            @enderror
             </div>
+            <span class="text-danger fw-bold" id="emailError"></span>
 
             <!-- Remember Me -->
             <div class="mt-4 checkbox-wrapper py-2 d-flex align-items-center ">
@@ -54,17 +56,9 @@
                     Log in
                 </button>
             </div>
-
-            <!-- Display Validation Errors -->
-            @if ($errors->any())
-                <div class="alert alert-danger mt-4">
-                    <ul class="mb-0">
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
         </div>
     </form>
+
+    <!-- Script per gestire gli errori -->
+    <script src="{{ asset('js/login-errors.js') }}"></script>
 @endsection
