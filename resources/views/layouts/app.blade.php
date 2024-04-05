@@ -62,6 +62,8 @@
         <main>
             <div class="container">
                 @yield('main-content')
+
+                @yield('scripts')
             </div>
         </main>
     </div>
