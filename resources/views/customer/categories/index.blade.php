@@ -9,9 +9,10 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Cerca il tuo ristorante" aria-label="Search">
+                        <input class="form-control me-2" type="search" id="search-bar" placeholder="Cerca il tuo ristorante" aria-label="Search">
                         <button class="btn btn btn-outline-danger" type="submit">Cerca</button>
                     </form>
+                
                 </div>
             </div>
             <div class="row mt-4">
@@ -36,6 +37,7 @@
   .title{
       font-size: 5rem;
   }
-
     </style>
+
+
 
