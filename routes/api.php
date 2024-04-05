@@ -25,6 +25,8 @@ Route::name('api.')->group(function (){
     Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
         return $request->user();
     });
+
+
    //Category Routes
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
     Route::get('/categories/{id}', [CategoryController::class, 'show'])->name('categories.show');
