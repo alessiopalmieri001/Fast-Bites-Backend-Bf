@@ -876,11 +876,11 @@ return [
         ],
         [
             'restaurant_id' => 11,
-            'name' => '',
-            'description' => '',
-            'price' => .99,
+            'name' => 'Involtino primavera',
+            'description' => 'Piatto cinese fritto realizzato con fogli di carta di riso farcito con verdura.',
+            'price' => 1.99,
             'availability' => true,
-            'img' => ''
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.g5kVLw7EFAFgjW1gsGh90wHaEK&pid=Api&P=0&h=180'
         ],
         [
             'restaurant_id' => 12,
@@ -1154,5 +1154,54 @@ return [
             'availability' => true,
             'img' => 'https://cdn.ilclubdellericette.it/wp-content/uploads/2018/05/tacos-di-pollo-1280x720.jpg'
         ],
+        [
+            'restaurant_id' => 15,
+            'name' => 'Enchiladas',
+            'description' => 'Piatto della tradizione messicana, composto da tortilias di mais farcite con sugo di pomodoro e carne.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.pCyFE5pYiKkFzZKXMbMw_gHaHT&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 15,
+            'name' => 'Churro',
+            'description' => 'Dolci fritti della cucina spagnola, composti da farina, acqua e zucchero.',
+            'price' => 0.50,
+            'availability' => true,
+            'img' => 'https://sp.yimg.com/ib/th?id=OIP.hywF8tb-UGJO97ZZzbFEAAHaEJ&pid=Api&w=148&h=148&c=7&dpr=2&rs=1'
+        ],
+        [
+            'restaurant_id' => 15,
+            'name' => 'Quesadillas',
+            'description' => 'Tortilias pieni di formaggio e serviti come antipasto.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.unGuBrX9w0FeGLZg2iS8xAHaHj&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 15,
+            'name' => 'Tamales',
+            'description' => 'Un impasto di mais cotto dentro foglie di banana da farcire con carne o verdura.',
+            'price' => 2.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.XXioLcDHwiwVtbZ07NiBvQHaE7&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 15,
+            'name' => 'Bacalhau bolinhos',
+            'description' => 'Frittelle di baccalà, ricetta brasiliana.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.NH9h3zGpN7mNYnfPqDQ61QHaEK&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 15,
+            'name' => 'Brigadeiros',
+            'description' => 'Dolcetti al cioccolato brasiliani.',
+            'price' => 0.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.9xeGd4iFmAPJLo5s4NLEjQHaE8&pid=Api&P=0&h=180'
+        ],
+        
 ]
 ?>
