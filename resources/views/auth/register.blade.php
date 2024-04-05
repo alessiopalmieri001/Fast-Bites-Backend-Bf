@@ -49,7 +49,7 @@
 
             <div class="text-decoration-underline ">
                 <a class="text-white" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Hai già un account?') }}
                 </a>
             </div>
 
