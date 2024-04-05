@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Restaurant extends Model
 {
@@ -18,6 +19,7 @@ class Restaurant extends Model
         'img',
         'category_id',
     ];
+      use SoftDeletes;
 
     //Creata relazione 1 (User) to many (Restaurant)
     public function user()

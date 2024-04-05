@@ -109,10 +109,19 @@ class FoodController extends Controller
         $foodData = $request->validated();
         $user = auth()->user();
 
-        if ($request['img']) {
+        // Controlla se una nuova immagine è stata inviata
+        if ($request->hasFile('img')) {
+            // Elimina l'immagine precedente
             Storage::disk('public')->delete($food->img);
-            $path = Storage::disk('public')->put('uploads/foods', $request['img']);
-            $data['img'] = $path;
+            
+            // Carica la nuova immagine
+            $path = Storage::disk('public')->put('uploads/foods', $request->file('img'));
+
+            // Aggiorna l'attributo 'img' con il percorso della nuova immagine
+            $foodData['img'] = $path;
+        } else {
+            // Utilizza l'immagine corrente
+            $foodData['img'] = $food->img;
         }
 
         $food->update([
@@ -120,11 +129,13 @@ class FoodController extends Controller
             'name' => $foodData['name'],
             'description' => $foodData['description'],
             'price' => $foodData['price'],
-            'availability' => $foodData['availability'],
+            $food->availability = $request->has('availability'),
+            'img' => $foodData['img'],
         ]);
 
         return redirect()->route('admin.foods.show', compact('food'));
     }
+
 
     /**
      * Remove the specified resource from storage.

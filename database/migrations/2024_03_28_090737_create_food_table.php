@@ -16,10 +16,11 @@ return new class extends Migration
             $table->foreignId('restaurant_id')->nullable()->constrained()->onDelete('set null')->onUpdate('cascade');
             $table->string('name', 256);
             $table->text('description', 1024)->nullable();
-            $table->double('price', 6, 2);
-            $table->boolean('availability');
+            $table->double('price', 6, 2)->unsigned();
+            $table->boolean('availability')->default(true);
             $table->string('img', 255);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

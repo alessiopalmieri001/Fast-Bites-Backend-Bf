@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('email', 128)->unique();
             $table->string('address', 256);
             $table->bigInteger('phone_num', false, true)->unsigned();
-            $table->double('total', 6, 2);
+            $table->double('total', 6, 2)->default(0);
             $table->string('status', 128);
             $table->timestamps();
         });

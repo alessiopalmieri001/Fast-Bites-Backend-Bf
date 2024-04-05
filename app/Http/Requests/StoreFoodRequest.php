@@ -25,9 +25,9 @@ class StoreFoodRequest extends FormRequest
         return [
             'name' => 'required|string|max:256',
             'description' => 'required|max:256',
-            'price' => 'required|numeric',
+            'price' => 'required|numeric|min:0',
             'img' => [File::image()->max(2048)],
-            'availability' => 'required',
+            'availability' => '',
         ];
     }
 
@@ -37,6 +37,8 @@ class StoreFoodRequest extends FormRequest
             'name.required' => 'Il campo nome è obbligatorio.',
             'description.required' => 'Il campo descrizione è obbligatorio.',
             'price.required' => 'Il campo prezzo è obbligatorio.',
+            'price.numeric' => 'Il prezzo deve essere un valore numerico.',
+            'price.min' => 'Il prezzo deve essere un valore positivo.',
             'img.image' => 'Il file deve essere un\'immagine.',
             'img.mimes' => 'Il file deve essere di tipo: :values.',
             'img.max' => 'Il file è troppo pesante.',

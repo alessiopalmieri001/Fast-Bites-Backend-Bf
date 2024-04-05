@@ -7,15 +7,13 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-6 form-style-2">
-                <h1 class="pb-5">Aggiungi un nuovo piatto</h1>
+                <h1 class="pb-5 text-center">Aggiungi un nuovo piatto</h1>
     
                 {{-- Link per tornare alla lista dei ristoranti --}}
-                <div class="mb-4">
-                    <button class="button-style-1">
-                        <a href="{{ route('admin.foods.index') }}">
-                            Torna alla dashboard
-                        </a>
-                    </button>
+                <div class="mb-4 text-center">
+                    <a href="{{ route('admin.foods.index') }}" class="button-style-1">
+                        Torna alla dashboard
+                    </a>
                 </div>
     
                 {{-- Gli errori di validazione vengono elencati qui --}}
@@ -54,7 +52,7 @@
                     {{-- PREZZO --}}
                     <div class="mb-3">
                         <label for="price" class="form-label">Prezzo<span class="text-white">*</span></label>
-                        <input class="form-control" type="number" step=".01"  id="price" name="price" placeholder="Inserisci il prezzo..." value="{{ old('price') }}" required>
+                        <input class="form-control" type="number" step=".01" min="0"  id="price" name="price" placeholder="Inserisci il prezzo..." value="{{ old('price') }}" required>
                         @error('price')
                             <div class="text-danger">{{ $message }}</div>
                         @enderror
@@ -81,7 +79,7 @@
                     </div>
     
                     {{-- aggiungi food --}}
-                    <div>
+                    <div class="text-center"> 
                         <button class="button-style-1" type="submit">
                             Aggiungi
                         </button>
