@@ -40,7 +40,7 @@ Route::prefix('customer')
 
 
 /* rotte protette */
-Route::middleware(['auth','check.restaurant'])
+Route::middleware('auth')
     ->prefix('admin')
     ->name('admin.')
     ->group(function () {
@@ -50,9 +50,10 @@ Route::middleware(['auth','check.restaurant'])
         Route::middleware('check.restaurant')->group(function () {
             // Definisci qui le tue rotte per la creazione del piatto
             Route::resource('foods',AdminFoodController::class);
+            Route::resource('orders',AdminOrderController::class);
 
         });
-        Route::resource('orders',AdminOrderController::class);
+        
         Route::resource('categories',AdminCategoryController::class);
 
     });
