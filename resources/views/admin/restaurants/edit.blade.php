@@ -49,11 +49,46 @@
                     <input class="form-control" type="text" id="address" name="address" placeholder="Inserisci l'indirizzo" value="{{ old('address', $restaurant->address) }}" max="256" required>
                 </div>
     
-                {{-- IVA RISTORANTE --}}
+                {{-- PARTITA IVA --}}
+
+                {{-- PARTITA IVA --}}
                 <div class="mb-3">
-                    <label for="iva" class="form-label">Partita Iva<span class="text-white">*</span></label>
-                    <input class="form-control" type="text" id="iva" name="iva" placeholder="Inserisci la partita iva..." value="{{ old('iva', $restaurant->iva) }}" max="11" min="11" required>
+                    <label for="iva" class="form-label">Partita Iva<span class="text-light">*</span></label>
+                    <input class="form-control @error('iva') is-invalid @enderror" type="text" id="iva" name="iva" placeholder="Inserisci la partita iva..." value="{{ old('iva', $restaurant->iva) }}" required>
+                    @error('iva')
+                        <div class="text-danger">{{ $message }}</div>
+                    @enderror
+                    <div id="ivaLengthError" class="alert alert-danger" style="display: none; background-color: #f8d7da; color: #721c24;">La Partita IVA deve contenere esattamente 11 cifre.</div>
+                    <div id="ivaFormatError" class="alert alert-danger" style="display: none; background-color: #f8d7da; color: #721c24;">La Partita IVA deve consistere solo di cifre.</div>
                 </div>
+                
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script>
+                    $(document).ready(function() {
+                    // Nascondi gli errori relativi alla Partita IVA all'avvio
+                    $('#ivaLengthError').hide();
+                    $('#ivaFormatError').hide();
+
+                    $('#iva').on('input', function() {
+                        var ivaValue = $(this).val();
+                        var ivaLength = ivaValue.length;
+                        var isNumeric = /^\d+$/.test(ivaValue);
+                        if (ivaLength !== 11 && !isNumeric) {
+                            $('#ivaLengthError').show();
+                            $('#ivaFormatError').show();
+                        } else if (ivaLength !== 11) {
+                            $('#ivaLengthError').show();
+                            $('#ivaFormatError').hide();
+                        } else if (!isNumeric) {
+                            $('#ivaLengthError').hide();
+                            $('#ivaFormatError').show();
+                        } else {
+                            $('#ivaLengthError').hide();
+                            $('#ivaFormatError').hide();
+                        }
+                    });
+                });
+                </script>
     
                 {{-- IMMAGINE RISTORANTE --}}
                 <div class="mb-3">
@@ -72,9 +107,7 @@
                     <div class="checkbox-groups">
                         @foreach ($categories as $category)
                             <div class="form-check form-check-inline w-25">
-                                <input class="form-check-input @error('categories') @enderror" 
-                                    type="checkbox" 
-                                    name="categories[]" 
+                                <input class="form-check-input @error('categories') @enderror" type="checkbox" name="categories[]" 
                                     id="category{{ $category->id }}" 
                                     value="{{ $category->id }}"
                                     {{ $restaurant->categories->contains($category->id) ? 'checked' : '' }}>
@@ -83,9 +116,14 @@
                                 </label>
                             </div>
                         @endforeach
-                        @error('categories')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                        @enderror
+                        <div class="alert alert-danger mt-3" id="categoryError" style="display: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-alert-triangle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                                <path d="M12 9v2m0 4v.01" />
+                                <path d="M12 3a9 9 0 0 1 9 9a9 9 0 0 1 -9 9a9 9 0 0 1 -9 -9a9 9 0 0 1 9 -9" />
+                            </svg>
+                            Selezionare almeno una categoria.
+                        </div>                       
                     </div>
                 </div>
     
@@ -99,6 +137,20 @@
         </div>
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('form').submit(function(event) {
+                // Verifica se almeno una categoria è stata selezionata
+                if ($('input[name="categories[]"]:checked').length === 0) {
+                    event.preventDefault(); // Impedisce l'invio del modulo
+                    $('#categoryError').show(); // Mostra il messaggio di errore
+                }
+            });
+        });
+
+    </script>
 @endsection
 
 <style lang="scss" scoped>
