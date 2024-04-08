@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function index ()
     {
-        $categories = Category::with(['restaurants'])->paginate(2);
+        $categories = Category::with(['restaurants'])->paginate(8);
 
       return response()-> json([
           'success' => true,

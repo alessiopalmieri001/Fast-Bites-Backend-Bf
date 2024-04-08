@@ -13,7 +13,7 @@ class FoodController extends Controller
 {
     public function index()
     {
-        $foods = Food::with(['restaurant', 'orders'])->paginate(2);
+        $foods = Food::with(['restaurant', 'orders']);
 
         return response()->json([
             'success' => true,
