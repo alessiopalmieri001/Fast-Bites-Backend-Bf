@@ -21,7 +21,7 @@ class CheckRestaurant
     if ($user) {
         // Verifica se l'utente ha già un ristorante
         if (!$user->restaurants) {
-            dd('test');
+            
             // Verifica se l'utente non è già sulla pagina di creazione del ristorante
             if ($request->route()->getName() !== 'admin.restaurants.create') {
                 // Se non ha un ristorante e non è già sulla pagina di creazione del ristorante, reindirizzalo
