@@ -8,13 +8,15 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 //Model
 use App\Models\Restaurant;
+use App\Models\Category;
 
 
 class RestaurantController extends Controller
 {
     public function index()
     {
-        $restaurants = Restaurant::all();
+        $restaurants = Restaurant::with('categories')->get();
+        
         return response()->json([
             'success' => true,
             'payload' => $restaurants,
