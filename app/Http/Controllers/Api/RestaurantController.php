@@ -14,10 +14,10 @@ class RestaurantController extends Controller
 {
     public function index()
     {
-        $restaurant = Restaurant::with(['categories', 'foods']);
+        $restaurants = Restaurant::all();
         return response()->json([
             'success' => true,
-            'payload' => $restaurant,
+            'payload' => $restaurants,
         ]);
     }
 
