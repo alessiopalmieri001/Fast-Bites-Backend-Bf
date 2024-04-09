@@ -17,7 +17,7 @@
             Accedi
          </a>
          <a href="{{ route('customer.categories.index') }}" class="button-style-3">
-         Aquista
+         Acquista
          </a>
       </div>
    </div>
