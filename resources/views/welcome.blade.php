@@ -16,7 +16,7 @@
          <a href="{{ route('login') }}" class="button-style-3">
             Accedi
          </a>
-         <a href="{{ route('customer.categories.index') }}" class="button-style-3">
+         <a href="http://localhost:5174/" class="button-style-3">
          Aquista
          </a>
       </div>

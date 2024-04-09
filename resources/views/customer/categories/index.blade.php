@@ -31,6 +31,14 @@
             </div>
         </div>
     </section>
+
+
+    @push('custom-scripts')
+        <script>
+
+        </script>
+        
+    @endpush
 @endsection
 
     <style>
