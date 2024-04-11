@@ -9,14 +9,14 @@
                Gestisci ristoranti, modifica menù, monitora il tuo locale e i piatti con una dashboard intuitiva.
             </p>
             <div class="d-flex justify-content-center gap-3">
-               <a href="{{ route('register') }}" class="button-style-3">
-                  Registrati
-               </a>
                <a href="{{ route('login') }}" class="button-style-3">
                   Accedi
                </a>
+               <a href="{{ route('register') }}" class="button-style-3">
+                  Registrati
+               </a>
                <a href="http://localhost:5174/" class="button-style-3">
-               Aquista
+               Acquista
                </a>
             </div>
          </div>
@@ -55,28 +55,4 @@
 		}
     }
 
-	.button-style-3 {
-        display: inline-block;
-        text-decoration: none;
-        color: rgb(0, 0, 0);
-        border: 1px solid transparent;
-        padding: 8px 20px;
-        margin: 4px 10px;
-        cursor: pointer;
-        border-radius: 24px;
-        background-color: white;
-        transition:
-            background-color 0.3s ease,
-            border-color 0.3s ease;
-    }
-
-    .button-style-3:hover {
-        color: white;
-        background-color: transparent;
-        border: 1px solid white;
-    }
-
-    .button-style-3 a {
-        text-decoration: none;
-    }
 </style>
