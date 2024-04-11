@@ -25,9 +25,9 @@
                                 class="round-image" alt="{{ $food->name }}">
                             </div>
                             <div class="card-details mb-2 text-center">
-                                <h2 class="title">{{ $food->name }}</h2> {{-- NOME DEL CIBO --}}
-                                <p class="price">€ {{ $food->price }}</p>       {{-- PREZZO --}}
-                                @if ($food->availability)                       {{-- DISPONIBILITA' --}}
+                                <h2 class="title">{{ $food->name }}</h2>
+                                <p class="price">€ {{ $food->price }}</p>       
+                                @if ($food->availability)                       
                                     <p class="badge bg-success">DISPONIBILE</p>
                                 @else
                                     <p class="badge bg-danger">NON DISPONIBILE</p>
@@ -50,7 +50,6 @@
                                     </button>
                                 </form>
                                 
-                                <!-- Aggiungi un div per il messaggio di conferma personalizzato -->
                                 <div id="confirmationMessage" class="confirmation-message" style="display: none;">
                                     <div class="confirmation-message-content">
                                         <h3>Sei sicuro di voler eliminare questo elemento?</h3>
