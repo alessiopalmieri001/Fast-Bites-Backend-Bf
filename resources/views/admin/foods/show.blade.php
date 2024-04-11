@@ -44,7 +44,6 @@
                                     </button>
                                 </form>
                                 
-                                <!-- Aggiungi un div per il messaggio di conferma personalizzato -->
                                 <div id="confirmationMessage" class="confirmation-message" style="display: none;">
                                     <div class="confirmation-message-content">
                                         <h3>Sei sicuro di voler eliminare questo elemento?</h3>
