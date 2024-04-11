@@ -5,12 +5,13 @@ use Illuminate\Support\Facades\Route;
 
 //Controllers
 use App\Http\Controllers\Api\CategoryController;
+use App\Http\Controllers\Api\EndpointController;
 use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\FoodController;
 use App\Http\Controllers\Api\OrderController;
 
 
-use App\Http\Controllers\BraintreeController;
+use App\Http\Controllers\Auth\BraintreeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -50,8 +51,10 @@ Route::name('api.')->group(function (){
     Route::post('/orders/{id}', [OrderController::class, "update"]);
 
     // Rotte per Braintree
-    Route::get('/braintree/client-token', [BraintreeController::class, 'generateClientToken']);
-    Route::post('/braintree/process-payment', [BraintreeController::class, 'processPayment']);
+    /*  Route::get('/braintree/client-token', [BraintreeController::class, 'generateClientToken']);
+    Route::post('/braintree/process-payment', [BraintreeController::class, 'processPayment']); */
+
+    Route::post('/endpoint', [EndpointController::class, 'store']);
 
 });
 
