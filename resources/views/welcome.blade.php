@@ -1,45 +1,58 @@
 @extends('layouts.guest')
 
 @section('main-content')
-   <div class="container my-5">
-      <div class="d-flex justify-content-center align-items-center">
-         <div class="title-wrapper">
-            <span id="title-fastbites">Fastbites</span>
-            <i class="fa-solid fa-lock"id="lock-icon"></i>
+   <main>
+      <div class="my-jumbotron d-flex align-items-center mb-2">
+         <div class="col mx-sm-5 text-center"> <!-- Added text-center class -->
+            <h1 class="title">Benvenuto in fastbites!</h1>
+            <p class="subtitle fs-5">
+               Gestisci ristoranti, modifica menù, monitora il tuo locale e i piatti con una dashboard intuitiva.
+            </p>
+            <div class="d-flex justify-content-center gap-3">
+               <a href="{{ route('login') }}" class="button-style-3">
+                  Accedi
+               </a>
+               <a href="{{ route('register') }}" class="button-style-3">
+                  Registrati
+               </a>
+               <a href="http://localhost:5174/" class="button-style-3">
+               Acquista
+               </a>
+            </div>
          </div>
       </div>
-      <p class="fs-4 my-5 text-center">Benvenuto in Fastbites! Qui puoi gestire i tuoi ristoranti, modificare i menù e monitorare l'andamento del tuo locale e dei piatti tramite una dashboard intuitiva.</p>
-      <div class="d-flex justify-content-center gap-3">
-         <a href="{{ route('register') }}" class="button-style-3">
-            Registrati
-         </a>
-         <a href="{{ route('login') }}" class="button-style-3">
-            Accedi
-         </a>
-         <a href="http://localhost:5174/" class="button-style-3">
-         Aquista
-         </a>
-      </div>
-   </div>
+   </main>
 @endsection
 
 <style lang="scss" scoped>
 
-   .title-wrapper {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-   }
+    .my-jumbotron {
+        height: 700px;
+        background-image: url('/images/homepage-backend.png');
+        background-size: 100% auto;
+        background-position: center;
+        background-repeat: no-repeat;
+        object-fit: fill;
 
-   #title-fastbites {
-      color: #ffffff;
-      font-size: 5rem;
-      font-weight: 900;
-   }
 
-   #lock-icon {
-      font-size: 3rem;
-      color: #ffffff;
-      margin-top: -15px;
-   }
+        .title {
+            font-family: 'Paytone One', sans-serif;
+            color: white;
+            font-size: 4rem;
+        }
+
+        .subtitle {
+            font-family: 'Open Sans', sans-serif;
+            color: white;
+            font-size: 1.5rem;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .my-jumbotron {
+         background-image: url('/images/homepage-backend-mobile.png');
+            height: 700px; 
+		}
+    }
+
 </style>
