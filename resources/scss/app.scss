@@ -10,14 +10,7 @@
     min-height: 100vh;
 }
 
-header {
-    background-color: transparent; /* Remove background color to let the gradient show */
-    color: #fff;
-}
 
-.container {
-    margin-bottom: 25px;
-}
 .card {
     background-color: rgba(255, 255, 255, 0.6);
     border: none;
@@ -190,18 +183,20 @@ div {
     text-decoration: none;
     color: rgb(0, 0, 0);
     border: 1px solid transparent;
-    padding: 10px 20px;
+    padding: 8px 20px;
     margin: 4px 10px;
     cursor: pointer;
     border-radius: 24px;
     background-color: white;
-    transition: background-color 0.3s ease, border-color 0.3s ease; 
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
 }
 
 .button-style-3:hover {
     color: white;
     background-color: transparent;
-    border: 1px solid white; 
+    border: 1px solid white;
 }
 
 .button-style-3 a {
@@ -224,15 +219,6 @@ div {
         background-color: #cc3234;
     }
 }
-
-.logo-header {
-    width: 200px;
-}
-
-img {
-    width: 100%;
-}
-
 
 .card-details i {
     color: black;

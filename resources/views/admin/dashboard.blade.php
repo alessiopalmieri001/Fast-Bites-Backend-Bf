@@ -3,16 +3,18 @@
 @section('page-title', 'Dashboard')
 
 @section('main-content')
-    <div class="row mt-2">
+<div class="container py-5">
+    <div class="row">
         <div class="col">
             <h2 class="title">
                 Sei loggato!
             </h2>
-            <h4 class="subtitle text-center">
-                Benvenuto nella tua dashboard
+            <h4 class="subtitle-2 text-center">
+                Benvenuto nella tua dashboard.
             </h4>
         </div>
-    </div>
+    </div> 
+</div>
 @endsection
 
 <style lang="scss" scoped>
@@ -24,7 +26,7 @@
       margin-bottom: 20px;
     }
     
-    .subtitle {
+    .subtitle-2 {
         font-family: 'Open Sans', sans-serif;
         color: white;
         font-size: 1.5rem;

@@ -1,15 +1,16 @@
 @extends('layouts.guest')
 
 @section('main-content')
-    <form id="registerForm" method="POST" action="{{ route('register') }}">
-        @csrf
-
+<form id="registerForm" method="POST" action="{{ route('register') }}">
+    @csrf
+    
+    <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 col-10 mx-auto">
         <h1 class="title text-center pb-3 ">
             Registrati 
         </h1>
 
         <div class="d-flex justify-content-center">
-            <div class="col-4 d-flex flex-column align-items-stretch form-style-1 text-white">
+            <div class="col-12 d-flex flex-column align-items-stretch form-style-1 text-white">
                 <!-- Name -->
                 <div class="field-input my-4">
                     <!-- Display Validation Errors -->
@@ -69,7 +70,8 @@
                 </div>
             </div>
         </div>
-    </form>
+    </div>
+</form>
 
     <script src="{{ asset('js/registration.js') }}"></script>
 @endsection
@@ -117,5 +119,27 @@
 
     .button-style-3 a {
         text-decoration: none;
+    }
+
+    @media (max-width: 576px) {
+        .col-xl-4,
+        .col-lg-6,
+        .col-md-8,
+        .col-sm-10,
+        .col-10 {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 577px) and (max-width: 768px) {
+        .col-md-6 {
+            max-width: 100%;
+        }
+    }
+
+    @media (min-width: 769px) and (max-width: 992px) {
+        .col-sm-8 {
+            max-width: 100%;
+        }
     }
 </style>
