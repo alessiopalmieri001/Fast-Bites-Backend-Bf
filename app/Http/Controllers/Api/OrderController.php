@@ -38,10 +38,9 @@ class OrderController extends Controller
         // Crea un nuovo ordine
         $order = new Order();
         $order->name = $request->name;
-        $order->surname = $request->surname;
         $order->email = $request->email;
-        $order->phone_num = $request->phone;
         $order->address = $request->address;
+        $order->phone_num = $request->phone;
         $order->restaurant_id = $request->restaurant_id;
         $order->total = $request->total;
         $order->status = $request->status;

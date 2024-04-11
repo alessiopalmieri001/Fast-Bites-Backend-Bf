@@ -9,6 +9,9 @@ use App\Http\Controllers\Api\RestaurantController;
 use App\Http\Controllers\Api\FoodController;
 use App\Http\Controllers\Api\OrderController;
 
+
+use App\Http\Controllers\BraintreeController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -42,6 +45,14 @@ Route::name('api.')->group(function (){
     //Order Routes
     Route::get('/orders', [OrderController::class, 'index'])->name('order.index');
     Route::get('/orders/{id}', [OrderController::class, 'show'])->name('order.show');
+
+    Route::post('/orders', [OrderController::class, "store"]);
+    Route::post('/orders/{id}', [OrderController::class, "update"]);
+
+    // Rotte per Braintree
+    Route::get('/braintree/client-token', [BraintreeController::class, 'generateClientToken']);
+    Route::post('/braintree/process-payment', [BraintreeController::class, 'processPayment']);
+
 });
 
 
