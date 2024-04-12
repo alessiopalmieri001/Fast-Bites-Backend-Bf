@@ -3,7 +3,7 @@
 @section('main-content')
    <main>
       <div class="my-jumbotron d-flex align-items-center mb-2">
-         <div class="col mx-sm-5 text-center"> <!-- Added text-center class -->
+         <div class="col mx-sm-5 text-center"> 
             <h1 class="title">Benvenuto in fastbites!</h1>
             <p class="subtitle fs-5">
                Gestisci ristoranti, modifica menù, monitora il tuo locale e i piatti con una dashboard intuitiva.
@@ -15,8 +15,8 @@
                <a href="{{ route('register') }}" class="button-style-3">
                   Registrati
                </a>
-               <a href="http://localhost:5174/" class="button-style-3">
-               Acquista
+               <a href="http://localhost:5173/" class="button-style-3">
+                  Acquista
                </a>
             </div>
          </div>
