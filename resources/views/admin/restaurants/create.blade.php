@@ -87,9 +87,10 @@
                 {{-- IMMAGINE --}}
                 <div class="mb-3">
                     <label for="img" class="form-label">Inserisci immagine <span class="text-white">*</span></label>
-                    <input class="form-control" type="file" name="img" id="img" required>
+                    <input class="form-control mb-4" type="file" name="img" id="img" accept=".jpg, .jpeg, .svg, .png" required>
+                    <img class="mb-2" id="preview" src="#" alt="Anteprima dell'immagine" style="max-width: 200px; max-height: 200px; display: none;">
                     @error('img')
-                        <div class="text-danger">{{ $message }}</div>
+                    <div class="text-danger">{{ $message }}</div>
                     @enderror
                 </div>
 
@@ -139,6 +140,20 @@
                 }
             });
         });
+
+        document.getElementById('img').addEventListener('change', function() {
+        const file = this.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(event) {
+                document.getElementById('preview').setAttribute('src', event.target.result);
+                document.getElementById('preview').style.display = 'block';
+            }
+            reader.readAsDataURL(file);
+        } else {
+            document.getElementById('preview').style.display = 'none';
+        }
+    });
     </script>
 @endsection
 
