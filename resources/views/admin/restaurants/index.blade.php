@@ -46,6 +46,10 @@
                                         Elimina
                                     </button>
                                 </form>
+
+                                <a href="{{ route('admin.foods.index') }}" class="button-style-2">
+                                    Menù
+                                </a>
                                 
                                 <!-- Aggiungi un div per il messaggio di conferma personalizzato -->
                                 <div id="confirmationMessage" class="confirmation-message" style="display: none;">

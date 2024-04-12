@@ -24,7 +24,7 @@
             <nav class="navbar navbar-expand-lg mt-4 mb-3">
                 <div class="container">
                     <div class="logo">
-                        <a class="navbar-brand" href="{{ route('home') }}">
+                        <a class="navbar-brand" href="http://localhost:5174/">
                             <img src="{{ asset('images/logoscritta.png') }}" alt="logo">
                         </a>
                     </div>
