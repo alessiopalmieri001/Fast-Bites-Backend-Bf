@@ -24,43 +24,45 @@ class EndpointController extends Controller
      * Store a newly created resource in storage.
      */
     public function store(Request $request)
-{
-    // Verifica se la richiesta contiene dati JSON
-    if ($request->isJson()) {
-        // Decodifica il JSON dalla richiesta
-        $data = $request->json()->all();
-
-        // Validazione dei dati
-        // Implementa la tua logica di validazione qui
-
-        // Crea un nuovo ordine
-        $order = new Order();
-        $order->name = $data['name'];
-        $order->email = $data['email'];
-        $order->address = $data['address'];
-        $order->phone_num = $data['phone'];
-        //$order->payment_nonce = $data['paymentNonce'];
-        $order->restaurant_id = $data['restaurantId'];
-        //$order->cart_items = json_encode($data['cartItems']);
-        $order->total = $data['total'];
-        $order->status = 'in preparazione';
-
-        // Salva l'ordine nel database
-        $order->save();
-
-        return response()->json([
-            'success' => true,
-            'payload' => $order
-        ]);
-    } else {
-        // Se la richiesta non contiene dati JSON, restituisci un errore
-        return response()->json([
-            'success' => false,
-            'error' => 'Invalid JSON data'
-        ], 400); // Codice di stato HTTP 400 per dati non validi
+    {
+        // Verifica se la richiesta contiene dati JSON
+        if ($request->isJson()) {
+            
+            $data = $request->json()->all();
+    
+            
+    
+            // Crea un nuovo ordine
+            $order = new Order();
+            $order->name = $data['name'];
+            $order->email = $data['email'];
+            $order->address = $data['address'];
+            $order->phone_num = $data['phone'];
+            $order->restaurant_id = $data['restaurantId'];
+            $order->total = $data['total'];
+            $order->status = 'in preparazione';
+    
+            // Salva l'ordine nel database
+            $order->save();
+    
+            // tabella ponte collegata importante anche farlo nel model
+            foreach ($data['cartItems'] as $cartItem) {
+                $order->foods()->attach($cartItem['id'], ['quantity' => $cartItem['quantity']]);
+            }
+    
+            return response()->json([
+                'success' => true,
+                'payload' => $order
+            ]);
+        } else {
+            // Se la richiesta non contiene dati JSON
+            return response()->json([
+                'success' => false,
+                'error' => 'Invalid JSON data'
+            ], 400); // Codice di stato HTTP 400 per dati non validi
+        }
     }
-}
-
+    
 
 
     /**
