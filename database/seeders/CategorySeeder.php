@@ -16,7 +16,7 @@ class CategorySeeder extends Seeder
         //array di tutte le categorie
         $allcategories = [
             [
-                'name'=> 'Pizza',
+                'name'=> 'Pizza',//1
                 'img' => ' https://italpizza.com/wp-content/uploads/2023/03/5.-Storia-della-pizza-Margherita.png'
             ],
             [
@@ -28,7 +28,7 @@ class CategorySeeder extends Seeder
                 'img' => 'https://img.freepik.com/premium-photo/hand-pressed-sushi-nigiri-is-classic-japanese-dish-featuring-fresh-fish-top-sushi-rice_998533-128.jpg'
             ],
             [
-                'name'=> 'Hamburger',
+                'name'=> 'Hamburger',//4
                 'img' => 'https://product.hstatic.net/200000291375/product/item_01_06ee15b90f6d41198cb71e8c7df2f235_master.jpg'
             ],
             [

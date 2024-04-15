@@ -76,5 +76,10 @@ return [
         'email' => 'gerry@gmail.com',
         'password' => 'gerry1234',
     ],
+    [
+        'name' => 'tonino nino',
+        'email' => 'tonino@gmail.com',
+        'password' => 'tonino1234',
+    ],
 
 ];

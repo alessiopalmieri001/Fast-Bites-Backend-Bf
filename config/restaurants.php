@@ -77,6 +77,11 @@ return [
         'address' => 'Via Leopoldo Cicognara, 19, 20129 Milano MI',
         'img' => 'https://tse3.mm.bing.net/th?id=OIP.bItIczh7uWbJM-IOOHwGSQHaEc&pid=Api&P=0&h=180',
     ],
+    [   'user_id' => 16,
+        'name' => 'tanta roba',
+        'address' => 'Via ponzio pilato, 29, 20129 Molise MO',
+        'img' => 'https://img.restaurantguru.com/r1d4-Ristorante-Pizzeria-Peccati-Di-Gola-2-burger.jpg',
+    ],
 ]
 
 
