@@ -111,4 +111,39 @@ return [
         'email' => 'FrancoDV@gmail.com',
         'password' => 'DV1234',
     ],
+    [
+        'name' => 'Edoardo Ombres',
+        'email' => 'Ombres@gmail.com',
+        'password' => 'EO1234',
+    ],
+    [
+        'name' => 'Sakuri Kunikai',
+        'email' => 'SakuriK@gmail.com',
+        'password' => 'SK1234',
+    ],
+    [
+        'name' => 'Homer Jay Simpson',
+        'email' => 'HomerJ.S.@gmail.com',
+        'password' => 'HJS1234',
+    ],
+    [
+        'name' => 'Peter Griffin',
+        'email' => 'PeterG@gmail.com',
+        'password' => 'PG1234',
+    ],
+    [
+        'name' => 'Raylos',
+        'email' => 'Raylos@gmail.com',
+        'password' => 'Raylos1234',
+    ],
+    [
+        'name' => 'Mr. Bean',
+        'email' => 'Bean@gmail.com',
+        'password' => 'Bean1234',
+    ],
+    [
+        'name' => 'Shinji Ikari',
+        'email' => 'ShinjiIk@gmail.com',
+        'password' => 'Shinji1234',
+    ],
 ];
