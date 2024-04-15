@@ -118,6 +118,54 @@ class RestaurantCategorySeeder extends Seeder
                     "restaurant" => 16,      
                     "category" => 4
                 ],
+                [
+                    "restaurant" => 17,      
+                    "category" => 1
+                ],
+                [
+                    "restaurant" => 17,      
+                    "category" => 4
+                ],
+                [
+                    "restaurant" => 18,      
+                    "category" => 1
+                ],
+                [
+                    "restaurant" => 18,      
+                    "category" => 4
+                ],
+                [
+                    "restaurant" => 19,      
+                    "category" => 1
+                ],
+                [
+                    "restaurant" => 19,      
+                    "category" => 4
+                ],
+                [
+                    "restaurant" => 20,      
+                    "category" => 1
+                ],
+                [
+                    "restaurant" => 20,      
+                    "category" => 4
+                ],
+                [
+                    "restaurant" => 21,      
+                    "category" => 1
+                ],
+                [
+                    "restaurant" => 21,      
+                    "category" => 4
+                ],
+                [
+                    "restaurant" => 22,      
+                    "category" => 1
+                ],
+                [
+                    "restaurant" => 22,      
+                    "category" => 4
+                ],
             ];
 
             foreach ($relations as $relation) {
