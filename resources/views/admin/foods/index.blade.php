@@ -16,7 +16,7 @@
             
             <div class="row justify-content-center m-0 g-0"> 
                 @foreach ($user->restaurants->foods as $food)
-                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 food-card m-3">
+                <div class="col-lg-3 col-md-8 col-sm-12 food-card m-3">
                     <div>
                         <div class="food-image">
                             <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"

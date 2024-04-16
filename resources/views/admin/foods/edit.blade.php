@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="row d-flex justify-content-center">
-        <div class="col-6 form-style-2">
+        <div class="col-lg-6 col-md-8 col-sm-12 form-style-2">
             {{-- Gli errori di validazione vengono elencati qui --}} 
             @if ($errors->any())
                 <div class="alert alert-danger mb-3">
@@ -119,4 +119,5 @@
             border-radius: 25px;
         }
     }
+
 </style>

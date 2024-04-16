@@ -14,3 +14,5 @@ function hideConfirmationMessage() {
 function confirmDelete() {
     document.getElementById('deleteForm').submit();
 }
+
+

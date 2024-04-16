@@ -5,20 +5,21 @@
 @section('main-content')
 
 <div class="container">
+    
+    <div class="mb-2">
+        <h1 class="m-4 text-center title">
+            Modifica il tuo ristorante
+        </h1>
+        {{-- Link per tornare alla lista dei ristoranti --}}
+        <div class="d-flex justify-content-center"> <!-- Center the button -->
+            <a href="{{ route('admin.foods.index') }}" class="button-style-3">
+                Ritorna al tuo ristorante
+            </a>
+        </div>
+    </div>
+
     <div class="row d-flex justify-content-center">
-        <div class="col-6 form-style-2">
-            <h1 class="pb-5 text-center">
-                Modifica il tuo ristorante
-            </h1>
-            {{-- Link per tornare alla lista dei ristoranti --}}
-            <div class="mb-4">
-                <div class="d-flex justify-content-center">
-                    <a href="{{ route('admin.restaurants.index') }}" class="button-style-1">
-                        Torna all'index dei ristoranti
-                    </a>
-                </div>
-            </div>
-               
+        <div class="col-lg-6 col-md-8 col-sm-12 form-style-2">
             {{-- Gli errori di validazione vengono elencati qui --}} 
             @if ($errors->any())
                 <div class="alert alert-danger mb-3">
@@ -128,7 +129,7 @@
                 </div>
     
                 <div class="d-flex justify-content-center">
-                    <button type="submit" class="button-style-1">
+                    <button type="submit" class="button-style-3">
                         Aggiorna
                     </button>
                 </div>
@@ -154,9 +155,20 @@
 @endsection
 
 <style lang="scss" scoped>
+
+.title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
 .img-container {
         width: 300px;
         justify-content: center;
         display: flex;
+        img {
+            border-radius: 25px;
+        }
     }
 </style>
