@@ -24,6 +24,7 @@
    </main>
 @endsection
 
+
 <style lang="scss" scoped>
 
     .my-jumbotron {

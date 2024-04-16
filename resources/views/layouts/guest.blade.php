@@ -29,17 +29,17 @@
                 </button>
                 
                 <!-- Offcanvas menu -->
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="offcanvasLabel">
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="offcanvasLabel" style="width: 100%">
                     <div class="offcanvas-header p-3">
                         <button type="button" class="btn-close button-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                     </div>
-                    <div class="offcanvas-body m-4">
-                        <h5 class="offcanvas-title" id="offcanvasLabel">Menu</h5>
+                    <div class="offcanvas-body mx-4 pe-2">
+                        <h5 class="offcanvas-title mx-2" id="offcanvasLabel">Menu</h5>
                         <ul class="navbar-nav">
-                            <li class="nav-item">
+                            <li class="nav-item mx-2">
                                 <a class="nav-link" href="{{ route('login') }}">Login</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item mx-2">
                                 <a class="nav-link" href="{{ route('register') }}">Registrati</a>
                             </li>
                         </ul>
@@ -49,11 +49,18 @@
         </nav>
     </header>
 
-    <main class="py-4">
-        <div class="container">
+    <main>
+        <div>
             @yield('main-content')
         </div>
     </main>
+
+    <main>
+        <div>
+            @yield('footer')
+        </div>
+    </main>
+
 </body>
 
 </html>
@@ -153,5 +160,27 @@ header {
     justify-content: flex-end;
 }
 }
+
+.navbar-nav .nav-link {
+            position: relative;
+        }
+    
+        .navbar-nav .nav-link::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #fff;
+            transform-origin: right;
+            transform: scaleX(0);
+            transition: transform .3s ease-in-out;
+        }
+    
+        .navbar-nav .nav-link:hover::before {
+            transform-origin: left;
+            transform: scaleX(1);
+        }
 
  </style>
