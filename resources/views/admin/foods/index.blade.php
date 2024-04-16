@@ -42,21 +42,24 @@
                                 Modifica
                             </a>
     
-                            <form id="deleteForm" class="m-0" action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
+                            <form id="deleteForm_{{ $food->id }}" class="m-0" action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="button" onclick="showConfirmationMessage()" class="button-style-foods">
+                                <button type="button" onclick="showConfirmationMessage('{{ $food->id }}')" class="button-style-foods">
                                     Elimina
                                 </button>
                             </form>
                             
-                            <div id="confirmationMessage" class="confirmation-message" style="display: none;">
-                                <div class="confirmation-message-content">
-                                    <h3>Sei sicuro di voler eliminare questo elemento?</h3>
-                                    <button onclick="confirmDelete()" class="button-style-2">Conferma</button>
-                                    <button onclick="hideConfirmationMessage()" class="button-style-2">Annulla</button>
+                            @foreach ($user->restaurants->foods as $food)
+                                <div id="confirmationMessage_{{ $food->id }}" class="confirmation-message" style="display: none;">
+                                    <div class="confirmation-message-content">
+                                        <h3>Sei sicuro di voler eliminare questo elemento?</h3>
+                                        <button onclick="confirmDelete('{{ $food->id }}')" class="button-style-2">Conferma</button>
+                                        <button onclick="hideConfirmationMessage('{{ $food->id }}')" class="button-style-2">Annulla</button>
+                                    </div>
                                 </div>
-                            </div>
+                            @endforeach
+
                             
                             <script src="{{ asset('js/confirmation.js') }}"></script>
                         </div>
@@ -89,9 +92,9 @@
     text-align: center;
     cursor: pointer;
     transition: 0.2s;
-    &:hover {
+    /* &:hover {
         transform: scale(1.09);
-    }
+    } */
 }
 
 .food-image {
