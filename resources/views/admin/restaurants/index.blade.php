@@ -12,7 +12,7 @@
             @if($user && $user->restaurants)
                 <div class="row justify-content-center m-0 g-0">
                     <div class="col-lg-6 col-md-8 col-sm-12">
-                        <div class="row align-items-center">
+                        <div class="row align-items-center m-0 g-0">
                             <div class="col-md-12">
                                 <div class="card-content d-flex align-items-center flex-column position-relative">
                                     <div class="card-image">

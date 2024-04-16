@@ -42,7 +42,7 @@
                             <div class="offcanvas-header p-3">
                                 <button type="button" class="btn-close button-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
-                            <div class="offcanvas-body mx-4">
+                            <div class="offcanvas-body mx-4 pe-2">
                                 <h5 class="offcanvas-title" id="offcanvasLabel">Menu</h5>
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
@@ -64,9 +64,9 @@
                                 </ul>
                             </div>
                         </div>
-                        <form class="g-0 m-0" method="POST" action="{{ route('logout') }}">
+                        <form class="g-0 m-0 d-flex align-items-center" method="POST" action="{{ route('logout') }}">
                             @csrf
-                            <button class="button-style-3" type="submit" class="button">Logout</button>
+                            <button class="button-style-3 m-0 ms-4" type="submit" class="button">Logout</button>
                         </form>
                     </div>
                 </div>
