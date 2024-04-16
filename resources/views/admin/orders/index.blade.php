@@ -70,6 +70,11 @@
                             </div>
                         </div>
                     @endforeach
+
+                    <div class="text-center mt-4">
+                        <button id="show-more-btn" class="button-style-3" onclick="showMoreOrders()">Mostra Altri Ordini</button>
+                        <button id="show-less-btn" class="button-style-3" onclick="showLessOrders()" style="display: none">Mostra Meno</button>
+                    </div>
                 </div>
             </div>
         </div>
