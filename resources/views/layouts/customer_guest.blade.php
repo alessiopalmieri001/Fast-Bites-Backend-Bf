@@ -39,6 +39,26 @@
                 @yield('content')
             </div>
         </main>
+
+        <footer class="py-1">
+            <div class="container d-flex align-items-center py-5">
+                <div class="logo-container">
+                    <img src="{{ asset('images/logo.png') }}" alt="logo">
+                </div>
+                <div class="container ps-5">
+                    <div class="text-footer mb-4">
+                        <strong>© FastBites • <a href="#" class="text-footer"> Cookie & Privacy Policy</a> • Developed by Team 4</strong>
+                    </div>
+                    <div class="icons d-flex">
+                        <i class="fa-brands fa-twitter mx-2"></i> 
+                        <i class="fa-brands fa-linkedin mx-2"></i> 
+                        <i class="fa-brands fa-youtube mx-2"></i> 
+                        <i class="fa-brands fa-instagram mx-2"></i> 
+                        <i class="fa-brands fa-pinterest mx-2"></i>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 </html>
 <style>

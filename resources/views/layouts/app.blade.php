@@ -103,7 +103,7 @@
     </html>
     
     <style lang="scss" scoped>
-        .logo {
+.navbar .logo {
             width: 230px;
         }
     
