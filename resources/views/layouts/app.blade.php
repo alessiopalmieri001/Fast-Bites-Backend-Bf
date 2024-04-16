@@ -23,10 +23,9 @@
     </head>
     
     <body class="background-container">
-
         <header>
             <nav class="navbar navbar-expand-lg mt-4 mb-3 flex-nowrap">
-                <div class="container g-0">
+                <div class="container">
                     <div class="logo">
                         <a class="navbar-brand" href="http://localhost:5174/">
                             <img src="{{ asset('images/logoscritta.png') }}" alt="logo">
@@ -39,7 +38,7 @@
                         </button>
                         
                         <!-- Offcanvas menu -->
-                        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="offcanvasLabel">
+                        <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarOffcanvas" aria-labelledby="offcanvasLabel" style="width: 100%">
                             <div class="offcanvas-header p-3">
                                 <button type="button" class="btn-close button-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                             </div>
@@ -65,7 +64,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <form class="m-0 mx-4" method="POST" action="{{ route('logout') }}">
+                        <form class="g-0 m-0" method="POST" action="{{ route('logout') }}">
                             @csrf
                             <button class="button-style-3" type="submit" class="button">Logout</button>
                         </form>
@@ -75,11 +74,9 @@
         </header>
 
         <main>
-            <div class="container">
-                @yield('main-content')
+            @yield('main-content')
 
-                @yield('scripts')
-            </div>
+            @yield('scripts')
         </main>
     </body>
 </html>
