@@ -6,55 +6,59 @@
     {{-- charts --}}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <div class="container my-4">
-
-        <div class="row gap-4">
-
-            <div class="col-12 col-md-6 glass p-4">
-                <h3>Incassi degli ultimi sei mesi</h3>
-                <canvas id="line-chart"></canvas>
-
-
+    <div class="container-fluid h-100 my-4">
+        <div class="row h-100">
+            <div class="col-auto h-100">
+                <aside class="h-100 d-flex flex-column justify-content-between">
+                    <nav class="h-100 px-4">
+                        <ul class="list-unstyled mt-3">
+                            <li class="nav-item my-4">
+                                <a class="btn btn-outline-light" href="{{ route('admin.dashboard') }}">Dashboard</a>
+                            </li>
+                            <li class="nav-item my-4">
+                                <a class="btn btn-outline-light" href="{{ route('admin.restaurants.index') }}">Il tuo ristorante</a>
+                            </li>
+                            {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
+                            @if($user->restaurants)
+                            <li class="nav-item my-4">
+                                <a class="btn btn-outline-light" href="{{ route('admin.foods.index') }}">Il tuo menu</a>
+                            </li>
+                            {{-- Verifica se l'utente ha un ristorante, quindi mostra il link per il menu --}}
+                            <li class="nav-item my-4">
+                                <a class="btn btn-outline-light" href="{{ route('admin.orders.index') }}">I tuoi ordini</a>
+                            </li>
+                            @endif
+                        </ul>
+                    </nav>
+                </aside>
             </div>
 
+            <div class="col g-0 h-100">
+                <main id="main-content" class="h-100 overflow-y-auto">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-5 col-12 glass p-4">
+                            <h3 class="subtitle-2 ">Incassi degli ultimi sei mesi</h3>
+                            <canvas id="line-chart" class="background-card p-4" style="height: 300px; padding:200px"></canvas>
+                        </div>
             
-
-        </div>
-
-        <div class="row mt-4">
-            <div class="col-12 col-md-6 glass p-4">
-                <h3>Status ordini</h3>
-                <canvas id="orders-doughnut-chart"></canvas>
-            </div>
-
-
-            <div class="col-12 ps-md-4 ps-0 pe-0 mt-4 mt-md-0 col-md-6 d-flex flex-wrap justify-content-between">
-
-                
-
-                <div class="glass p-4 w-100">
-                    <h3>Andamento degli ordini negli ultimi 6 mesi</h3>
-                    <canvas id="orders-line-chart"></canvas>
-
-                </div>
+                        <div class="col-lg-5 col-12 glass p-4">
+                            <h3 class="subtitle-2 ">Status ordini</h3>
+                            <canvas id="orders-doughnut-chart" class="background-card p-4" style="height: 100%;"></canvas>
+                        </div>
+            
+                        <div class="col-lg-5 col-12 glass p-4">
+                            <h3 class="subtitle-2 ">Andamento degli ordini negli ultimi 6 mesi</h3>
+                            <canvas id="orders-line-chart" class="background-card p-4" style="height: 300px;"></canvas>
+                        </div>
+            
+                        <div class="col-lg-5 col-12 glass p-4">
+                            <h3 class="subtitle-2 ">Rapporto prezzo/quantità ordinata </h3>
+                            <canvas id="foods-mixed-chart" class="background-card p-4" style="height: 300px;"></canvas>
+                        </div>
+                    </div>
+                </main>
             </div>
         </div>
-
-        <div class="row gap-4 mt-4">
-
-            <div class="col-12 glass p-4">
-                <h3>Rapporto prezzo/quantità ordinata </h3>
-                <canvas id="foods-mixed-chart"></canvas>
-            </div>
-
-
-
-        </div>
-
-
-
-
-
     </div>
 
     <script>
@@ -368,18 +372,26 @@
 
 
 
-<style lang="scss" scoped>
-    .title {
-        font-family: 'Paytone One', sans-serif;
-        font-size: 3rem;
-        color: white;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    .subtitle-2 {
-        font-family: 'Open Sans', sans-serif;
-        color: white;
-        font-size: 1.5rem;
-    }
+<style lang="scss" scoped>    
+
+.title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subtitle-2 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 1rem;
+}
+
+.background-card {
+    background-color: white;
+    border-radius: 25px;
+}
+
+
 </style>
