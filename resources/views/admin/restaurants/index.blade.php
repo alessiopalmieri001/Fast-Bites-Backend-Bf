@@ -66,7 +66,7 @@
                                         </div>
                                     </div>
                                     
-                                    <script src="{{ asset('js/confirmation.js') }}"></script>
+                                    <script src="{{ asset('js/delete.js') }}"></script>
                                 </div>
                             </div>
                         </div>
