@@ -6,7 +6,7 @@
     <section class="container">
         <div>
             <div class="mb-2">
-                <h1 class="text-center m-4 text-light title">Il tuo menu</h1>
+                <h1 class="text-center m-4 text-light title">Il tuo menù</h1>
                 <div class="d-flex justify-content-center">
                     <a href="{{ route('admin.foods.create') }}" class="button-style-3">
                         + Aggiungi un nuovo piatto
