@@ -3,10 +3,10 @@
 @section('page-title', 'I foods')
 
 @section('main-content')
-    <section>
-        <div class="row d-flex justify-content-center">
-            <div class="mb-2 col-4">
-                <h1 class="text-center m-4 text-light">Il tuo menu</h1>
+    <section class="container">
+        <div>
+            <div class="mb-2">
+                <h1 class="text-center m-4 text-light title">Il tuo menu</h1>
                 <div class="d-flex justify-content-center">
                     <a href="{{ route('admin.foods.create') }}" class="button-style-1">
                         + Aggiungi un nuovo piatto
@@ -14,52 +14,51 @@
                 </div>
             </div>
             
-            <div class="container d-flex justify-content-center flex-wrap">
+            <div class="row justify-content-center m-0 g-0"> 
                 @foreach ($user->restaurants->foods as $food)
-                <div class="col-md-4 container">
-                    <div class="card m-1 custom-card" >
-                        <div class="card-content">
-                            <div class="card-img-container mb-3">
-                                {{-- Se i primi 4 caratteri sono 'http' allora consideralo come url, altrimenti sarà un file conservato in storage  --}}
-                                <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
-                                class="round-image" alt="{{ $food->name }}">
-                            </div>
-                            <div class="card-details mb-2 text-center">
-                                <h2 class="title">{{ $food->name }}</h2>
-                                <p class="price">€ {{ $food->price }}</p>       
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 food-card m-3">
+                    <div>
+                        <div class="food-image">
+                            <img src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
+                            class="food-image" alt="{{ $food->name }}">
+                        </div>
+                        <div class="text-center">
+                            <h2 class="food-name my-3">{{ $food->name }}</h2>
+                            <h6 class="mb-3 text-dark">€ {{ $food->price }}</h6>  
+                            <div class="d-flex justify-content-center align-items-center">
                                 @if ($food->availability)                       
-                                    <p class="badge bg-success">DISPONIBILE</p>
+                                <p class="badge-pill-2">Disponibile</p>
                                 @else
-                                    <p class="badge bg-danger">NON DISPONIBILE</p>
+                                <p class="badge-pill-1">Non Disponibile</p>
                                 @endif
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <a href="{{ route('admin.foods.show', ['food' => $food->id]) }}" class="button-style-2">
-                                    Vedi
-                                </a>
-                                
-                                <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="button-style-2">
-                                    Modifica
-                                </a>
-
-                                <form id="deleteForm" class="m-0" action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" onclick="showConfirmationMessage()" class="button-style-2">
-                                        Elimina
-                                    </button>
-                                </form>
-                                
-                                <div id="confirmationMessage" class="confirmation-message" style="display: none;">
-                                    <div class="confirmation-message-content">
-                                        <h3>Sei sicuro di voler eliminare questo elemento?</h3>
-                                        <button onclick="confirmDelete()" class="button-style-2">Conferma</button>
-                                        <button onclick="hideConfirmationMessage()" class="button-style-2">Annulla</button>
-                                    </div>
+                            </div>     
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="{{ route('admin.foods.show', ['food' => $food->id]) }}" class="button-style-foods">
+                                Vedi
+                            </a>
+                            
+                            <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="button-style-foods">
+                                Modifica
+                            </a>
+    
+                            <form id="deleteForm" class="m-0" action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" onclick="showConfirmationMessage()" class="button-style-foods">
+                                    Elimina
+                                </button>
+                            </form>
+                            
+                            <div id="confirmationMessage" class="confirmation-message" style="display: none;">
+                                <div class="confirmation-message-content">
+                                    <h3>Sei sicuro di voler eliminare questo elemento?</h3>
+                                    <button onclick="confirmDelete()" class="button-style-2">Conferma</button>
+                                    <button onclick="hideConfirmationMessage()" class="button-style-2">Annulla</button>
                                 </div>
-                                
-                                <script src="{{ asset('js/confirmation.js') }}"></script>
                             </div>
+                            
+                            <script src="{{ asset('js/confirmation.js') }}"></script>
                         </div>
                     </div>
                 </div>
@@ -71,32 +70,137 @@
 
 <style lang="scss" scoped>
 
-    .title {
-        font-weight: 700;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        min-height: 50px;
+.title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.food-card {
+    box-shadow: 0px 0px 5px rgb(214, 214, 214);
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+    /* padding: 10px; */
+    /* width: 275px; */
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+        transform: scale(1.09);
     }
-    .price {
-        font-weight: 600;
-        font-size: 25px;
-    }
-    .confirmation-message {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 30%;
-        margin: 0 auto;
-        border-radius: 20px;
-        background-color: rgba(0, 0, 0, 0.701); /* Trasparenza per sfondo scuro */
-        z-index: 9999; /* Livello superiore */
+}
+
+.food-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 10px;
+    object-fit: cover;
+}
+
+.food-name {
+    color: #000000;
+    font-weight: bold;
+    font-size: 18px;
+    font-family: 'Open Sans', 'sans-serif';
+}
+
+.badge-pill-1 {
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Open Sans', 'sans-serif';
+    background-color: #bc3431;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    width: 120px;
+}
+
+.badge-pill-2 {
+    font-size: 15px;
+    cursor: pointer;
+    font-family: 'Open Sans', 'sans-serif';
+    background-color: #006b0d;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    width: 120px;
+}
+
+.button-style-foods {
+    font-size: 15px;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 4px 5px;
+    cursor: pointer;
+    border-radius: 24px;
+    transition: background-color 0.3s ease;
+    border: none;
+    background-color: rgba(246, 144, 30, 1); 
+
+    &:hover {
+        background-color: white;
+        color: black;
     }
 
-    .confirmation-message-content {
-        padding: 20px;
-        text-align: center;
+    a {
+        text-decoration: none;
     }
+}
+.confirmation-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    margin: 0 auto;
+    border-radius: 20px;
+    background-color: rgba(0, 0, 0, 0.701); /* Trasparenza per sfondo scuro */
+    z-index: 9999; /* Livello superiore */
+}
+
+.confirmation-message-content {
+    padding: 20px;
+    text-align: center;
+}
+
+@media (max-width: 1200px) {
+    .food-card {
+        flex: 0 0 33.33%;
+        max-width: 33.33%;
+    }
+}
+
+@media (max-width: 992px) {
+    .food-card {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .food-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .justify-content-center {
+        justify-content: center;
+    }
+}
 </style>
