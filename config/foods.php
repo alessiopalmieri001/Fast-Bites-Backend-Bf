@@ -1202,6 +1202,230 @@ return [
             'availability' => true,
             'img' => 'https://tse4.mm.bing.net/th?id=OIP.9xeGd4iFmAPJLo5s4NLEjQHaE8&pid=Api&P=0&h=180'
         ],
+        [
+            'restaurant_id' => 16,
+            'name' => 'Pizza Margherita',
+            'description' => 'Pizza classica con sugo di pomodoro, mozzarella e origano.',
+            'price' => 3.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.oWI38yAzSDcjDvT8xVFlcwEjDW&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 16,
+            'name' => 'Cheeseburger',
+            'description' => 'Hamburger di manzo, pane con semi di sedano, insalata iceberg, formaggio cheddar, sottaceti e ketchup.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.tv6KbxTuZi1VxEpE2l9YjQHaGF&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 17,
+            'name' => 'Pizza Wurstel',
+            'description' => 'Pomodoro, mozzarella, origano e wurstel.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.-HhYKyLR1qnBqHwDoapMdQHaE6&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 17,
+            'name' => 'Beef Master',
+            'description' => 'Pane con semi di sedano, doppio hamburger di manzo, pomodoro, sottaceti, insalata iceberg, cipolla, formaggio cheddar e ketchup.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.HPatMVhHC7jCyC7Di6wuNAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 18,
+            'name' => 'Bistecca di pollo',
+            'description' => 'Bisteacca grigliata di pollo 100% italiano.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.Zl2Ty0hZ0cpiO85g6TQgfwHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 18,
+            'name' => 'Pizza Cipolla',
+            'description' => 'Pomodoro, mozzarella e cipolla.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.BxKPPeXp9Ik6baCwRkbUagHaEK&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 19,
+            'name' => 'Pizza Nduja',
+            'description' => 'Pomodoro, mozzarella, origano e salame piccante nduja.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.ytT524WiCJC0j3ZL_1IDMAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 19,
+            'name' => 'Hamburger Vegano',
+            'description' => 'Pane con semi di sedano, hamburger di spinaci e piselli, pomodoro e cipolla.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.AUgbyanO61l6Pp0Q-nmcpwHaEs&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 20,
+            'name' => 'Pizza Mari e Monti',
+            'description' => 'Pomodoro, mozzarella, origano, frutti di mare, funghi porcini e aglio.',
+            'price' => 8.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.QdyY-48uXeTf5Onl5hOj_wHaFj&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 20,
+            'name' => 'Hamburger di tacchino',
+            'description' => 'Hamburger di carne di tacchino 100% italiano con contorno di insalata condita con olio extravergine.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.UOijQj2_z6oexiB7uXPy7QHaE7&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 21,
+            'name' => 'Pizza Olive Nere e Champignon',
+            'description' => 'Pizza pomodoro, mozzarella, orignano, funghi champgnon e olive.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse1.explicit.bing.net/th?id=OIP.ENxvnnL-0WgnJC-KNUTLIgHaHa&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 21,
+            'name' => 'Toast',
+            'description' => 'Toast grigliato con doppio hamburger di manzo e sottiletta al cheddar.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.iaQjVaqVRDyQ6WPdI9WRzQHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 22,
+            'name' => 'Pizza Uovo',
+            'description' => 'Pizza pomodoro, origano, mozzarella, uovo all occhio di bue.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.SgoXX_Eqa1AmB-YIFJYgEQHaHa&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 22,
+            'name' => 'Bacon Burger',
+            'description' => 'Pane con semi di sedano, bistecca di maiale, strisce di bacon, formaggio cheddar e ketchup',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.Zi5v_eyS2rZPEfJEKDfChQHaEq&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 23,
+            'name' => 'Pizza Marinara',
+            'description' => 'Pomodoro, agilo, origano e olio.',
+            'price' => 3.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.1o4o7z0fHglsrZztvhKA-wHaFj&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 23,
+            'name' => 'Chicken Burger',
+            'description' => 'Pane al mais, ketchup, maionese, pollo con panatura croccante.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.Y2mMyXzFxP4dHOXd3KrHBgHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 24,
+            'name' => 'Nigiri',
+            'description' => '6 pezzi di fette di salmone distese su una piccola piattaorma di riso.',
+            'price' => 2.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.XSeVktgwdRcmj3v89SNBpAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 24,
+            'name' => 'Boazi',
+            'description' => 'Panini al vapore ripieni di carne o verdure, 4 pezzi.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.ofhPNjzlesjeZOh3pJCgcgHaE6&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 25,
+            'name' => 'Hosomaki',
+            'description' => 'Piccoli cilindri di salmone avvolto da uno strato riso ed alga, 6 pezzi.',
+            'price' => 3.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.XSeVktgwdRcmj3v89SNBpAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 25,
+            'name' => 'Mapo tofu',
+            'description' => 'Tofu in una salsa piccante di fagioli fermentati, spesso con carne macinata.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse2.mm.bing.net/th?id=OIP.4YuzXwKxLzPM7Oht813YVAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 26,
+            'name' => 'Urumaki',
+            'description' => 'Sushi roll con il riso come strato esterno ed alga nori al suo interno, 6 pezzi.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.2r5KYeSj_e4swE_vxQANjAHaFP&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 26,
+            'name' => 'Wonton',
+            'description' => 'Piccoli involtini ripieni di gamberetti in brodo.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.82C-MpsaxNOlk7ZBiyv6iwHaHa&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 27,
+            'name' => 'Cochinita Pibil',
+            'description' => 'Un piatto tradizionale dello Yucatán, dove la carne di maiale è marinata in agrumi e annatto, poi cotta lentamente.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.dejkCxHwK9oIF7kYfL58qAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 27,
+            'name' => 'Hamburger al Formaggio Blu',
+            'description' => 'Pane al mais, hamburger di manzo, lattuga, formaggio cheddar, pomodorini freschi e formaggio blu.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.Fk1xvwp-eDgDqchRmE7QJQHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 28,
+            'name' => 'Tamales',
+            'description' => 'Impasti di mais cotti al vapore avvolti in foglie di banano, ripieni di carne e peperoncini.',
+            'price' => 6.99,
+            'availability' => true,
+            'img' => 'https://tse1.mm.bing.net/th?id=OIP.XXioLcDHwiwVtbZ07NiBvQHaE7&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 28,
+            'name' => 'Hamburger con Funghi',
+            'description' => 'Pane al sedamo, hamburger di manzo, lattuga, formaggio cheddar, pomodorini freschi e funghi.',
+            'price' => 4.99,
+            'availability' => true,
+            'img' => 'https://tse4.mm.bing.net/th?id=OIP.5Swh7HpbyWDS3mmDP1kKQAHaE8&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 29,
+            'name' => 'Hamburger Piccante',
+            'description' => 'Pane al sedamo, hamburger di manzo, lattuga, formaggio cheddar, pomodoro e jalapeno.',
+            'price' => 5.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.VcpPR0mTW2A-BJlWeQOPKwHaFj&pid=Api&P=0&h=180'
+        ],
+        [
+            'restaurant_id' => 29,
+            'name' => 'Pozole',
+            'description' => 'Una zuppa sostanziosa con mais, carne di maiale e condimenti come cavolo, ravanello, avocado, coriandolo e lime.',
+            'price' => 7.99,
+            'availability' => true,
+            'img' => 'https://tse3.mm.bing.net/th?id=OIP.9ovb8umhZB0zzz5gTK7ewQHaE7&pid=Api&P=0&h=180'
+        ],
         
 ]
 ?>

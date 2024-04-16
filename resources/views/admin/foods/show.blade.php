@@ -65,63 +65,7 @@
         </div>
     </div>
 </section>
-    {{-- <section>
-        <div class="row d-flex justify-content-center">
-            <div class="mb-2 col-4 text-center">
-                <a href="{{ route('admin.foods.index') }}" class="button-style-1">
-                    Torna all'index
-                </a>
-            </div>
 
-            <div class="container d-flex justify-content-center flex-wrap">
-                <div class="col-md-4 container">
-                    <div class="card m-1 custom-card">
-                        <div class="card-content">
-                            <div class="card-img-container mb-3">
-                                <div class="img-container">
-                                    <img class="round-image" src="{{ substr($food->img, 0, 4) === 'http' ? $food->img : asset('storage/' . $food->img) }}"
-                                        alt="{{ $food->name }}">
-                                </div>
-                            </div>
-                            <div class="card-details mb-2 text-center">
-                                <h2 class="title">{{ $food->name }}</h2> 
-                                <p class="price">€ {{ $food->price }}</p>      
-                                <p class="description">{{ $food->description }}</p>    
-                                @if ($food->availability)                    
-                                    <p class="badge bg-success">DISPONIBILE</p>
-                                @else
-                                    <p class="badge bg-danger">NON DISPONIBILE</p>
-                                @endif
-                            </div>
-                            <div class="d-flex justify-content-center">
-                                <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="button-style-2">
-                                    Modifica
-                                </a>
-
-                                <form id="deleteForm" class="m-0" action="{{ route('admin.foods.destroy', ['food' => $food->id]) }}" method="POST">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="button" onclick="showConfirmationMessage()" class="button-style-2">
-                                        Elimina
-                                    </button>
-                                </form>
-                                
-                                <div id="confirmationMessage" class="confirmation-message" style="display: none;">
-                                    <div class="confirmation-message-content">
-                                        <h3>Sei sicuro di voler eliminare questo elemento?</h3>
-                                        <button onclick="confirmDelete()" class="button-style-2">Conferma</button>
-                                        <button onclick="hideConfirmationMessage()" class="button-style-2">Annulla</button>
-                                    </div>
-                                </div>
-                                
-                                <script src="{{ asset('js/confirmation.js') }}"></script>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> --}}
 @endsection
 
 <style lang="scss" scoped>
