@@ -5,20 +5,20 @@
 @section('main-content')
 
 <div class="container">
+
+    <div class="mb-2">
+        <h1 class="m-4 text-center title">
+            Modifica il tuo piatto
+        </h1>
+        {{-- Link per tornare alla lista dei ristoranti --}}
+        <div class="d-flex justify-content-center"> <!-- Center the button -->
+            <a href="{{ route('admin.foods.index') }}" class="button-style-3">
+                Ritorna al tuo menù
+            </a>
+        </div>
+    </div>
     <div class="row d-flex justify-content-center">
         <div class="col-6 form-style-2">
-            <h1 class="pb-5 text-center">
-                Modifica il tuo piatto
-            </h1>
-            {{-- Link per tornare alla lista dei ristoranti --}}
-            <div class="mb-4">
-                <div class="d-flex justify-content-center"> <!-- Center the button -->
-                    <a href="{{ route('admin.foods.index') }}" class="button-style-1">
-                        Torna all'index foods
-                    </a>
-                </div>
-            </div>
-    
             {{-- Gli errori di validazione vengono elencati qui --}} 
             @if ($errors->any())
                 <div class="alert alert-danger mb-3">
@@ -90,7 +90,7 @@
                 </div>
             
                 <div class="d-flex justify-content-center">
-                    <button class="button-style-1" type="submit">
+                    <button class="button-style-3" type="submit">
                         Aggiorna
                     </button>
                 </div>
@@ -102,9 +102,21 @@
 @endsection
 
 <style lang="scss" scoped>
+
+.title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
     .img-container {
         width: 300px;
         justify-content: center;
         display: flex;
+        img {
+            border-radius: 25px;
+        }
     }
 </style>

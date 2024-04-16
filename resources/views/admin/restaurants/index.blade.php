@@ -5,7 +5,7 @@
 @section('main-content')
     <section>
         <div class="row">
-            <h1 class="text-center mb-4 text-white">Il tuo ristorante</h1>
+            <h1 class="text-center mb-4 title">Il tuo ristorante</h1>
             
             {{-- Reindirizzo l'utente alla pagina di creazione del ristorante --}}
             
@@ -83,6 +83,14 @@
 
 
 <style lang="scss" scoped>
+
+.title {
+        font-family: 'Paytone One', sans-serif;
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        margin-bottom: 20px;
+    }
     .restaurant-name {
         font-weight: 700;
     }
