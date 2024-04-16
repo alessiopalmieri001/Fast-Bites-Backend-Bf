@@ -16,9 +16,9 @@
                 <div class="card background-card p-3">
                     <h5 class="card-title text-center">Tot. incassi</h5>
                     <h2 class="card-text text-center" id="total-incassi"></h2>
-                    {{-- {{$incomingTotal}} --}}
                 </div>
             </div>
+            
 
             <!-- Totale ordini consegnati -->
             <div class="col-lg-3 col-md-6 col-sm-12 p-4">
@@ -177,7 +177,8 @@
 
         
 
-
+        console.log('Totale incassi: '+incomingTotal[0] + '€')
+        document.getElementById('total-incassi').innerText ='€ ' + incomingTotal[0];
 
         // doughnut chart
         const ordersDoughnut = document.getElementById('orders-doughnut-chart');
@@ -224,6 +225,17 @@
             }
         });
 
+        const ordersDelivered = orders.filter(order => order.status === 'Consegnato');
+        console.log('Ordini consegnati:', ordersDelivered.length);
+        document.getElementById('total-delivered').innerText = ordersDelivered.length;
+
+        const ordersPending = orders.filter(order => order.status === 'In preparazione');
+        console.log('Ordini in preparazione:', ordersPending.length);
+        document.getElementById('total-preparation').innerText = ordersPending.length;
+
+        const ordersTransit = orders.filter(order => order.status === 'In transito');
+        console.log('Ordini in transito:', ordersTransit.length);
+        document.getElementById('total-transit').innerText = ordersTransit.length;
 
         //line chart
         const ordersLine = document.getElementById('orders-line-chart');
