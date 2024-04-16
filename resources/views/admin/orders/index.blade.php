@@ -12,9 +12,9 @@
         </div>
 
             
-        <div class="row">
+        <div class="row ">
             <div class="my-4">
-                <div class="row order-header table-responsive ">
+                <div class="row order-header table-responsive">
                     <div class="col">
                         <button class="table-btn btn btn-outline-light" onclick="orderBy('id')">ID</button>
                     </div>
