@@ -10,7 +10,42 @@
         <div class="mb-2">
             <h1 class="text-center m-4 text-light title">Dashboard</h1>
         </div>
-        
+        <div class="row justify-content-center g-2">
+            <!-- Totale incassi -->
+            <div class="col-lg-3 col-md-6 col-sm-12 p-4">
+                <div class="card background-card p-3">
+                    <h5 class="card-title text-center">Tot. incassi</h5>
+                    <h2 class="card-text text-center" id="total-incassi"></h2>
+                    {{-- {{$incomingTotal}} --}}
+                </div>
+            </div>
+
+            <!-- Totale ordini consegnati -->
+            <div class="col-lg-3 col-md-6 col-sm-12 p-4">
+                <div class="card background-card p-3">
+                    <h5 class="card-title text-center">Tot. ordini consegnati</h5>
+                    <h2 class="card-text text-center" id="total-delivered"></h2>
+                </div>
+            </div>
+
+            <!-- Totale ordini in preparazione -->
+            <div class="col-lg-3 col-md-6 col-sm-12 p-4">
+                <div class="card background-card p-3">
+                    <h5 class="card-title text-center">Tot. ordini in preparazione</h5>
+                    <h2 class="card-text text-center" id="total-preparation"></h2>
+                </div>
+            </div>
+
+            <!-- Totale ordini in transito -->
+            <div class="col-lg-3 col-md-6 col-sm-12 p-4">
+                <div class="card background-card p-3">
+                    <h5 class="card-title text-center">Tot. ordini in transito</h5>
+                    <h2 class="card-text text-center" id="total-transit"></h2>
+                </div>
+            </div>
+        </div>
+
+        </div>
     
         <div class="row justify-content-center g-0">
             <div class="col-lg-5 col-12 glass p-4">
@@ -126,9 +161,9 @@
                     label: 'Totale netto',
                     data: lastSixMonthsIncoming,
                     hoverBorderWidth: 5,
-                    borderWidth: 1,
-                    borderColor: 'rgb(31, 135, 88)',
-                    backgroundColor: 'rgb(31, 135, 88)'
+                    borderWidth: 2,
+                    borderColor: 'rgb(245, 142, 31)',
+                    backgroundColor: 'rgb(245, 142, 31)',
                 }]
             },
             options: {
@@ -164,16 +199,16 @@
                 label: 'Ordini',
                 data: Object.values(orderStatuses), // Usa Object.values per ottenere i valori dell'oggetto
                 backgroundColor: [
-                    'rgba(255, 61, 61, 0.6)',
-                    'rgba(39, 211, 131, 0.6)',
+                    'rgba(246, 143, 31, 0.6)',
+                    'rgba(203, 51, 50, 0.6)',
                     'rgba(255, 226, 7, 0.6)',
                 ],
                 borderColor: [
-                    'rgb(255, 61, 61)',
-                    'rgb(39, 211, 131)',
+                    'rgba(246, 143, 31, 0.6)',
+                    'rgba(203, 51, 50, 0.6)',
                     'rgb(255, 226, 7)',
                 ],
-                borderWidth: 1
+                borderWidth: 2,
             }]
         };
 
@@ -256,9 +291,9 @@
                 datasets: [{
                     label: 'Ordini',
                     data: ordersInLastSixMonth,
-                    borderWidth: 1,
-                    borderColor: 'rgba(142, 250, 246, 1)',
-                    backgroundColor: 'rgba(142, 250, 246, 1)'
+                    borderWidth: 2,
+                    borderColor: 'rgb(245, 142, 31)',
+                    backgroundColor: 'rgb(245, 142, 31)'
                 }]
             },
             options: {
@@ -302,14 +337,14 @@
                     label: 'Prezzo',
                     data: foods.map(dish => dish.price),
                     borderWidth: 2,
-                    borderColor: 'rgba(142, 250, 246, 1)',
-                    backgroundColor: 'rgba(142, 250, 246, 0.2)'
+                    borderColor: 'rgb(245, 142, 31, 0.6)',
+                    backgroundColor: 'rgb(245, 142, 31, 0.6)'
                 }, {
                     type: 'line',
                     label: 'Percentuale piatto ordinato',
                     data: dishesQuantityPercentage,
-                    borderColor: 'rgb(255, 33, 33)',
-                    backgroundColor: 'rgb(255, 33, 33)'
+                    borderColor: 'rgb(203, 51, 50)',
+                    backgroundColor: 'rgb(203, 51, 50)'
                 }],
                 labels: foods.map(dish => dish.name)
             },
@@ -366,5 +401,11 @@
 .background-card {
     background-color: white;
     border-radius: 25px;
+}
+
+.card-text {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 1rem;
+
 }
 </style>
