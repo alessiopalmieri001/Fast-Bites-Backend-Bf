@@ -25,7 +25,7 @@
                         <div class="text-center">
                             <h2 class="food-name my-3">{{ $food->name }}</h2>
                             <h6 class="mb-3 text-dark fw-bold ">€ {{ $food->price }}</h6>  
-                            <h6 class="mb-3 text-dark mx-2 description">{{ $food->description }}</h6>  
+                            <h6 class="text-dark mx-4 description">{{ $food->description }}</h6>  
                             <div class="d-flex justify-content-center align-items-center">
                                 @if ($food->availability)                       
                                 <p class="badge-pill-2">Disponibile</p>

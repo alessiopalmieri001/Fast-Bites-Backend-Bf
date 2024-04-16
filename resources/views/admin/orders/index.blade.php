@@ -38,11 +38,11 @@
                             Totale <i class="fas fa-sort"></i>
                         </button>
                     </div>
-                    <div class="col">
-                        <button class="table-btn btn btn-outline-light" onclick="resetFilters(this)">Resetta Filtri</button>
+                    <div class="col d-flex justify-content-center m-0">
+                        <button class="table-btn btn btn-outline-light m-0" onclick="resetFilters(this)">Resetta Filtri</button>
                     </div>
                 </div>
-                <div id="table-content" class="d-flex flex-column table-responsive ">
+                <div id="table-content" class="d-flex flex-column table-responsive overflow-y-auto" style="max-height: 600px">
                     @foreach ($user->restaurants->orders as $order)
                         <div class="row order align-items-baseline">
                             <div class="col">
@@ -65,16 +65,11 @@
                                 <span>€ {{ number_format($order->total, 2) }}</span>
                             </div>
 
-                            <div class="col">
-                                <button class="button-style-1" onclick="window.location='{{ route('admin.orders.show', $order->id) }}'">Vedi</button>
+                            <div class="col d-flex justify-content-center">
+                                <button class="button-style-ordini" onclick="window.location='{{ route('admin.orders.show', $order->id) }}'">Vedi</button>
                             </div>
                         </div>
                     @endforeach
-
-                    <div class="text-center mt-4">
-                        <button id="show-more-btn" class="button-style-3" onclick="showMoreOrders()">Mostra Altri Ordini</button>
-                        <button id="show-less-btn" class="button-style-3" onclick="showLessOrders()" style="display: none">Mostra Meno</button>
-                    </div>
                 </div>
             </div>
         </div>
@@ -188,4 +183,29 @@
     margin-bottom: 20px;
 }
              
+
+.button-style-ordini {
+    display: inline-block;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border: 1px solid transparent;
+    padding: 8px 45px;
+    cursor: pointer;
+    border-radius: 24px;
+    background-color: white;
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.button-style-ordini:hover {
+    color: white;
+    background-color: transparent;
+    border: 1px solid white;
+}
+
+.button-style-ordini a {
+    text-decoration: none;
+}
+
 </style>
