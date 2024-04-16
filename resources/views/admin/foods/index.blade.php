@@ -24,7 +24,8 @@
                         </div>
                         <div class="text-center">
                             <h2 class="food-name my-3">{{ $food->name }}</h2>
-                            <h6 class="mb-3 text-dark">€ {{ $food->price }}</h6>  
+                            <h6 class="mb-3 text-dark fw-bold ">€ {{ $food->price }}</h6>  
+                            <h6 class="mb-3 text-dark mx-2 description">{{ $food->description }}</h6>  
                             <div class="d-flex justify-content-center align-items-center">
                                 @if ($food->availability)                       
                                 <p class="badge-pill-2">Disponibile</p>
@@ -34,9 +35,9 @@
                             </div>     
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a href="{{ route('admin.foods.show', ['food' => $food->id]) }}" class="button-style-foods">
+                            {{-- <a href="{{ route('admin.foods.show', ['food' => $food->id]) }}" class="button-style-foods">
                                 Vedi
-                            </a>
+                            </a> --}}
                             
                             <a href="{{ route('admin.foods.edit', ['food' => $food->id]) }}" class="button-style-foods">
                                 Modifica
@@ -73,6 +74,8 @@
 
 <style lang="scss" scoped>
 
+
+
 .title {
     font-family: 'Paytone One', sans-serif;
     font-size: 3rem;
@@ -80,13 +83,16 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
+.description {
+    min-height: 70px;
+}
 .food-card {
     box-shadow: 0px 0px 5px rgb(214, 214, 214);
     background-color: rgba(255, 255, 255, 0.6);
     border: none;
     border-radius: 20px;
     margin: 10px;
+    min-height: 300px;
     /* padding: 10px; */
     /* width: 275px; */
     text-align: center;
