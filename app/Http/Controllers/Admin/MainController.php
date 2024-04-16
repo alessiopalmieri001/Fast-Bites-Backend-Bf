@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Category;
 use App\Models\Restaurant;
 
 class MainController extends Controller
@@ -14,9 +15,10 @@ class MainController extends Controller
     {
         $user = auth()->user();
         $restaurant = $user->restaurants;
-        // if (!$restaurant) {
-        //     return view ('admin.restaurants.create');
-        // }
+        if (!$restaurant) {
+            $categories = Category::all();
+            return view ('admin.restaurants.create', compact('categories'));
+        }
 
         $orders = Order::with(['restaurant', 'foods'])
             ->whereHas('restaurant', function ($query) use ($restaurant) {
