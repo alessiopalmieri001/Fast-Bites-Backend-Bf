@@ -6,9 +6,7 @@
     <section class="container">
         <div class="mb-2">
             <h1 class="text-center text-light title">I tuoi ordini</h1>
-            <div class="d-flex justify-content-center">
-                <button class="table-btn btn btn-outline-light" onclick="resetFilters()">Resetta Filtri</button>
-            </div>
+            
         </div>
 
             
@@ -16,22 +14,32 @@
             <div class="my-4">
                 <div class="row order-header table-responsive">
                     <div class="col">
-                        <button class="table-btn btn btn-outline-light" onclick="orderBy('id')">ID</button>
+                        <button class="table-btn btn btn-outline-light" onclick="orderBy('id', this)">
+                            ID <i class="fas fa-sort"></i>
+                        </button>
                     </div>
                     <div class="col">
-                        <button class="table-btn btn btn-outline-light" onclick="orderBy('name')">Cliente</button>
+                        <button class="table-btn btn btn-outline-light" onclick="orderBy('name', this)">
+                            Cliente <i class="fas fa-sort"></i>
+                        </button>
                     </div>
                     <div class="col">
-                        <button class="table-btn btn btn-outline-light" onclick="orderBy('status')">Stato</button>
+                        <button class="table-btn btn btn-outline-light" onclick="orderBy('status', this)">
+                            Stato <i class="fas fa-sort"></i>
+                        </button>
                     </div>
                     <div class="col">
-                        <button class="table-btn btn btn-outline-light" onclick="orderBy('created_at')">Data</button>
+                        <button class="table-btn btn btn-outline-light" onclick="orderBy('created_at', this)">
+                            Data <i class="fas fa-sort"></i>
+                        </button>
                     </div>
                     <div class="col">
-                        <button class="table-btn btn btn-outline-light" onclick="orderBy('total')">Totale</button>
+                        <button class="table-btn btn btn-outline-light" onclick="orderBy('total', this)">
+                            Totale <i class="fas fa-sort"></i>
+                        </button>
                     </div>
                     <div class="col">
-                        <span>Azioni</span>
+                        <button class="table-btn btn btn-outline-light" onclick="resetFilters(this)">Resetta Filtri</button>
                     </div>
                 </div>
                 <div id="table-content" class="d-flex flex-column table-responsive ">
@@ -65,51 +73,6 @@
                 </div>
             </div>
         </div>
-
-        {{-- <table class="table table-borderless">
-            <thead>
-              <tr>
-                <th scope="col">                        
-                    <button class="table-btn btn btn-outline-light" onclick="orderBy('id')">ID</button>
-                </th>
-                <th scope="col">
-                    <button class="table-btn btn btn-outline-light" onclick="orderBy('name')">Cliente</button>
-                </th>
-                <th scope="col">
-                    <button class="table-btn btn btn-outline-light" onclick="orderBy('status')">Stato</button>
-                </th>
-                <th scope="col">
-                    <button class="table-btn btn btn-outline-light" onclick="orderBy('created_at')">Data</button>
-                </th>
-                <th scope="col">
-                    <button class="table-btn btn btn-outline-light" onclick="orderBy('total')">Totale</button>
-                </th>
-                <th scope="col">
-                    <span>Azioni</span>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-                
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>@fat</td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>@twitter</td>
-              </tr>
-            </tbody>
-          </table> --}}
     </section>
 @endsection
 
@@ -117,17 +80,25 @@
     <script>
         const originalOrders = {!! json_encode($user->restaurants->orders) !!};
 
-        function resetFilters() {
-            // Riordina gli ordini nella sequenza originale
-            const orders = [...originalOrders];
+        function resetFilters(button) {
+        // Riordina gli ordini nella sequenza originale
+        const orders = [...originalOrders];
 
-            // Render gli ordini riordinati
-            renderOrders(orders);
-        }
+        // Render gli ordini riordinati
+        renderOrders(orders);
+
+        // Rimuovi la classe "active" da tutti i pulsanti dei filtri
+        document.querySelectorAll('.table-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+
+        // Aggiungi la classe "active" al pulsante di reset
+        button.classList.add('active');
+    }
 
         let sortOrder = 'asc'; // Default sort order
         
-        function orderBy(column) {
+        function orderBy(column, button) {
             const orders = {!! json_encode($user->restaurants->orders) !!};
             orders.sort((a, b) => {
                 const valA = column === 'created_at' ? new Date(a[column]).getTime() : a[column];
@@ -143,9 +114,17 @@
             // Reverse sort order for next click
             sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
 
+            // Rimuovi la classe "active" da tutti i pulsanti dei filtri
+            document.querySelectorAll('.table-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            // Toggle della classe "active" sul pulsante del filtro
+            button.classList.add('active');
+
             // Render sorted orders
             renderOrders(orders);
-        }
+            }
 
         function formatCreatedAt(dateString) {
             const date = new Date(dateString);
@@ -203,6 +182,5 @@
     text-align: center;
     margin-bottom: 20px;
 }
-
              
 </style>

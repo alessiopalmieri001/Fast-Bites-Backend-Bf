@@ -96,12 +96,9 @@
   cursor: pointer;
   position: relative;
   transition: transform 0.2s ease; 
-  
 }
 
 .card-content:hover {
-  transform: scale(1.03);
-  /* filter: blur(2px); */
   .buy-button {
     display: block;
     transition: 0.3s ease-in;
