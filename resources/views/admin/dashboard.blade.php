@@ -8,50 +8,28 @@
 
     <div class="container my-4">
 
-        <div class="row gap-4">
-
-            <div class="col-12 col-md-6 glass p-4">
-                <h3>Incassi degli ultimi sei mesi</h3>
-                <canvas id="line-chart"></canvas>
-
-
+        <div class="row justify-content-center">
+            <div class="col-lg-5 col-12 glass p-4">
+                <h3 class="subtitle-2 ">Incassi degli ultimi sei mesi</h3>
+                <canvas id="line-chart" class="background-card p-4" style="height: 300px; padding:200px"></canvas>
             </div>
 
-            
+            <div class="col-lg-5 col-12 glass p-4">
+                <h3 class="subtitle-2 ">Status ordini</h3>
+                <canvas id="orders-doughnut-chart" class="background-card p-4" style="height: 100%;"></canvas>
+            </div>
+
+            <div class="col-lg-5 col-12 glass p-4">
+                <h3 class="subtitle-2 ">Andamento degli ordini negli ultimi 6 mesi</h3>
+                <canvas id="orders-line-chart" class="background-card p-4" style="height: 300px;"></canvas>
+            </div>
+
+            <div class="col-lg-5 col-12 glass p-4">
+                <h3 class="subtitle-2 ">Rapporto prezzo/quantità ordinata </h3>
+                <canvas id="foods-mixed-chart" class="background-card p-4" style="height: 300px;"></canvas>
+            </div>
 
         </div>
-
-        <div class="row mt-4">
-            <div class="col-12 col-md-6 glass p-4">
-                <h3>Status ordini</h3>
-                <canvas id="orders-doughnut-chart"></canvas>
-            </div>
-
-
-            <div class="col-12 ps-md-4 ps-0 pe-0 mt-4 mt-md-0 col-md-6 d-flex flex-wrap justify-content-between">
-
-                
-
-                <div class="glass p-4 w-100">
-                    <h3>Andamento degli ordini negli ultimi 6 mesi</h3>
-                    <canvas id="orders-line-chart"></canvas>
-
-                </div>
-            </div>
-        </div>
-
-        <div class="row gap-4 mt-4">
-
-            <div class="col-12 glass p-4">
-                <h3>Rapporto prezzo/quantità ordinata </h3>
-                <canvas id="foods-mixed-chart"></canvas>
-            </div>
-
-
-
-        </div>
-
-
 
 
 
@@ -368,18 +346,24 @@
 
 
 
-<style lang="scss" scoped>
-    .title {
-        font-family: 'Paytone One', sans-serif;
-        font-size: 3rem;
-        color: white;
-        text-align: center;
-        margin-bottom: 20px;
-    }
-    
-    .subtitle-2 {
-        font-family: 'Open Sans', sans-serif;
-        color: white;
-        font-size: 1.5rem;
-    }
+<style lang="scss" scoped>    
+
+.title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.subtitle-2 {
+    font-family: 'Open Sans', sans-serif;
+    color: white;
+    font-size: 1rem;
+}
+
+.background-card {
+    background-color: white;
+    border-radius: 25px;
+}
 </style>

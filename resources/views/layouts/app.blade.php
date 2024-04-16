@@ -32,7 +32,7 @@
                             <img src="{{ asset('images/logoscritta.png') }}" alt="logo">
                         </a>
                     </div>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
                         <span class="navbar-toggler-icon"></span>
                     </button>
 
