@@ -3,15 +3,18 @@
 @section('page-title', 'Ordini')
 
 @section('main-content')
-    <section>
-        <div class="row">
-            <h1 class="text-center text-light">I tuoi ordini</h1>
+    <section class="container">
+        <div class="mb-2">
+            <h1 class="text-center text-light title">I tuoi ordini</h1>
             <div class="d-flex justify-content-center">
                 <button class="table-btn btn btn-outline-light" onclick="resetFilters()">Resetta Filtri</button>
             </div>
+        </div>
+
             
-            <div class="container my-4">
-                <div class="row order-header">
+        <div class="row">
+            <div class="my-4">
+                <div class="row order-header table-responsive ">
                     <div class="col">
                         <button class="table-btn btn btn-outline-light" onclick="orderBy('id')">ID</button>
                     </div>
@@ -31,7 +34,7 @@
                         <span>Azioni</span>
                     </div>
                 </div>
-                <div id="table-content" class="d-flex flex-column">
+                <div id="table-content" class="d-flex flex-column table-responsive ">
                     @foreach ($user->restaurants->orders as $order)
                         <div class="row order align-items-baseline">
                             <div class="col">
@@ -62,6 +65,51 @@
                 </div>
             </div>
         </div>
+
+        {{-- <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">                        
+                    <button class="table-btn btn btn-outline-light" onclick="orderBy('id')">ID</button>
+                </th>
+                <th scope="col">
+                    <button class="table-btn btn btn-outline-light" onclick="orderBy('name')">Cliente</button>
+                </th>
+                <th scope="col">
+                    <button class="table-btn btn btn-outline-light" onclick="orderBy('status')">Stato</button>
+                </th>
+                <th scope="col">
+                    <button class="table-btn btn btn-outline-light" onclick="orderBy('created_at')">Data</button>
+                </th>
+                <th scope="col">
+                    <button class="table-btn btn btn-outline-light" onclick="orderBy('total')">Totale</button>
+                </th>
+                <th scope="col">
+                    <span>Azioni</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+                
+              <tr>
+                <th scope="row">1</th>
+                <td>Mark</td>
+                <td>Otto</td>
+                <td>@mdo</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>Jacob</td>
+                <td>Thornton</td>
+                <td>@fat</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td colspan="2">Larry the Bird</td>
+                <td>@twitter</td>
+              </tr>
+            </tbody>
+          </table> --}}
     </section>
 @endsection
 
@@ -146,3 +194,15 @@
         }
     </script>
 @endsection
+
+<style lang="scss" scoped>
+.title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+             
+</style>
