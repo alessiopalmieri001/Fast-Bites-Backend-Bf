@@ -8,7 +8,7 @@
             <div class="mb-2">
                 <h1 class="text-center m-4 text-light title">Il tuo menu</h1>
                 <div class="d-flex justify-content-center">
-                    <a href="{{ route('admin.foods.create') }}" class="button-style-1">
+                    <a href="{{ route('admin.foods.create') }}" class="button-style-3">
                         + Aggiungi un nuovo piatto
                     </a>
                 </div>

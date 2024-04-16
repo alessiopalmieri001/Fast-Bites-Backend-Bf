@@ -5,16 +5,21 @@
 @section('main-content')
 
 <div class="container">
-    <div class="row d-flex justify-content-center">
-        <div class="col-6 form-style-2">
-            <h1 class="pb-5 text-center">Aggiungi un nuovo piatto</h1>
+    
+    <div class="mb-2">
+        <h1 class="m-4 text-center title">
+            Aggiungi un nuovo piatto
+        </h1>
+        {{-- Link per tornare alla lista dei ristoranti --}}
+        <div class="d-flex justify-content-center"> <!-- Center the button -->
+            <a href="{{ route('admin.foods.index') }}" class="button-style-3">
+                Torna alla dashboard
+            </a>
+        </div>
+    </div>
 
-            {{-- Link per tornare alla lista dei ristoranti --}}
-            <div class="mb-4 text-center">
-                <a href="{{ route('admin.foods.index') }}" class="button-style-1">
-                    Torna alla dashboard
-                </a>
-            </div>
+    <div class="row g-0 d-flex justify-content-center">
+        <div class="col-lg-6 col-md-8 col-sm-12 form-style-2">
 
             {{-- Gli errori di validazione vengono elencati qui --}}
             @if ($errors->any())
@@ -79,7 +84,7 @@
 
                 {{-- aggiungi food --}}
                 <div class="text-center">
-                    <button class="button-style-1" type="submit">
+                    <button class="button-style-3" type="submit">
                         Aggiungi
                     </button>
                 </div>
@@ -106,3 +111,13 @@
 </script>
 
 @endsection
+
+<style lang="scss" scoped>
+    .title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+</style>

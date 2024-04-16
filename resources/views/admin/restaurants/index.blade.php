@@ -23,7 +23,7 @@
                                             @if (count($user->restaurants->categories) > 0)
                                                 <ul class="d-flex justify-content-center p-0 list-unstyled">
                                                     @foreach ($user->restaurants->categories as $category)
-                                                        <li class="text-center badge-category">{{ $category->name }}</li>
+                                                        <li class="text-center badge-category me-2">{{ $category->name }}</li>
                                                     @endforeach
                                                 </ul>
                                             @else

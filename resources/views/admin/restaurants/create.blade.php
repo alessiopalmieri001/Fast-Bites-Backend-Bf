@@ -3,15 +3,15 @@
 @section('page-title', 'Restaurant Create')
 
 @section('main-content')
-    <h1 class="text-center">Restaurant Create</h1>
-    <div class="mb-4">
-        <div class="d-flex justify-content-center"> 
-            <a href="{{ route('admin.restaurants.index') }}" class="button-style-1">Torna all'index dei ristoranti</a>
-        </div>
-    </div>
 
-    <div class="row w-50 m-auto">
-        <div class="col py-4">
+<section>
+    <div class="container">
+        <div class="mb-2">
+            <h1 class="text-center m-4 text-light title">Crea il tuo ristorante</h1>
+        </div>
+
+        <div class="row g-0 d-flex justify-content-center">
+            <div class="col-lg-6 col-md-8 col-sm-12 form-style-2">
 
             @if ($errors->any())
                 <div class="alert alert-danger mb-3">
@@ -122,12 +122,13 @@
                 </div>
 
                 <div class="d-flex justify-content-center"> 
-                    <button type="submit" class="button-style-1">+ Aggiungi</button>
+                    <button type="submit" class="button-style-3">+ Aggiungi</button>
                 </div>
 
             </form>
         </div>
     </div>
+</section>
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
@@ -158,5 +159,11 @@
 @endsection
 
 <style lang="scss" scoped>
-
+.title {
+    font-family: 'Paytone One', sans-serif;
+    font-size: 3rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
 </style>
