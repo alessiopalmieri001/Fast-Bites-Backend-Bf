@@ -15,7 +15,7 @@
                <a href="{{ route('register') }}" class="button-style-3">
                   Registrati
                </a>
-               <a href="http://localhost:5173/" class="button-style-3">
+               <a href="http://localhost:5174/" class="button-style-3">
                   Acquista
                </a>
             </div>
