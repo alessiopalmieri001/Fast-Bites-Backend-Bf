@@ -40,7 +40,7 @@ class EndpointController extends Controller
             $order->phone_num = $data['phone'];
             $order->restaurant_id = $data['restaurantId'];
             $order->total = $data['total'];
-            $order->status = 'in preparazione';
+            $order->status = 'In preparazione';
     
             // Salva l'ordine nel database
             $order->save();
