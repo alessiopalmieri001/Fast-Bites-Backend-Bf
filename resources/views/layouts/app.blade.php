@@ -26,7 +26,7 @@
         <header>
             <nav class="navbar navbar-expand-lg mt-5 mb-3 flex-nowrap">
                 <div class="container">
-                    <div class="logo">
+                    <div class="logo-header">
                         <a class="navbar-brand" href="http://localhost:5174/">
                             <img src="{{ asset('images/logoscritta.png') }}" alt="logo">
                         </a>
@@ -79,44 +79,44 @@
     
         @yield('scripts')
 
-        <footer class="p-2">
-            <div class="container py-5">
-                <div class="row d-flex align-items-center pb-4">
-                    <div class="col">
-                        <div class="logo-container">
-                            <img src="{{ asset('images/logo.png') }}" alt="logo">
-                        </div>
-                    </div>
-                </div>
-                <div class="row pb-4">
-                    <div class="col">
-                        <div class="icons d-flex">
-                            <i class="fa-brands fa-twitter mx-2"></i> 
-                            <i class="fa-brands fa-linkedin mx-2"></i> 
-                            <i class="fa-brands fa-youtube mx-2"></i> 
-                            <i class="fa-brands fa-instagram mx-2"></i> 
-                            <i class="fa-brands fa-pinterest mx-2"></i>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="text-footer mb-4">
-                            <strong>© FastBites • <a href="#" class="text-footer"> Cookie & Privacy Policy</a> • Developed by Team 4</strong>
-                        </div>
-                    </div>
+<footer class="p-2">
+    <div class="container py-3 d-flex flex-column align-items-center">
+        <div class="row pb-4 d-flex justify-content-center align-items-center">
+            <div class="col-6 d-flex justify-content-center align-items-center">
+                <div class="logo-container d-flex justify-content-center align-items-center">
+                    <img class="logo-footer" src="{{ asset('images/logo.png') }}" alt="logo">
                 </div>
             </div>
-        </footer>
+        </div>
+        <div class="row pb-4">
+            <div class="col d-flex justify-content-center">
+                <div class="icons d-flex justify-content-center">
+                    <i class="fa-brands fa-twitter mx-2"></i> 
+                    <i class="fa-brands fa-linkedin mx-2"></i> 
+                    <i class="fa-brands fa-youtube mx-2"></i> 
+                    <i class="fa-brands fa-instagram mx-2"></i> 
+                    <i class="fa-brands fa-pinterest mx-2"></i>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col d-flex justify-content-center">
+                <div class="text-footer mb-4 text-center">
+                    <strong>© FastBites • <a href="#" class="text-footer"> Cookie & Privacy Policy</a> • Developed by Team 4</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
     </body>
     </html>
     
     <style lang="scss" scoped>
-.navbar .logo {
+.navbar .logo-header {
             width: 230px;
         }
     
-        img {
+img {
             width: 100%;
         }
     
@@ -245,7 +245,7 @@ footer {
   align-items: center; 
 }
 
-.logo {
+.logo-footer {
   width: 100%;
 }
 

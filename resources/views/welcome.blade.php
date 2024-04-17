@@ -25,6 +25,7 @@
 @endsection
 
 
+
 <style lang="scss" scoped>
 
     .my-jumbotron {
@@ -55,5 +56,6 @@
             height: 700px; 
 		}
     }
+
 
 </style>

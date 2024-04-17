@@ -9,6 +9,14 @@
         <title>@yield('page-title') | {{ config('app.name', 'Laravel') }}</title>
         <link href="{{ asset('vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Paytone+One&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Paytone+One&display=swap" rel="stylesheet">
+
 
         @vite('resources/js/app.js')
     </head>
@@ -41,17 +49,17 @@
         </main>
 
         <footer class="p-2">
-            <div class="container py-5">
-                <div class="row d-flex align-items-center pb-4">
-                    <div class="col">
-                        <div class="logo-container">
-                            <img class="logo" src="/public/img/logo.png" alt="logo">
+            <div class="container py-3 d-flex flex-column align-items-center">
+                <div class="row pb-4 d-flex justify-content-center align-items-center">
+                    <div class="col-6 d-flex justify-content-center align-items-center">
+                        <div class="logo-container d-flex justify-content-center align-items-center">
+                            <img class="logo-footer" src="{{ asset('images/logo.png') }}" alt="logo">
                         </div>
                     </div>
                 </div>
                 <div class="row pb-4">
-                    <div class="col">
-                        <div class="icons d-flex">
+                    <div class="col d-flex justify-content-center">
+                        <div class="icons d-flex justify-content-center">
                             <i class="fa-brands fa-twitter mx-2"></i> 
                             <i class="fa-brands fa-linkedin mx-2"></i> 
                             <i class="fa-brands fa-youtube mx-2"></i> 
@@ -61,8 +69,8 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col">
-                        <div class="text-footer mb-4">
+                    <div class="col d-flex justify-content-center">
+                        <div class="text-footer mb-4 text-center">
                             <strong>© FastBites • <a href="#" class="text-footer"> Cookie & Privacy Policy</a> • Developed by Team 4</strong>
                         </div>
                     </div>
