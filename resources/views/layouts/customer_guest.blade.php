@@ -40,21 +40,31 @@
             </div>
         </main>
 
-        <footer class="py-1">
-            <div class="container d-flex align-items-center py-5">
-                <div class="logo-container">
-                    <img src="{{ asset('images/logo.png') }}" alt="logo">
-                </div>
-                <div class="container ps-5">
-                    <div class="text-footer mb-4">
-                        <strong>© FastBites • <a href="#" class="text-footer"> Cookie & Privacy Policy</a> • Developed by Team 4</strong>
+        <footer class="p-2">
+            <div class="container py-5">
+                <div class="row d-flex align-items-center pb-4">
+                    <div class="col">
+                        <div class="logo-container">
+                            <img class="logo" src="/public/img/logo.png" alt="logo">
+                        </div>
                     </div>
-                    <div class="icons d-flex">
-                        <i class="fa-brands fa-twitter mx-2"></i> 
-                        <i class="fa-brands fa-linkedin mx-2"></i> 
-                        <i class="fa-brands fa-youtube mx-2"></i> 
-                        <i class="fa-brands fa-instagram mx-2"></i> 
-                        <i class="fa-brands fa-pinterest mx-2"></i>
+                </div>
+                <div class="row pb-4">
+                    <div class="col">
+                        <div class="icons d-flex">
+                            <i class="fa-brands fa-twitter mx-2"></i> 
+                            <i class="fa-brands fa-linkedin mx-2"></i> 
+                            <i class="fa-brands fa-youtube mx-2"></i> 
+                            <i class="fa-brands fa-instagram mx-2"></i> 
+                            <i class="fa-brands fa-pinterest mx-2"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="text-footer mb-4">
+                            <strong>© FastBites • <a href="#" class="text-footer"> Cookie & Privacy Policy</a> • Developed by Team 4</strong>
+                        </div>
                     </div>
                 </div>
             </div>
