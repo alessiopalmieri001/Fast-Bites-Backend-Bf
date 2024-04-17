@@ -22,8 +22,10 @@
         @vite('resources/js/app.js')
     </head>
     
-    <body class="background-container">
-        <header>
+    <body>
+        <div class="background-container">
+            <header>
+
             <nav class="navbar navbar-expand-lg mt-5 mb-3 flex-nowrap">
                 <div class="container">
                     <div class="logo-header">
@@ -78,6 +80,8 @@
         </main>
     
         @yield('scripts')
+
+        </div>
 
 <footer class="p-2">
     <div class="container py-3 d-flex flex-column align-items-center">

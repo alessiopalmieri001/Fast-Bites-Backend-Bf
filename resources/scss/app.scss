@@ -1,5 +1,11 @@
 @import "~bootstrap/scss/bootstrap";
 
+
+body {
+    min-height: 100vh;
+
+}
+
 .background-container {
     background: rgb(246, 144, 30);
     background: linear-gradient(
@@ -7,7 +13,6 @@
         rgba(246, 144, 30, 1) 0%,
         rgba(204, 51, 51, 1) 75%
     );
-    min-height: 100vh;
 }
 
 .paytone-one-regular {
