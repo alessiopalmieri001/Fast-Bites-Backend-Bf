@@ -280,7 +280,7 @@ footer {
 }
 
 main {
-    min-height: 400px;
+    min-height: 100vh;
 }
 
 </style>
