@@ -73,7 +73,9 @@
             </nav>
         </header>
     
-        @yield('main-content')
+        <main>
+            @yield('main-content')
+        </main>
     
         @yield('scripts')
 
@@ -264,4 +266,8 @@ footer {
   color: white;
 }
 
-    </style>
+main {
+    min-height: 400px;
+}
+
+</style>
