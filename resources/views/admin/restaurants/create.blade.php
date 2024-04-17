@@ -122,7 +122,7 @@
                 </div>
 
                 <div class="d-flex justify-content-center"> 
-                    <button type="submit" class="button-style-3">+ Aggiungi</button>
+                    <button type="submit" class="button-style-3">Crea</button>
                 </div>
 
             </form>

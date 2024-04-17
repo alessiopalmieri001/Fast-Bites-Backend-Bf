@@ -75,7 +75,7 @@
 
                 {{-- visibility checkbox --}}
                 <div class="mb-3 form-check">
-                    <input class="form-check-input my-0 " type="checkbox" name="availability" checked id="availability" value="1" {{ old('availability') ? 'checked' : '' }}>
+                    <input class="form-check-input my-0" type="checkbox" name="availability" checked id="availability" value="1" {{ old('availability') ? 'checked' : '' }} required>
                     <label class="form-check-label @error('availability') is-invalid @enderror" for="availability">Disponibile</label>
                     @error('availability')
                     <div class="text-danger">{{ $message }}</div>

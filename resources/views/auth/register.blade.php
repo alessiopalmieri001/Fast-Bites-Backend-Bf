@@ -26,7 +26,7 @@
                     <label for="name">
                         Nome e Cognome <strong>*</strong> 
                     </label>
-                    <input class="input-style-1" type="text" id="name" name="name" value="{{ old('name') }}">
+                    <input class="input-style-1" type="text" id="name" name="name" value="{{ old('name') }}" required>
                 </div>
                 <span class="alert-text fw-bold" id="nameError"></span>
     
@@ -44,7 +44,7 @@
                     <label for="password">
                         Password <strong>*</strong> 
                     </label>
-                    <input class="input-style-1" type="password" id="password" name="password" >
+                    <input class="input-style-1" type="password" id="password" name="password" required>
                 </div>
                 <span class="alert-text fw-bold" id="passwordError"></span>
     
@@ -53,7 +53,7 @@
                     <label for="password_confirmation">
                         Conferma Password <strong>*</strong> 
                     </label>
-                    <input class="input-style-1" type="password" id="password_confirmation" name="password_confirmation">
+                    <input class="input-style-1" type="password" id="password_confirmation" name="password_confirmation" required>
                 </div>
                 <span class="alert-text fw-bold" id="passwordConfirmationError"></span>
     
