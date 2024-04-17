@@ -48,22 +48,24 @@
         </div>
     
         <div class="row justify-content-center g-0">
-            <div class="col-lg-5 col-12 glass p-4">
+            <div class="col-lg-4 col-12 glass p-4">
                 <h3 class="subtitle-2 pb-2">Incassi degli ultimi sei mesi</h3>
                 <canvas id="line-chart" class="background-card p-4" style="height: 300px; padding:200px"></canvas>
             </div>
 
-            <div class="col-lg-5 col-12 glass p-4">
+            <div class="col-lg-4 col-12 glass p-4">
                 <h3 class="subtitle-2 pb-2 ">Status ordini</h3>
                 <canvas id="orders-doughnut-chart" class="background-card p-4" style="height: 100%;"></canvas>
             </div>
+        </div>
 
-            <div class="col-lg-5 col-12 glass p-4">
+        <div class="row justify-content-center g-0 pb-5 mb-4">
+            <div class="col-lg-4 col-12 glass p-4">
                 <h3 class="subtitle-2 pb-2">Andamento degli ordini negli ultimi 6 mesi</h3>
                 <canvas id="orders-line-chart" class="background-card p-4" style="height: 300px; padding:200px;"></canvas>
             </div>
 
-            <div class="col-lg-5 col-12 glass p-4">
+            <div class="col-lg-4 col-12 glass p-4">
                 <h3 class="subtitle-2 pb-2">Rapporto prezzo/quantità ordinata </h3>
                 <canvas id="foods-mixed-chart" class="background-card p-4" style="height: 300px; padding:200px;"></canvas>
             </div>
@@ -419,7 +421,7 @@
 
 .card-text {
     font-family: 'Paytone One', sans-serif;
-    font-size: 1rem;
+    font-size: 2rem;
 
 }
 
