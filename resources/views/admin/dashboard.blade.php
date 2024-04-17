@@ -14,7 +14,7 @@
             <!-- Totale incassi -->
             <div class="col-lg-2 col-md-12 col-sm-12 mx-1">
                 <div class="card background-card p-3">
-                    <h5 class="card-title text-center">Totale incassi in 6 mesi</h5>
+                    <h5 style="min-height: 40px" class="card-title text-center fs-6 fw-bold">Totale incassi</h5>
                     <h2 class="card-text text-center" id="total-incassi"></h2>
                 </div>
             </div>
@@ -23,7 +23,7 @@
             <!-- Totale ordini consegnati -->
             <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 mx-1">
                 <div class="card background-card p-3">
-                    <h5 class="card-title text-center">Totale ordini consegnati</h5>
+                    <h5 style="min-height: 40px" class="card-title text-center fs-6 fw-bold">Totale ordini consegnati</h5>
                     <h2 class="card-text text-center" id="total-delivered"></h2>
                 </div>
             </div>
@@ -31,7 +31,7 @@
             <!-- Totale ordini in preparazione -->
             <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 mx-1">
                 <div class="card background-card p-3">
-                    <h5 class="card-title text-center">Tot. ordini in preparazione</h5>
+                    <h5 style="min-height: 40px" class="card-title text-center fs-6 fw-bold">Tot. ordini in preparazione</h5>
                     <h2 class="card-text text-center" id="total-preparation"></h2>
                 </div>
             </div>
@@ -39,7 +39,7 @@
             <!-- Totale ordini in transito -->
             <div class="col-lg-2 col-md-12 col-sm-12 col-xs-12 mx-1">
                 <div class="card background-card p-3">
-                    <h5 class="card-title text-center">Totale ordini in transito</h5>
+                    <h5 style="min-height: 40px" class="card-title text-center fs-6 fw-bold">Totale ordini in transito</h5>
                     <h2 class="card-text text-center" id="total-transit"></h2>
                 </div>
             </div>
@@ -421,7 +421,7 @@
 
 .card-text {
     font-family: 'Paytone One', sans-serif;
-    font-size: 2rem;
+    font-size: 20px;
 
 }
 
