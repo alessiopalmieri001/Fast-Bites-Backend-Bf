@@ -176,9 +176,10 @@
         });
 
         
+        //TOTALE INCASSI
+        console.log('Totale incassi: ' + incomingTotal[0].toFixed(2) + '€');
+        document.getElementById('total-incassi').innerText = '€ ' + incomingTotal[0].toFixed(2);
 
-        console.log('Totale incassi: '+incomingTotal[0] + '€')
-        document.getElementById('total-incassi').innerText ='€ ' + incomingTotal[0];
 
         // doughnut chart
         const ordersDoughnut = document.getElementById('orders-doughnut-chart');
@@ -225,6 +226,7 @@
             }
         });
 
+        //TOTALE DEGLI ORDINI
         const ordersDelivered = orders.filter(order => order.status === 'Consegnato');
         console.log('Ordini consegnati:', ordersDelivered.length);
         document.getElementById('total-delivered').innerText = ordersDelivered.length;
