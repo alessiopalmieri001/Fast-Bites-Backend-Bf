@@ -4,7 +4,7 @@
     <form method="POST" action="{{ route('login') }}">
         @csrf
 
-        <div class="col-xl-4 col-lg-6 col-md-8 col-sm-10 col-10 mx-auto">
+        <div class="col-xl-3 col-lg-6 col-md-8 col-sm-10 col-10 mx-auto">
             <h1 class="title text-center pb-3">
                 Effetua il Login
             </h1>

@@ -4,7 +4,7 @@
 <form id="registerForm" method="POST" action="{{ route('register') }}">
     @csrf
     
-    <div class="col-xl-6 col-lg-8 col-md-10 col-sm-12 col-10 mx-auto">
+    <div class="col-xl-4 col-lg-8 col-md-10 col-sm-12 col-10 mx-auto">
         <h1 class="title text-center pb-3 ">
             Registrati 
         </h1>
